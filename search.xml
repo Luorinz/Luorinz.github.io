@@ -12,17 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[HelloWorld]]></title>
-    <url>%2F2019%2F03%2F28%2FHelloWorld%2F</url>
-    <content type="text"><![CDATA[长风破浪会有时，直挂云帆济沧海！]]></content>
-      <categories>
-        <category>personal</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[[Leetcode] 3. Longest Substring Without Repeating Characters]]></title>
     <url>%2F2019%2F03%2F28%2F3.%20Longest%20Substring%20Without%20Repeating%20Characters%2F</url>
     <content type="text"><![CDATA[meidumGiven a string, find the length of the longest substring without repeating characters. Example 1: 123Input: &quot;abcabcbb&quot;Output: 3 Explanation: The answer is &quot;abc&quot;, with the length of 3. Example 2: 123Input: &quot;bbbbb&quot;Output: 1Explanation: The answer is &quot;b&quot;, with the length of 1. Example 3: 1234Input: &quot;pwwkew&quot;Output: 3Explanation: The answer is &quot;wke&quot;, with the length of 3. Note that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring. 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263class Solution1: def lengthOfLongestSubstring(self, s): """ :type s: str :rtype: int """ # DFS solution O(n2) if not s: return 0 memo = set() self.max_length = float('-inf') for i in range(len(s)): if self.max_length &gt;= len(s) - i: break self.helper("", i, s, memo) return self.max_length def helper(self, path, ind, string, memo): self.max_length = max(self.max_length, len(path)) if ind &gt;= len(string): return if string[ind] not in path: path+=string[ind] # print(path) self.helper(path, ind+1, string, memo) return class Solution2: # sliding window # O(2n) time O(min(m, n)) space. m is 26, n is len of str def lengthOfLongestSubstring(self, s): if not s: return 0 i = j = 0 res = 0 memo = set() while i &lt; len(s) and j &lt; len(s): if s[j] not in memo: memo.add(s[j]) res = max(res, j - i + 1) j+=1 else: memo.remove(s[i]) i += 1 return res class Solution: # sliding window optimized using map # O(n) time O(min(m, n)) space. m is 26, n is len of str def lengthOfLongestSubstring(self, s): if not s: return 0 res = 0 i = j = 0 dic = &#123;&#125; while j &lt; len(s): if s[j] in dic: i = max(dic[s[j]], i) res = max(res, j - i + 1) dic[s[j]] = j + 1 j+=1 return res]]></content>
@@ -31,6 +20,17 @@
       </categories>
       <tags>
         <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HelloWorld]]></title>
+    <url>%2F2019%2F03%2F28%2FHelloWorld%2F</url>
+    <content type="text"><![CDATA[长风破浪会有时，直挂云帆济沧海！]]></content>
+      <categories>
+        <category>personal</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
       </tags>
   </entry>
 </search>
