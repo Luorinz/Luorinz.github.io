@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="Anda">
 <meta property="og:description" content="Web ApplicationDependencies: Java 8 Eclipse EE Postman Tomcat  Web Application: Clients -&amp;gt;Internet-&amp;gt; Server Server(Backend) Client(Frontend): User interface Internet  TCP/IP区别： IP对应特定机器的地址，TCP对应">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-04T00:59:41.915Z">
+<meta property="og:updated_time" content="2019-04-04T01:28:30.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Notes] Web Appication Basic">
 <meta name="twitter:description" content="Web ApplicationDependencies: Java 8 Eclipse EE Postman Tomcat  Web Application: Clients -&amp;gt;Internet-&amp;gt; Server Server(Backend) Client(Frontend): User interface Internet  TCP/IP区别： IP对应特定机器的地址，TCP对应">
@@ -447,7 +447,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-03 17:59:41" itemprop="dateModified" datetime="2019-04-03T17:59:41-07:00">2019-04-03</time>
+                <time title="Modified: 2019-04-03 18:28:30" itemprop="dateModified" datetime="2019-04-03T18:28:30-07:00">2019-04-03</time>
               
             
           </span>
@@ -527,50 +527,50 @@
       
 
       
-        <h1 id="Web-Application"><a href="#Web-Application" class="headerlink" title="Web Application"></a>Web Application</h1><h3 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies:"></a>Dependencies:</h3><ol>
+        <h1 id="Web-Application"><a href="#Web-Application" class="headerlink" title="Web Application"></a>Web Application</h1><h2 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies:"></a>Dependencies:</h2><ol>
 <li>Java 8</li>
 <li>Eclipse EE</li>
 <li>Postman</li>
 <li>Tomcat</li>
 </ol>
-<h3 id="Web-Application-Clients-gt-Internet-gt-Server"><a href="#Web-Application-Clients-gt-Internet-gt-Server" class="headerlink" title="Web Application: Clients -&gt;Internet-&gt; Server"></a>Web Application: Clients -&gt;Internet-&gt; Server</h3><ul>
+<h2 id="Web-Application-Clients-gt-Internet-gt-Server"><a href="#Web-Application-Clients-gt-Internet-gt-Server" class="headerlink" title="Web Application: Clients -&gt;Internet-&gt; Server"></a>Web Application: Clients -&gt;Internet-&gt; Server</h2><ul>
 <li>Server(Backend)</li>
 <li>Client(Frontend): User interface</li>
 <li>Internet</li>
 </ul>
-<h3 id="TCP-IP区别："><a href="#TCP-IP区别：" class="headerlink" title="TCP/IP区别："></a>TCP/IP区别：</h3><ul>
+<h2 id="TCP-IP区别："><a href="#TCP-IP区别：" class="headerlink" title="TCP/IP区别："></a>TCP/IP区别：</h2><ul>
 <li>IP对应特定机器的地址，TCP对应特定机器特定进程的地址</li>
 <li>TCP通过端口来监听请求，请求包括IP和端口号</li>
 </ul>
-<h3 id="在浏览器输入www-example-com会发生什么？"><a href="#在浏览器输入www-example-com会发生什么？" class="headerlink" title="在浏览器输入www.example.com会发生什么？"></a>在浏览器输入<a href="http://www.example.com会发生什么？" target="_blank" rel="noopener">www.example.com会发生什么？</a></h3><ol>
+<h2 id="在浏览器输入www-example-com会发生什么？"><a href="#在浏览器输入www-example-com会发生什么？" class="headerlink" title="在浏览器输入www.example.com会发生什么？"></a>在浏览器输入<a href="http://www.example.com会发生什么？" target="_blank" rel="noopener">www.example.com会发生什么？</a></h2><ol>
 <li>(client) client opens browser and goes to an Internet address (IP address/URL/hostname) and asks for page for (<a href="http://www.example.com)" target="_blank" rel="noopener">http://www.example.com)</a>, which means “I want to see ‘<a href="http://www.example.com/index.html’”" target="_blank" rel="noopener">http://www.example.com/index.html’”</a></li>
 <li>(network) Internet redirects your request “I want to see ‘<a href="http://www.example.com’”" target="_blank" rel="noopener">http://www.example.com’”</a> to example’s server (a set of web servers)</li>
 <li>(server) One of example’s server sends a response to your Internet address (ip address). The response contains a HTML page. We will talk about HTML later.</li>
 <li>(network) The response goes through the Internet and received by your browser.</li>
 <li>(client) Your browser receives the response from example’s server and the HTML page contained in it. Render the page view and present to you. How to view the HTML page source? (Right click, and view page source) </li>
 </ol>
-<h3 id="如何设计web-app-三层结构"><a href="#如何设计web-app-三层结构" class="headerlink" title="如何设计web app? 三层结构"></a>如何设计web app? 三层结构</h3><ol>
+<h2 id="如何设计web-app-三层结构"><a href="#如何设计web-app-三层结构" class="headerlink" title="如何设计web app? 三层结构"></a>如何设计web app? 三层结构</h2><ol>
 <li>presentation tier 直接与用户交互</li>
 <li>logic tier 应用具体的逻辑</li>
 <li>data tier 数据库</li>
 </ol>
-<h3 id="Tomcat-提供web-server"><a href="#Tomcat-提供web-server" class="headerlink" title="Tomcat 提供web server"></a>Tomcat 提供web server</h3><ol>
+<h2 id="Tomcat-提供web-server"><a href="#Tomcat-提供web-server" class="headerlink" title="Tomcat 提供web server"></a>Tomcat 提供web server</h2><ol>
 <li>RPC(remote procedure call) 调用一个远端机器上的API</li>
 <li>Java Servlet 服务器端负责处理RPC的java class</li>
 <li>Tomcat 存放servlet的环境，负责接受请求并分配到对应的servlet处理,把处理的结果传给正确的客户</li>
 </ol>
-<h3 id="Tomcat配置"><a href="#Tomcat配置" class="headerlink" title="Tomcat配置"></a>Tomcat配置</h3><ol>
+<h2 id="Tomcat配置"><a href="#Tomcat配置" class="headerlink" title="Tomcat配置"></a>Tomcat配置</h2><ol>
 <li>在properties里面点一下switch location找配置文件</li>
 <li>server location改成 use tomcat installation</li>
 <li>地址localhost:8080</li>
 </ol>
-<h3 id="Http-request-methods"><a href="#Http-request-methods" class="headerlink" title="Http request methods"></a>Http request methods</h3><ol>
+<h2 id="Http-request-methods"><a href="#Http-request-methods" class="headerlink" title="Http request methods"></a>Http request methods</h2><ol>
 <li>GET(read in general)</li>
 <li>POST(write in general)</li>
 <li>PUT(write)</li>
 <li>DELETE(write)</li>
 </ol>
-<h3 id="URL-Unique-Resource-Locator"><a href="#URL-Unique-Resource-Locator" class="headerlink" title="URL(Unique Resource Locator)"></a>URL(Unique Resource Locator)</h3><ol>
+<h2 id="URL-Unique-Resource-Locator"><a href="#URL-Unique-Resource-Locator" class="headerlink" title="URL(Unique Resource Locator)"></a>URL(Unique Resource Locator)</h2><ol>
 <li><p>format: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">+ protocal(http/https)</span><br><span class="line">+ hostname(www.youtube.com)</span><br><span class="line">+ port(8080): which process</span><br><span class="line">+ endpoint: The name and location of the requested resource, under the server base directory. 相当于要触发的服务或功能</span><br><span class="line">+ query: separated from the preceding part by a question mark (?), containing a query string of attribute–value pairs separated by a delimiter. 相当于参数</span><br><span class="line">+ example: ```https://www.youtube.com/results?search_query=example</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p>example: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2. url会自动将空格转码成```&quot;20%&quot;</span><br></pre></td></tr></table></figure></p>
@@ -580,7 +580,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="http-request-body-包含http-request的数据"><a href="#http-request-body-包含http-request的数据" class="headerlink" title="http request body: 包含http request的数据"></a>http request body: 包含http request的数据</h3><ul>
+<h2 id="http-request-body-包含http-request的数据"><a href="#http-request-body-包含http-request的数据" class="headerlink" title="http request body: 包含http request的数据"></a>http request body: 包含http request的数据</h2><ul>
 <li>POST的body信息通常是隐藏的,GET通常没有必要隐藏</li>
 <li><p>request例子</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">JSON(JavaScript Object Notation)</span><br><span class="line">&#123;</span><br><span class="line">“instructor”: </span><br><span class="line">&#123;</span><br><span class="line">    &quot;company&quot;: &quot;Laioffer&quot;,</span><br><span class="line">    &quot;course&quot;: “Project” ,</span><br><span class="line">    &quot;name&quot;: “Vincent”</span><br><span class="line">&#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Alternative formats</span><br><span class="line"></span><br><span class="line">XML: eXtensible Markup Language</span><br><span class="line">&lt;instructor&gt;</span><br><span class="line">&lt;company&gt;Laioffer&lt;/company&gt;</span><br><span class="line">&lt;course&gt;Project&lt;/course&gt;</span><br><span class="line">&lt;name&gt;Vincent&lt;/name&gt;</span><br><span class="line">&lt;/instructor&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ProtocolBuffer</span><br><span class="line">Instructor &#123;</span><br><span class="line">company = “Laioffer”,</span><br><span class="line">course= “Project”</span><br><span class="line">name= “Vincent”</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -819,7 +819,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web-Application"><span class="nav-number">1.</span> <span class="nav-text">Web Application</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dependencies"><span class="nav-number">1.0.1.</span> <span class="nav-text">Dependencies:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web-Application-Clients-gt-Internet-gt-Server"><span class="nav-number">1.0.2.</span> <span class="nav-text">Web Application: Clients -&gt;Internet-&gt; Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP区别："><span class="nav-number">1.0.3.</span> <span class="nav-text">TCP/IP区别：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在浏览器输入www-example-com会发生什么？"><span class="nav-number">1.0.4.</span> <span class="nav-text">在浏览器输入www.example.com会发生什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何设计web-app-三层结构"><span class="nav-number">1.0.5.</span> <span class="nav-text">如何设计web app? 三层结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tomcat-提供web-server"><span class="nav-number">1.0.6.</span> <span class="nav-text">Tomcat 提供web server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tomcat配置"><span class="nav-number">1.0.7.</span> <span class="nav-text">Tomcat配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Http-request-methods"><span class="nav-number">1.0.8.</span> <span class="nav-text">Http request methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL-Unique-Resource-Locator"><span class="nav-number">1.0.9.</span> <span class="nav-text">URL(Unique Resource Locator)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http-request-body-包含http-request的数据"><span class="nav-number">1.0.10.</span> <span class="nav-text">http request body: 包含http request的数据</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web-Application"><span class="nav-number">1.</span> <span class="nav-text">Web Application</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dependencies"><span class="nav-number">1.1.</span> <span class="nav-text">Dependencies:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-Application-Clients-gt-Internet-gt-Server"><span class="nav-number">1.2.</span> <span class="nav-text">Web Application: Clients -&gt;Internet-&gt; Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP区别："><span class="nav-number">1.3.</span> <span class="nav-text">TCP/IP区别：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在浏览器输入www-example-com会发生什么？"><span class="nav-number">1.4.</span> <span class="nav-text">在浏览器输入www.example.com会发生什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何设计web-app-三层结构"><span class="nav-number">1.5.</span> <span class="nav-text">如何设计web app? 三层结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat-提供web-server"><span class="nav-number">1.6.</span> <span class="nav-text">Tomcat 提供web server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat配置"><span class="nav-number">1.7.</span> <span class="nav-text">Tomcat配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Http-request-methods"><span class="nav-number">1.8.</span> <span class="nav-text">Http request methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL-Unique-Resource-Locator"><span class="nav-number">1.9.</span> <span class="nav-text">URL(Unique Resource Locator)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http-request-body-包含http-request的数据"><span class="nav-number">1.10.</span> <span class="nav-text">http request body: 包含http request的数据</span></a></li></ol></li></ol></div>
             
 
           </div>

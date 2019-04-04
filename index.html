@@ -446,7 +446,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-03 17:59:41" itemprop="dateModified" datetime="2019-04-03T17:59:41-07:00">2019-04-03</time>
+                <time title="Modified: 2019-04-03 18:28:30" itemprop="dateModified" datetime="2019-04-03T18:28:30-07:00">2019-04-03</time>
               
             
           </span>
@@ -528,50 +528,50 @@
       
         
           
-            <h1 id="Web-Application"><a href="#Web-Application" class="headerlink" title="Web Application"></a>Web Application</h1><h3 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies:"></a>Dependencies:</h3><ol>
+            <h1 id="Web-Application"><a href="#Web-Application" class="headerlink" title="Web Application"></a>Web Application</h1><h2 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies:"></a>Dependencies:</h2><ol>
 <li>Java 8</li>
 <li>Eclipse EE</li>
 <li>Postman</li>
 <li>Tomcat</li>
 </ol>
-<h3 id="Web-Application-Clients-gt-Internet-gt-Server"><a href="#Web-Application-Clients-gt-Internet-gt-Server" class="headerlink" title="Web Application: Clients -&gt;Internet-&gt; Server"></a>Web Application: Clients -&gt;Internet-&gt; Server</h3><ul>
+<h2 id="Web-Application-Clients-gt-Internet-gt-Server"><a href="#Web-Application-Clients-gt-Internet-gt-Server" class="headerlink" title="Web Application: Clients -&gt;Internet-&gt; Server"></a>Web Application: Clients -&gt;Internet-&gt; Server</h2><ul>
 <li>Server(Backend)</li>
 <li>Client(Frontend): User interface</li>
 <li>Internet</li>
 </ul>
-<h3 id="TCP-IP区别："><a href="#TCP-IP区别：" class="headerlink" title="TCP/IP区别："></a>TCP/IP区别：</h3><ul>
+<h2 id="TCP-IP区别："><a href="#TCP-IP区别：" class="headerlink" title="TCP/IP区别："></a>TCP/IP区别：</h2><ul>
 <li>IP对应特定机器的地址，TCP对应特定机器特定进程的地址</li>
 <li>TCP通过端口来监听请求，请求包括IP和端口号</li>
 </ul>
-<h3 id="在浏览器输入www-example-com会发生什么？"><a href="#在浏览器输入www-example-com会发生什么？" class="headerlink" title="在浏览器输入www.example.com会发生什么？"></a>在浏览器输入<a href="http://www.example.com会发生什么？" target="_blank" rel="noopener">www.example.com会发生什么？</a></h3><ol>
+<h2 id="在浏览器输入www-example-com会发生什么？"><a href="#在浏览器输入www-example-com会发生什么？" class="headerlink" title="在浏览器输入www.example.com会发生什么？"></a>在浏览器输入<a href="http://www.example.com会发生什么？" target="_blank" rel="noopener">www.example.com会发生什么？</a></h2><ol>
 <li>(client) client opens browser and goes to an Internet address (IP address/URL/hostname) and asks for page for (<a href="http://www.example.com)" target="_blank" rel="noopener">http://www.example.com)</a>, which means “I want to see ‘<a href="http://www.example.com/index.html’”" target="_blank" rel="noopener">http://www.example.com/index.html’”</a></li>
 <li>(network) Internet redirects your request “I want to see ‘<a href="http://www.example.com’”" target="_blank" rel="noopener">http://www.example.com’”</a> to example’s server (a set of web servers)</li>
 <li>(server) One of example’s server sends a response to your Internet address (ip address). The response contains a HTML page. We will talk about HTML later.</li>
 <li>(network) The response goes through the Internet and received by your browser.</li>
 <li>(client) Your browser receives the response from example’s server and the HTML page contained in it. Render the page view and present to you. How to view the HTML page source? (Right click, and view page source) </li>
 </ol>
-<h3 id="如何设计web-app-三层结构"><a href="#如何设计web-app-三层结构" class="headerlink" title="如何设计web app? 三层结构"></a>如何设计web app? 三层结构</h3><ol>
+<h2 id="如何设计web-app-三层结构"><a href="#如何设计web-app-三层结构" class="headerlink" title="如何设计web app? 三层结构"></a>如何设计web app? 三层结构</h2><ol>
 <li>presentation tier 直接与用户交互</li>
 <li>logic tier 应用具体的逻辑</li>
 <li>data tier 数据库</li>
 </ol>
-<h3 id="Tomcat-提供web-server"><a href="#Tomcat-提供web-server" class="headerlink" title="Tomcat 提供web server"></a>Tomcat 提供web server</h3><ol>
+<h2 id="Tomcat-提供web-server"><a href="#Tomcat-提供web-server" class="headerlink" title="Tomcat 提供web server"></a>Tomcat 提供web server</h2><ol>
 <li>RPC(remote procedure call) 调用一个远端机器上的API</li>
 <li>Java Servlet 服务器端负责处理RPC的java class</li>
 <li>Tomcat 存放servlet的环境，负责接受请求并分配到对应的servlet处理,把处理的结果传给正确的客户</li>
 </ol>
-<h3 id="Tomcat配置"><a href="#Tomcat配置" class="headerlink" title="Tomcat配置"></a>Tomcat配置</h3><ol>
+<h2 id="Tomcat配置"><a href="#Tomcat配置" class="headerlink" title="Tomcat配置"></a>Tomcat配置</h2><ol>
 <li>在properties里面点一下switch location找配置文件</li>
 <li>server location改成 use tomcat installation</li>
 <li>地址localhost:8080</li>
 </ol>
-<h3 id="Http-request-methods"><a href="#Http-request-methods" class="headerlink" title="Http request methods"></a>Http request methods</h3><ol>
+<h2 id="Http-request-methods"><a href="#Http-request-methods" class="headerlink" title="Http request methods"></a>Http request methods</h2><ol>
 <li>GET(read in general)</li>
 <li>POST(write in general)</li>
 <li>PUT(write)</li>
 <li>DELETE(write)</li>
 </ol>
-<h3 id="URL-Unique-Resource-Locator"><a href="#URL-Unique-Resource-Locator" class="headerlink" title="URL(Unique Resource Locator)"></a>URL(Unique Resource Locator)</h3><ol>
+<h2 id="URL-Unique-Resource-Locator"><a href="#URL-Unique-Resource-Locator" class="headerlink" title="URL(Unique Resource Locator)"></a>URL(Unique Resource Locator)</h2><ol>
 <li><p>format: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">+ protocal(http/https)</span><br><span class="line">+ hostname(www.youtube.com)</span><br><span class="line">+ port(8080): which process</span><br><span class="line">+ endpoint: The name and location of the requested resource, under the server base directory. 相当于要触发的服务或功能</span><br><span class="line">+ query: separated from the preceding part by a question mark (?), containing a query string of attribute–value pairs separated by a delimiter. 相当于参数</span><br><span class="line">+ example: ```https://www.youtube.com/results?search_query=example</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p>example: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2. url会自动将空格转码成```&quot;20%&quot;</span><br></pre></td></tr></table></figure></p>
@@ -581,7 +581,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="http-request-body-包含http-request的数据"><a href="#http-request-body-包含http-request的数据" class="headerlink" title="http request body: 包含http request的数据"></a>http request body: 包含http request的数据</h3><ul>
+<h2 id="http-request-body-包含http-request的数据"><a href="#http-request-body-包含http-request的数据" class="headerlink" title="http request body: 包含http request的数据"></a>http request body: 包含http request的数据</h2><ul>
 <li>POST的body信息通常是隐藏的,GET通常没有必要隐藏</li>
 <li><p>request例子</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">JSON(JavaScript Object Notation)</span><br><span class="line">&#123;</span><br><span class="line">“instructor”: </span><br><span class="line">&#123;</span><br><span class="line">    &quot;company&quot;: &quot;Laioffer&quot;,</span><br><span class="line">    &quot;course&quot;: “Project” ,</span><br><span class="line">    &quot;name&quot;: “Vincent”</span><br><span class="line">&#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Alternative formats</span><br><span class="line"></span><br><span class="line">XML: eXtensible Markup Language</span><br><span class="line">&lt;instructor&gt;</span><br><span class="line">&lt;company&gt;Laioffer&lt;/company&gt;</span><br><span class="line">&lt;course&gt;Project&lt;/course&gt;</span><br><span class="line">&lt;name&gt;Vincent&lt;/name&gt;</span><br><span class="line">&lt;/instructor&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ProtocolBuffer</span><br><span class="line">Instructor &#123;</span><br><span class="line">company = “Laioffer”,</span><br><span class="line">course= “Project”</span><br><span class="line">name= “Vincent”</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -849,194 +849,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/HelloWorld/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Anda Luo">
-      <meta itemprop="description" content="Notes of study, work and life">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Anda">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/28/HelloWorld/" class="post-title-link" itemprop="url">HelloWorld</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-28 12:13:17 / Modified: 19:47:52" itemprop="dateCreated datePublished" datetime="2019-03-28T12:13:17-07:00">2019-03-28</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/personal/" itemprop="url" rel="index"><span itemprop="name">personal</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">16</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">1 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="长风破浪会有时，直挂云帆济沧海！"><a href="#长风破浪会有时，直挂云帆济沧海！" class="headerlink" title="长风破浪会有时，直挂云帆济沧海！"></a>长风破浪会有时，直挂云帆济沧海！</h1>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/3. Longest Substring Without Repeating Characters/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1178,6 +990,194 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;pwwkew&quot;</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: The answer is &quot;wke&quot;, with the length of 3. </span><br><span class="line">             Note that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring.</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution1</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment"># DFS solution O(n2)</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        memo = set()</span><br><span class="line">        self.max_length = float(<span class="string">'-inf'</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">            <span class="keyword">if</span> self.max_length &gt;= len(s) - i:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            self.helper(<span class="string">""</span>, i, s, memo)</span><br><span class="line">        <span class="keyword">return</span> self.max_length</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(self, path, ind, string, memo)</span>:</span></span><br><span class="line">        self.max_length = max(self.max_length, len(path))</span><br><span class="line">        <span class="keyword">if</span> ind &gt;= len(string):</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> string[ind] <span class="keyword">not</span> <span class="keyword">in</span> path:</span><br><span class="line">            path+=string[ind]</span><br><span class="line">            <span class="comment"># print(path)</span></span><br><span class="line">            self.helper(path, ind+<span class="number">1</span>, string, memo)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution2</span>:</span></span><br><span class="line">    <span class="comment"># sliding window</span></span><br><span class="line">    <span class="comment"># O(2n) time O(min(m, n)) space. m is 26, n is len of str</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        i = j = <span class="number">0</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        memo = set()</span><br><span class="line">        <span class="keyword">while</span> i &lt; len(s) <span class="keyword">and</span> j &lt; len(s):</span><br><span class="line">            <span class="keyword">if</span> s[j] <span class="keyword">not</span> <span class="keyword">in</span> memo:</span><br><span class="line">                memo.add(s[j])</span><br><span class="line">                res = max(res, j - i + <span class="number">1</span>)</span><br><span class="line">                j+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                memo.remove(s[i])</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="comment"># sliding window optimized using map</span></span><br><span class="line">    <span class="comment"># O(n) time O(min(m, n)) space. m is 26, n is len of str</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        i = j = <span class="number">0</span></span><br><span class="line">        dic = &#123;&#125;</span><br><span class="line">        <span class="keyword">while</span> j &lt; len(s):</span><br><span class="line">            <span class="keyword">if</span> s[j] <span class="keyword">in</span> dic:</span><br><span class="line">                i = max(dic[s[j]], i)</span><br><span class="line">            res = max(res, j - i + <span class="number">1</span>)</span><br><span class="line">            dic[s[j]] = j + <span class="number">1</span></span><br><span class="line">            j+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
 
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/HelloWorld/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anda Luo">
+      <meta itemprop="description" content="Notes of study, work and life">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anda">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/28/HelloWorld/" class="post-title-link" itemprop="url">HelloWorld</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-03-28 12:13:17 / Modified: 19:47:52" itemprop="dateCreated datePublished" datetime="2019-03-28T12:13:17-07:00">2019-03-28</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/personal/" itemprop="url" rel="index"><span itemprop="name">personal</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">16</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">1 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="长风破浪会有时，直挂云帆济沧海！"><a href="#长风破浪会有时，直挂云帆济沧海！" class="headerlink" title="长风破浪会有时，直挂云帆济沧海！"></a>长风破浪会有时，直挂云帆济沧海！</h1>
           
         
       
