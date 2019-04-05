@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[[Notes] Web Appication Basic]]></title>
-    <url>%2F2019%2F04%2F04%2F%5BNotes%5D%20Web%20Appication%20Basic%2F</url>
+    <title><![CDATA[[Notes] Web Application Basic]]></title>
+    <url>%2F2019%2F04%2F04%2F%5BNotes%5D%20Web%20Application%20Basic%2F</url>
     <content type="text"><![CDATA[Web ApplicationDependencies: Java 8 Eclipse EE Postman Tomcat Web Application: Clients -&gt;Internet-&gt; Server Server(Backend) Client(Frontend): User interface Internet TCP/IP区别： IP对应特定机器的地址，TCP对应特定机器特定进程的地址 TCP通过端口来监听请求，请求包括IP和端口号 在浏览器输入www.example.com会发生什么？ (client) client opens browser and goes to an Internet address (IP address/URL/hostname) and asks for page for (http://www.example.com), which means “I want to see ‘http://www.example.com/index.html’” (network) Internet redirects your request “I want to see ‘http://www.example.com’” to example’s server (a set of web servers) (server) One of example’s server sends a response to your Internet address (ip address). The response contains a HTML page. We will talk about HTML later. (network) The response goes through the Internet and received by your browser. (client) Your browser receives the response from example’s server and the HTML page contained in it. Render the page view and present to you. How to view the HTML page source? (Right click, and view page source) 如何设计web app? 三层结构 presentation tier 直接与用户交互 logic tier 应用具体的逻辑 data tier 数据库 Tomcat 提供web server RPC(remote procedure call) 调用一个远端机器上的API Java Servlet 服务器端负责处理RPC的java class Tomcat 存放servlet的环境，负责接受请求并分配到对应的servlet处理,把处理的结果传给正确的客户 Tomcat配置 在properties里面点一下switch location找配置文件 server location改成 use tomcat installation 地址localhost:8080 Http request methods GET(read in general) POST(write in general) PUT(write) DELETE(write) URL(Unique Resource Locator) format: 123456+ protocal(http/https)+ hostname(www.youtube.com)+ port(8080): which process+ endpoint: The name and location of the requested resource, under the server base directory. 相当于要触发的服务或功能+ query: separated from the preceding part by a question mark (?), containing a query string of attribute–value pairs separated by a delimiter. 相当于参数+ example: ```https://www.youtube.com/results?search_query=example example: 12. url会自动将空格转码成```&quot;20%&quot; 如果要inplace操作的话，先扫一遍找出空格数，然后再扩容字符串，然后冲后往前填。 http request body: 包含http request的数据 POST的body信息通常是隐藏的,GET通常没有必要隐藏 request例子 1234567891011121314151617181920212223242526JSON(JavaScript Object Notation)&#123;“instructor”: &#123; &quot;company&quot;: &quot;Laioffer&quot;, &quot;course&quot;: “Project” , &quot;name&quot;: “Vincent”&#125; &#125;// Alternative formatsXML: eXtensible Markup Language&lt;instructor&gt;&lt;company&gt;Laioffer&lt;/company&gt;&lt;course&gt;Project&lt;/course&gt;&lt;name&gt;Vincent&lt;/name&gt;&lt;/instructor&gt;ProtocolBufferInstructor &#123;company = “Laioffer”,course= “Project”name= “Vincent”&#125; JSON简洁一些，xml长一些，ProtocalBuffer更新效率更高。前两种都是字符串，后一种是java class，相当于二进制文件，需要额外支持。]]></content>
       <categories>
         <category>CS</category>
@@ -25,17 +25,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[[Leetcode] 3. Longest Substring Without Repeating Characters]]></title>
-    <url>%2F2019%2F03%2F28%2F3.%20Longest%20Substring%20Without%20Repeating%20Characters%2F</url>
-    <content type="text"><![CDATA[meidumGiven a string, find the length of the longest substring without repeating characters. Example 1: 123Input: &quot;abcabcbb&quot;Output: 3 Explanation: The answer is &quot;abc&quot;, with the length of 3. Example 2: 123Input: &quot;bbbbb&quot;Output: 1Explanation: The answer is &quot;b&quot;, with the length of 1. Example 3: 1234Input: &quot;pwwkew&quot;Output: 3Explanation: The answer is &quot;wke&quot;, with the length of 3. Note that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring. 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263class Solution1: def lengthOfLongestSubstring(self, s): """ :type s: str :rtype: int """ # DFS solution O(n2) if not s: return 0 memo = set() self.max_length = float('-inf') for i in range(len(s)): if self.max_length &gt;= len(s) - i: break self.helper("", i, s, memo) return self.max_length def helper(self, path, ind, string, memo): self.max_length = max(self.max_length, len(path)) if ind &gt;= len(string): return if string[ind] not in path: path+=string[ind] # print(path) self.helper(path, ind+1, string, memo) return class Solution2: # sliding window # O(2n) time O(min(m, n)) space. m is 26, n is len of str def lengthOfLongestSubstring(self, s): if not s: return 0 i = j = 0 res = 0 memo = set() while i &lt; len(s) and j &lt; len(s): if s[j] not in memo: memo.add(s[j]) res = max(res, j - i + 1) j+=1 else: memo.remove(s[i]) i += 1 return res class Solution: # sliding window optimized using map # O(n) time O(min(m, n)) space. m is 26, n is len of str def lengthOfLongestSubstring(self, s): if not s: return 0 res = 0 i = j = 0 dic = &#123;&#125; while j &lt; len(s): if s[j] in dic: i = max(dic[s[j]], i) res = max(res, j - i + 1) dic[s[j]] = j + 1 j+=1 return res]]></content>
-      <categories>
-        <category>CS</category>
-      </categories>
-      <tags>
-        <tag>algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[HelloWorld]]></title>
     <url>%2F2019%2F03%2F28%2FHelloWorld%2F</url>
     <content type="text"><![CDATA[长风破浪会有时，直挂云帆济沧海！]]></content>
@@ -44,6 +33,17 @@
       </categories>
       <tags>
         <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[[Leetcode] 3. Longest Substring Without Repeating Characters]]></title>
+    <url>%2F2019%2F03%2F28%2F3.%20Longest%20Substring%20Without%20Repeating%20Characters%2F</url>
+    <content type="text"><![CDATA[meidumGiven a string, find the length of the longest substring without repeating characters. Example 1: 123Input: &quot;abcabcbb&quot;Output: 3 Explanation: The answer is &quot;abc&quot;, with the length of 3. Example 2: 123Input: &quot;bbbbb&quot;Output: 1Explanation: The answer is &quot;b&quot;, with the length of 1. Example 3: 1234Input: &quot;pwwkew&quot;Output: 3Explanation: The answer is &quot;wke&quot;, with the length of 3. Note that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring. 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263class Solution1: def lengthOfLongestSubstring(self, s): """ :type s: str :rtype: int """ # DFS solution O(n2) if not s: return 0 memo = set() self.max_length = float('-inf') for i in range(len(s)): if self.max_length &gt;= len(s) - i: break self.helper("", i, s, memo) return self.max_length def helper(self, path, ind, string, memo): self.max_length = max(self.max_length, len(path)) if ind &gt;= len(string): return if string[ind] not in path: path+=string[ind] # print(path) self.helper(path, ind+1, string, memo) return class Solution2: # sliding window # O(2n) time O(min(m, n)) space. m is 26, n is len of str def lengthOfLongestSubstring(self, s): if not s: return 0 i = j = 0 res = 0 memo = set() while i &lt; len(s) and j &lt; len(s): if s[j] not in memo: memo.add(s[j]) res = max(res, j - i + 1) j+=1 else: memo.remove(s[i]) i += 1 return res class Solution: # sliding window optimized using map # O(n) time O(min(m, n)) space. m is 26, n is len of str def lengthOfLongestSubstring(self, s): if not s: return 0 res = 0 i = j = 0 dic = &#123;&#125; while j &lt; len(s): if s[j] in dic: i = max(dic[s[j]], i) res = max(res, j - i + 1) dic[s[j]] = j + 1 j+=1 return res]]></content>
+      <categories>
+        <category>CS</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
       </tags>
   </entry>
 </search>
