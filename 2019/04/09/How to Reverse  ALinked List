@@ -107,16 +107,18 @@
 
 
 
-  <meta name="description" content="Notes of study, work and life">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Anda">
-<meta property="og:url" content="http://yoursite.com/tags/HTML/index.html">
+  <meta name="description" content="Reverse linked list corner case 12dummy-&amp;gt;1-&amp;gt;nulldummy-&amp;gt;null  general case 1234567891011dummy-&amp;gt; 1 -&amp;gt;   2      -&amp;gt; 3 -&amp;gt; nullpre    cur  nextNodedummy -&amp;gt;  2   -&amp;gt; 1 -&amp;gt; 3 -&amp;gt;">
+<meta name="keywords" content="Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Reverse A Linked List">
+<meta property="og:url" content="http://yoursite.com/2019/04/09/How to Reverse  ALinked List">
 <meta property="og:site_name" content="Anda">
-<meta property="og:description" content="Notes of study, work and life">
+<meta property="og:description" content="Reverse linked list corner case 12dummy-&amp;gt;1-&amp;gt;nulldummy-&amp;gt;null  general case 1234567891011dummy-&amp;gt; 1 -&amp;gt;   2      -&amp;gt; 3 -&amp;gt; nullpre    cur  nextNodedummy -&amp;gt;  2   -&amp;gt; 1 -&amp;gt; 3 -&amp;gt;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-09T17:06:02.908Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Anda">
-<meta name="twitter:description" content="Notes of study, work and life">
+<meta name="twitter:title" content="How to Reverse A Linked List">
+<meta name="twitter:description" content="Reverse linked list corner case 12dummy-&amp;gt;1-&amp;gt;nulldummy-&amp;gt;null  general case 1234567891011dummy-&amp;gt; 1 -&amp;gt;   2      -&amp;gt; 3 -&amp;gt; nullpre    cur  nextNodedummy -&amp;gt;  2   -&amp;gt; 1 -&amp;gt; 3 -&amp;gt;">
 
 
 
@@ -124,7 +126,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/tags/HTML/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/09/How to Reverse  ALinked List">
 
 
 
@@ -134,7 +136,7 @@
   };
 </script>
 
-  <title>Tag: HTML | Anda</title>
+  <title>How to Reverse A Linked List | Anda</title>
   
 
 
@@ -182,7 +184,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -243,7 +245,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -313,25 +315,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -386,57 +369,241 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>HTML<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/How to Reverse  ALinked List?/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anda Luo">
+      <meta itemprop="description" content="Notes of study, work and life">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anda">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/04/09/[Notes] HTML Basic/" itemprop="url">
-            
-              <span itemprop="name">[Notes] HTML Basic</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">How to Reverse A Linked List
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-09T02:39:12-07:00" content="2019-04-09">
-          04-09
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-09 17:04:54 / Modified: 10:06:02" itemprop="dateCreated datePublished" datetime="2019-04-09T17:04:54-07:00">2019-04-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">780</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">1 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Reverse-linked-list"><a href="#Reverse-linked-list" class="headerlink" title="Reverse linked list"></a>Reverse linked list</h1><ol>
+<li><p>corner case</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dummy-&gt;1-&gt;null</span><br><span class="line">dummy-&gt;null</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>general case</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dummy-&gt; 1 -&gt;   2      -&gt; 3 -&gt; null</span><br><span class="line">pre    cur  nextNode</span><br><span class="line"></span><br><span class="line">dummy -&gt;  2   -&gt; 1 -&gt; 3 -&gt; null</span><br><span class="line">pre     nextNode cur  </span><br><span class="line"></span><br><span class="line">dummy -&gt;  2   -&gt; 1 -&gt;   3   -&gt; null</span><br><span class="line">pre             cur  nextNode</span><br><span class="line"></span><br><span class="line">dummy -&gt;  3   -&gt; 2 -&gt;   1   -&gt; null</span><br><span class="line">pre                    cur      nextNode</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<ol>
+<li>link cur to the next node <code>cur.next = nextNode.next</code></li>
+<li>link nextNode to the head of the reversed part <code>nextNode.next = pre.next</code></li>
+<li>link pre to the nextNode <code>pre.next = nextNode</code></li>
+<li>update nextNode to next <code>nextNode = cur.next</code></li>
+<li>when nextNode gets to the end, exit</li>
+</ol>
+<hr>
+<blockquote>
+<p>cur represents the tail, and pre represents the the dummy, nextNode represents the node waiting to be added to the head of the list.</p>
+</blockquote>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/09/[Notes] HTML Basic/" rel="next" title="[Notes] HTML Basic">
+                <i class="fa fa-chevron-left"></i> [Notes] HTML Basic
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -456,8 +623,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -577,6 +753,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Reverse-linked-list"><span class="nav-number">1.</span> <span class="nav-text">Reverse linked list</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -737,6 +930,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -752,6 +949,8 @@
 
   
 
+
+  
 
 
   
@@ -1105,7 +1304,7 @@
   <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script>
   
-    bookmark.loadBookmark();
+    bookmark.scrollToMark('auto', "#more");
   
   </script>
 
