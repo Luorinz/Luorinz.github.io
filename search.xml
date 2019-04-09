@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[How to Reverse A Linked List]]></title>
-    <url>%2F2019%2F04%2F09%2FHow%20to%20Reverse%20%20ALinked%20List%3F%2F</url>
+    <url>%2F2019%2F04%2F09%2FHow%20to%20Reverse%20A%20Linked%20List%2F</url>
     <content type="text"><![CDATA[Reverse linked list corner case 12dummy-&gt;1-&gt;nulldummy-&gt;null general case 1234567891011dummy-&gt; 1 -&gt; 2 -&gt; 3 -&gt; nullpre cur nextNodedummy -&gt; 2 -&gt; 1 -&gt; 3 -&gt; nullpre nextNode cur dummy -&gt; 2 -&gt; 1 -&gt; 3 -&gt; nullpre cur nextNodedummy -&gt; 3 -&gt; 2 -&gt; 1 -&gt; nullpre cur nextNode link cur to the next node cur.next = nextNode.next link nextNode to the head of the reversed part nextNode.next = pre.next link pre to the nextNode pre.next = nextNode update nextNode to next nextNode = cur.next when nextNode gets to the end, exit cur represents the tail, and pre represents the the dummy, nextNode represents the node waiting to be added to the head of the list.]]></content>
       <categories>
         <category>CS</category>
