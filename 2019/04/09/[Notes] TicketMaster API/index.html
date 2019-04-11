@@ -107,18 +107,22 @@
 
 
 
-  <meta name="description" content="TicketMaster APIHTML request message [pic] Request structure GET /doc/test.html HTTP 1.1First part indicates the type of the request, second part indicates the resource it asks for, third part is the">
+  <meta name="description" content="TicketMaster APIHTML request message  Request structure GET /doc/test.html HTTP 1.1First part indicates the type of the request, second part indicates the resource it asks for, third part is the versi">
 <meta name="keywords" content="Web,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Notes] TicketMaster API">
 <meta property="og:url" content="http://yoursite.com/2019/04/09/[Notes] TicketMaster API/index.html">
 <meta property="og:site_name" content="Anda">
-<meta property="og:description" content="TicketMaster APIHTML request message [pic] Request structure GET /doc/test.html HTTP 1.1First part indicates the type of the request, second part indicates the resource it asks for, third part is the">
+<meta property="og:description" content="TicketMaster APIHTML request message  Request structure GET /doc/test.html HTTP 1.1First part indicates the type of the request, second part indicates the resource it asks for, third part is the versi">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-09T23:21:06.270Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/4.%20TicketMasterAPI-2019-4-11-11-26-25.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/4.%20TicketMasterAPI-2019-4-11-11-26-38.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/4.%20TicketMasterAPI-2019-4-11-11-27-25.png">
+<meta property="og:updated_time" content="2019-04-11T18:56:23.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Notes] TicketMaster API">
-<meta name="twitter:description" content="TicketMaster APIHTML request message [pic] Request structure GET /doc/test.html HTTP 1.1First part indicates the type of the request, second part indicates the resource it asks for, third part is the">
+<meta name="twitter:description" content="TicketMaster APIHTML request message  Request structure GET /doc/test.html HTTP 1.1First part indicates the type of the request, second part indicates the resource it asks for, third part is the versi">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Luorinz/images/master/4.%20TicketMasterAPI-2019-4-11-11-26-25.png">
 
 
 
@@ -430,12 +434,24 @@
                 
               
 
-              <time title="Created: 2019-04-09 23:19:53 / Modified: 16:21:06" itemprop="dateCreated datePublished" datetime="2019-04-09T23:19:53-07:00">2019-04-09</time>
+              <time title="Created: 2019-04-09 23:19:53" itemprop="dateCreated datePublished" datetime="2019-04-09T23:19:53-07:00">2019-04-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-11 11:56:23" itemprop="dateModified" datetime="2019-04-11T11:56:23-07:00">2019-04-11</time>
               
             
           </span>
@@ -516,7 +532,7 @@
 
       
         <h1 id="TicketMaster-API"><a href="#TicketMaster-API" class="headerlink" title="TicketMaster API"></a>TicketMaster API</h1><h2 id="HTML-request-message"><a href="#HTML-request-message" class="headerlink" title="HTML request message"></a>HTML request message</h2><ul>
-<li>[pic]</li>
+<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/4.%20TicketMasterAPI-2019-4-11-11-26-25.png" alt="4. TicketMasterAPI-2019-4-11-11-26-25.png"></li>
 <li>Request structure<ul>
 <li><code>GET /doc/test.html HTTP 1.1</code><br>First part indicates the type of the request, second part indicates the resource it asks for, third part is the version of protocal</li>
 <li>Request Header</li>
@@ -527,17 +543,20 @@
 </li>
 </ul>
 </li>
+<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/4.%20TicketMasterAPI-2019-4-11-11-26-38.png" alt="4. TicketMasterAPI-2019-4-11-11-26-38.png"></li>
 <li>Status line <code>HTTP/1.1 200 OK</code><br>200 indicates that the response status number, and the “OK” is the explanation of the status.</li>
 <li>Response Header</li>
-<li>Response Body <code>&lt;h1&gt;Home page&lt;/h1&gt;</code><h2 id="RESTful-API"><a href="#RESTful-API" class="headerlink" title="RESTful API"></a>RESTful API</h2><ul>
-<li>CRUD</li>
+<li>Response Body <code>&lt;h1&gt;Home page&lt;/h1&gt;</code></li>
 </ul>
 </li>
+</ul>
+<h2 id="RESTful-API"><a href="#RESTful-API" class="headerlink" title="RESTful API"></a>RESTful API</h2><ul>
+<li>CRUD<ul>
 <li>Create/Read/Update/Delete</li>
-<li>matches HTTP POST/GET/PUT/DELETE<ul>
-<li>server is stateless</li>
+<li>matches HTTP POST/GET/PUT/DELETE</li>
 </ul>
 </li>
+<li>server is stateless<ul>
 <li>No need to involve other requests when handling the request.</li>
 </ul>
 </li>
@@ -562,7 +581,7 @@
 </ul>
 </li>
 <li>Response<ul>
-<li>[pic]</li>
+<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/4.%20TicketMasterAPI-2019-4-11-11-27-25.png" alt="4. TicketMasterAPI-2019-4-11-11-27-25.png"></li>
 <li>data we need is located in <code>_embedded(JSON Object) -&gt; events(JSON Array) -&gt; item object(JSON Object)</code></li>
 </ul>
 </li>
