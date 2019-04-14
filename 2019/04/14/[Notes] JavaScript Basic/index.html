@@ -122,7 +122,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/9.%20JavaScript%20Basic-2019-4-14-9-49-37.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/9.%20JavaScript%20Basic-2019-4-14-10-5-3.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/9.%20JavaScript%20Basic-2019-4-14-10-10-25.png">
-<meta property="og:updated_time" content="2019-04-14T17:42:26.315Z">
+<meta property="og:updated_time" content="2019-04-14T17:52:19.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Notes] JavaScript Basic">
 <meta name="twitter:description" content="Linking JavaScript file and html fileAdding JavaScript into an HTML DocumentYou can add JavaScript code in an HTML document by employing the dedicated HTML tag&amp;lt;script&amp;gt; that wraps around JavaScri">
@@ -438,7 +438,7 @@
                 
               
 
-              <time title="Created: 2019-04-14 17:39:28 / Modified: 10:42:26" itemprop="dateCreated datePublished" datetime="2019-04-14T17:39:28-07:00">2019-04-14</time>
+              <time title="Created: 2019-04-14 17:39:28 / Modified: 10:52:19" itemprop="dateCreated datePublished" datetime="2019-04-14T17:39:28-07:00">2019-04-14</time>
             
 
             
@@ -653,7 +653,8 @@
 </ol>
 </li>
 </ol>
-<h2 id="Hoisting-变量提升"><a href="#Hoisting-变量提升" class="headerlink" title="Hoisting 变量提升"></a>Hoisting 变量提升</h2><p>Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.</p>
+<p>##<br> Hoisting 变量提升</p>
+<p>Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.</p>
 <ol>
 <li><p>Execution Context</p>
 <ul>
@@ -673,13 +674,18 @@
 <li><p>JavaScript engine creates the execution context in the following two stages: <code>Creation phase</code> and <code>Execution phase</code>.</p>
 </li>
 </ol>
-<pre><code>+ In creation phase, JS engine performs the following task:
-  -    creates the `activation object` or the `variable object`: `activation object` is a special object in JS which contain all the variables, function arguments and inner functions declarations information. 
-  -    creates the `scope chain`: Once the `activation object` gets created, JS engine initializes the scope chain which is a list of all the `variables objects` inside which the current function exists. This also includes the `variable object` of `global execution context`. Scope chain also contains the current `function variable object`.
-  -    determines the value of `this`: After the `scope chain`, JavaScript engine initialize the value of `‘this’`.
+<ul>
+<li><p>In creation phase, JS engine performs the following task:</p>
+<ul>
+<li>creates the <code>activation object</code> or the <code>variable object</code>: <code>activation object</code> is a special object in JS which contain all the variables, function arguments and inner functions declarations information. </li>
+<li>creates the <code>scope chain</code>: Once the <code>activation object</code> gets created, JS engine initializes the scope chain which is a list of all the <code>variables objects</code> inside which the current function exists. This also includes the <code>variable object</code> of <code>global execution context</code>. Scope chain also contains the current <code>function variable object</code>.</li>
+<li>determines the value of <code>this</code>: After the <code>scope chain</code>, JavaScript engine initialize the value of <code>‘this’</code>.</li>
+</ul>
+</li>
+<li><p>In the execution phase, JS engines will again scan through the function to update the variable object with the values of the variables and will execute the code.</p>
+</li>
+</ul>
 
-+ In the execution phase, JS engines will again scan through the function to update the variable object with the values of the variables and will execute the code.
-</code></pre>
       
     </div>
 
@@ -918,7 +924,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linking-JavaScript-file-and-html-file"><span class="nav-number">1.</span> <span class="nav-text">Linking JavaScript file and html file</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adding-JavaScript-into-an-HTML-Document"><span class="nav-number">1.1.</span> <span class="nav-text">Adding JavaScript into an HTML Document</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Method-1-Inline-Mode"><span class="nav-number">1.1.1.</span> <span class="nav-text">Method 1: Inline Mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Method-2-using-lt-script-gt-tag"><span class="nav-number">1.1.2.</span> <span class="nav-text">Method 2: using &lt;script&gt; tag</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-Fundamentals"><span class="nav-number">2.</span> <span class="nav-text">JavaScript Fundamentals</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#variables"><span class="nav-number">2.1.</span> <span class="nav-text">variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Types"><span class="nav-number">2.2.</span> <span class="nav-text">Data Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Date-types-Number-String-Boolean-Object-Function-Null-Undefined"><span class="nav-number">2.2.1.</span> <span class="nav-text">Date types: Number, String, Boolean, Object, Function, Null, Undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#typeof-Operator"><span class="nav-number">2.2.2.</span> <span class="nav-text">typeof Operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparisons"><span class="nav-number">2.2.3.</span> <span class="nav-text">Comparisons</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">2.3.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">2.4.</span> <span class="nav-text">Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Primitive-Type-VS-Reference-Type"><span class="nav-number">2.5.</span> <span class="nav-text">Primitive Type VS. Reference Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pass-by-reference-and-pass-by-value"><span class="nav-number">2.6.</span> <span class="nav-text">Pass by reference and pass by value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hoisting-变量提升"><span class="nav-number">2.7.</span> <span class="nav-text">Hoisting 变量提升</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linking-JavaScript-file-and-html-file"><span class="nav-number">1.</span> <span class="nav-text">Linking JavaScript file and html file</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adding-JavaScript-into-an-HTML-Document"><span class="nav-number">1.1.</span> <span class="nav-text">Adding JavaScript into an HTML Document</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Method-1-Inline-Mode"><span class="nav-number">1.1.1.</span> <span class="nav-text">Method 1: Inline Mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Method-2-using-lt-script-gt-tag"><span class="nav-number">1.1.2.</span> <span class="nav-text">Method 2: using &lt;script&gt; tag</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-Fundamentals"><span class="nav-number">2.</span> <span class="nav-text">JavaScript Fundamentals</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#variables"><span class="nav-number">2.1.</span> <span class="nav-text">variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Types"><span class="nav-number">2.2.</span> <span class="nav-text">Data Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Date-types-Number-String-Boolean-Object-Function-Null-Undefined"><span class="nav-number">2.2.1.</span> <span class="nav-text">Date types: Number, String, Boolean, Object, Function, Null, Undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#typeof-Operator"><span class="nav-number">2.2.2.</span> <span class="nav-text">typeof Operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparisons"><span class="nav-number">2.2.3.</span> <span class="nav-text">Comparisons</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">2.3.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">2.4.</span> <span class="nav-text">Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Primitive-Type-VS-Reference-Type"><span class="nav-number">2.5.</span> <span class="nav-text">Primitive Type VS. Reference Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pass-by-reference-and-pass-by-value"><span class="nav-number">2.6.</span> <span class="nav-text">Pass by reference and pass by value</span></a></li></ol></li></ol></div>
             
 
           </div>
