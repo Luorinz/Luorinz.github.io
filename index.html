@@ -256,7 +256,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">11</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">13</span></a>
 
   </li>
         
@@ -294,7 +294,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">17</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">18</span></a>
 
   </li>
 
@@ -368,6 +368,323 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/18/[Notes] Cloud Computing Basic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anda Luo">
+      <meta itemprop="description" content="Notes of study, work and life">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anda">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/18/[Notes] Cloud Computing Basic/" class="post-title-link" itemprop="url">[Notes] Cloud Computing Basic</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-18 19:26:54 / Modified: 12:28:15" itemprop="dateCreated datePublished" datetime="2019-04-18T19:26:54-07:00">2019-04-18</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">11k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">10 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Implement-verifyLogin-and-getFullname"><a href="#Implement-verifyLogin-and-getFullname" class="headerlink" title="Implement verifyLogin and getFullname"></a>Implement verifyLogin and getFullname</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Get the first name and last name and concat them to full name, given the userId</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getFullname</span><span class="params">(String userId)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (conn == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    String name = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        String sql = <span class="string">"SELECT first_name, last_name FROM users WHERE user_id = ?"</span>;</span><br><span class="line">        PreparedStatement stmt = conn.prepareStatement(sql);</span><br><span class="line">        stmt.setString(<span class="number">1</span>, userId);</span><br><span class="line">        ResultSet res = stmt.executeQuery();</span><br><span class="line">        <span class="keyword">if</span> (res.next()) name = String.join(<span class="string">" "</span>, res.getString(<span class="string">"first_name"</span>), res.getString(<span class="string">"last_name"</span>));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Verify the userId and password</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">verifyLogin</span><span class="params">(String userId, String password)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (conn == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        String sql = <span class="string">"SELECT user_id FROM users WHERE user_id = ? AND password = ?"</span>;</span><br><span class="line">        PreparedStatement stmt = conn.prepareStatement(sql);</span><br><span class="line">        stmt.setString(<span class="number">1</span>, userId);</span><br><span class="line">        stmt.setString(<span class="number">2</span>, password);</span><br><span class="line">        ResultSet res = stmt.executeQuery();</span><br><span class="line">        <span class="keyword">if</span> (res.next()) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Make-search-result-aware-of-favorite-history"><a href="#Make-search-result-aware-of-favorite-history" class="headerlink" title="Make search result aware of favorite history"></a>Make search result aware of favorite history</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * get the info from request, query, and response</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    </span><br><span class="line">    String userId = request.getParameter(<span class="string">"user_id"</span>);</span><br><span class="line">    <span class="keyword">double</span> lat = Double.parseDouble(request.getParameter(<span class="string">"lat"</span>));</span><br><span class="line">    <span class="keyword">double</span> lon = Double.parseDouble(request.getParameter(<span class="string">"lon"</span>));</span><br><span class="line">    </span><br><span class="line">    String keyword = request.getParameter(<span class="string">"term"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Connect db first</span></span><br><span class="line">    DBConnection conn = DBConnectionFactory.getConnection();</span><br><span class="line">    List&lt;Item&gt; items = conn.searchItems(lat, lon, keyword);</span><br><span class="line">    </span><br><span class="line">    Set&lt;String&gt; favorite = conn.getFavoriteItemIds(userId);</span><br><span class="line">    conn.close();</span><br><span class="line">    </span><br><span class="line">    JSONArray array = <span class="keyword">new</span> JSONArray();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (Item item : items) &#123;</span><br><span class="line">            JSONObject obj = item.toJSONObject();</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// check if current item is a favorite item</span></span><br><span class="line">            <span class="comment">// this field is required by front end to control the fav status</span></span><br><span class="line">            obj.put(<span class="string">"favorite"</span>, favorite.contains(item.getItemId()));</span><br><span class="line">            array.put(obj);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    RpcHelper.writeJSONArray(response, array);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="What’s-Cloud-Computing"><a href="#What’s-Cloud-Computing" class="headerlink" title="What’s Cloud Computing"></a>What’s Cloud Computing</h1><p>Cloud computing is the delivery of on-demand computing resources—everything from applications to data centers—over the Internet on a pay-for-use basis.</p>
+<p>Since 2006 when Amazon introduced the Elastic Compute Cloud</p>
+<p>Features:</p>
+<ul>
+<li>scalability,</li>
+<li>flexibility,</li>
+<li>on-demand,</li>
+<li>reduced labor cost and data center cost, handled by SREs</li>
+</ul>
+<p>Bad</p>
+<ul>
+<li>data safety and privacy</li>
+<li>cannot control downtime</li>
+</ul>
+<p>Types</p>
+<ul>
+<li>private cloud (VMware)</li>
+<li>public cloud (Microsoft Azure, Google App Engine, Amazon EC2)</li>
+<li>hybrid cloud</li>
+</ul>
+<h1 id="Amazon-EC2"><a href="#Amazon-EC2" class="headerlink" title="Amazon EC2"></a>Amazon EC2</h1><h2 id="Elastic-Compute-Cloud-EC2"><a href="#Elastic-Compute-Cloud-EC2" class="headerlink" title="Elastic Compute Cloud (EC2)"></a>Elastic Compute Cloud (EC2)</h2><p>EC2 allows scalable deployment of applications by providing a Web service through which a user can boot an Amazon Machine Image to create a virtual machine, which Amazon calls an “instance”, containing any software desired. A user can create, launch, and terminate server instances as needed, paying by the hour for active servers, hence the term “elastic”.</p>
+<h2 id="Launch-an-instance-Ubuntu-linux"><a href="#Launch-an-instance-Ubuntu-linux" class="headerlink" title="Launch an instance (Ubuntu linux)"></a>Launch an instance (Ubuntu linux)</h2><p>Step 1, go to <a href="http://aws.amazon.com" target="_blank" rel="noopener">http://aws.amazon.com</a>, sign into your account and then open EC2 dashboard. Launch an instance.</p>
+<p>Step 2, Select the Ubuntu Server 16.04 image.</p>
+<p>Step 3, Use t2.micro as instance, which is free tier eligible. Click next instead of launch.</p>
+<p>Step 4, Jump to security group setup. You need to add 2 more TCP ports: 80, 8080.</p>
+<p>Step 5, Click Launch, you will be asked to create a new key pair and download the private key. You can name it as mykey.pem</p>
+<h2 id="Connect-to-the-instance"><a href="#Connect-to-the-instance" class="headerlink" title="Connect to the instance"></a>Connect to the instance</h2><h3 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h3><p>Open your terminal, run:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 600 ~/Downloads/mykey.pem</span><br><span class="line">ssh -i ~/Downloads/mykey.pem ubuntu@YOUR_INSTANCE_IP</span><br></pre></td></tr></table></figure></p>
+<p>if asked “Are you sure you want to continue connecting (yes/no)? ”, type “yes”, enter.</p>
+<p>You are now on the remote server, you can play with Linux commands. <code>hostname, ifconfig, whoami, uptime, pwd, ls</code></p>
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>Windows (Putty)</p>
+<ul>
+<li><p>Download Putty and Puttygen from <a href="https://the.earth.li/~sgtatham/putty/latest/x86/putty.zip" target="_blank" rel="noopener">https://the.earth.li/~sgtatham/putty/latest/x86/putty.zip</a> </p>
+</li>
+<li><p>Open Puttygen,  “Conversions”-&gt;”Import key”, select mykey.pem file, Save private key as mykey.ppk</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/14.%20Cloud%20Computing-2019-4-17-20-13-19.png" alt="14. Cloud Computing-2019-4-17-20-13-19.png"></p>
+<ul>
+<li>Open Putty, enter host ip, in SSH-&gt;Auth, choose your ppk file</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/14.%20Cloud%20Computing-2019-4-17-20-13-30.png" alt="14. Cloud Computing-2019-4-17-20-13-30.png"></p>
+<ul>
+<li>Click Open, enter the username ubuntu</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/14.%20Cloud%20Computing-2019-4-17-20-13-42.png" alt="14. Cloud Computing-2019-4-17-20-13-42.png"></p>
+<h2 id="Install-Java"><a href="#Install-Java" class="headerlink" title="Install Java"></a>Install Java</h2><p>Step 1, In your instance’s terminal, execute the following commands:</p>
+<ul>
+<li>sudo apt-get update</li>
+<li>sudo apt-get install default-jre</li>
+</ul>
+<p>Step 2, You can verify with</p>
+<ul>
+<li>java -version</li>
+</ul>
+<h2 id="Install-MySQL"><a href="#Install-MySQL" class="headerlink" title="Install MySQL"></a>Install MySQL</h2><p>Step 1, sudo apt-get install mysql-server. When you are asked for new mysql password, use “root”.</p>
+<p>Step 2, after installation, type <code>mysql -u root -p</code> in your terminal, then input the “root” as password.</p>
+<p>Step 3, In the mysql shell, paste the following SQL statements to install the tables:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> myproject;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> myproject;</span><br><span class="line"></span><br><span class="line"><span class="keyword">USE</span> myproject;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> items (item_id <span class="built_in">VARCHAR</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">255</span>), rating <span class="built_in">FLOAT</span>, address <span class="built_in">VARCHAR</span>(<span class="number">255</span>), image_url <span class="built_in">VARCHAR</span>(<span class="number">255</span>), <span class="keyword">url</span> <span class="built_in">VARCHAR</span>(<span class="number">255</span>), distance <span class="built_in">FLOAT</span>, PRIMARY <span class="keyword">KEY</span> ( item_id));</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> categories (item_id <span class="built_in">VARCHAR</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, <span class="keyword">category</span> <span class="built_in">VARCHAR</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, PRIMARY <span class="keyword">KEY</span> ( item_id, <span class="keyword">category</span>), <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (item_id) <span class="keyword">REFERENCES</span> items(item_id));    </span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">users</span> (user_id <span class="built_in">VARCHAR</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, <span class="keyword">password</span> <span class="built_in">VARCHAR</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, first_name <span class="built_in">VARCHAR</span>(<span class="number">255</span>), last_name <span class="built_in">VARCHAR</span>(<span class="number">255</span>), PRIMARY <span class="keyword">KEY</span> ( user_id ));</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> history (user_id <span class="built_in">VARCHAR</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, item_id <span class="built_in">VARCHAR</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, last_favor_time <span class="built_in">timestamp</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span>, PRIMARY <span class="keyword">KEY</span> (user_id, item_id), <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (item_id) <span class="keyword">REFERENCES</span> items(item_id), <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span> (user_id) <span class="keyword">REFERENCES</span> <span class="keyword">users</span>(user_id));</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">users</span> <span class="keyword">VALUES</span> (<span class="string">"1111"</span>, <span class="string">"3229c1097c00d497a0fd282d586be050"</span>, <span class="string">"John"</span>, <span class="string">"Smith"</span>);</span><br></pre></td></tr></table></figure>
+<p>Step 4, Type “exit” to quit mysql shell.</p>
+<h2 id="Install-Tomcat-9"><a href="#Install-Tomcat-9" class="headerlink" title="Install Tomcat 9"></a>Install Tomcat 9</h2><p>Step 1, Execute the following commands<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /opt/</span><br><span class="line">sudo wget http://apache.mirrors.hoobly.com/tomcat/tomcat-9/v9.0.19/bin/apache-tomcat-9.0.19.tar.gz</span><br><span class="line">sudo tar xzf apache-tomcat-9.0.8.tar.gz</span><br><span class="line">sudo ln -s apache-tomcat-9.0.8 tomcat</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"export CATALINA_HOME=\"/opt/tomcat\""</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line"><span class="built_in">cd</span> /opt/tomcat</span><br><span class="line">sudo bin/startup.sh</span><br></pre></td></tr></table></figure></p>
+<p>Step 2, Verify with <a href="http://YOUR_INSTANCE_IP:8080/" target="_blank" rel="noopener">http://YOUR_INSTANCE_IP:8080/</a></p>
+<h2 id="Run-Jupiter-on-EC2"><a href="#Run-Jupiter-on-EC2" class="headerlink" title="Run Jupiter on EC2"></a>Run Jupiter on EC2</h2><p><code>WAR</code> file (or Web application ARchive) is a JAR file used to distribute a collection of JavaServer Pages, Java Servlets, Java classes, XML files, tag libraries, static web pages (HTML and related files) and other resources that together constitute a web application.</p>
+<p>Step 1, Open Eclipse and MAMP, verify your website works correctly on local environment:<br><a href="http://localhost:8080/Jupiter/" target="_blank" rel="noopener">http://localhost:8080/Jupiter/</a></p>
+<p>Step 2, open your MySQLDBUtil.java, change and make sure port is 3306, and username and password are root.</p>
+<blockquote>
+<p>3306 is default port in MySQL</p>
+</blockquote>
+<p>Step 3, In Eclipse, select File -&gt; Export -&gt; Web-&gt;war File, save the war file to disk.</p>
+<p>Step 4, Copy the war file to your instance.</p>
+<p><strong><code>MAC</code></strong>:<br>Open a new terminal window and type:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -i ~/Downloads/mykey.pem  ~/Downloads/Jupiter.war ubuntu@YOUR_INSTANCE_IP:~/</span><br></pre></td></tr></table></figure></p>
+<p>Windows (MSYS2): </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -i /c/Users/&lt;YOUR_USERNAME&gt;/Downloads/mykey.pem  /c/Users/&lt;YOUR_PATH&gt;/Jupiter.war ubuntu@YOUR_INSTANCE_IP:~/</span><br></pre></td></tr></table></figure>
+<p>Windows (putty):<br>use WinSCP, <a href="https://winscp.net/download/WinSCP-5.13.2-Setup.exe" target="_blank" rel="noopener">https://winscp.net/download/WinSCP-5.13.2-Setup.exe</a></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/14.%20Cloud%20Computing-2019-4-18-10-31-3.png" alt="14. Cloud Computing-2019-4-18-10-31-3.png"></p>
+<p>Click Advanced-&gt;SSH-&gt;Authentication-&gt;Private key file: choose *.ppk </p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/14.%20Cloud%20Computing-2019-4-18-10-31-14.png" alt="14. Cloud Computing-2019-4-18-10-31-14.png"></p>
+<p>Drag the Jupiter.war to the left (into /home/ubuntu/).</p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/14.%20Cloud%20Computing-2019-4-18-10-31-26.png" alt="14. Cloud Computing-2019-4-18-10-31-26.png"></p>
+<p>Step 5, Both Mac and Windows, back to your terminal/putty, type the following command</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp ~/Jupiter.war /opt/tomcat/webapps/</span><br></pre></td></tr></table></figure>
+<p>Step 6, Wait for a few seconds, then you can verify the server on your browser:<br><a href="http://YOUR_INSTANCE_IP:8080/Jupiter/" target="_blank" rel="noopener">http://YOUR_INSTANCE_IP:8080/Jupiter/</a></p>
+<p><strong>Redeploy application</strong>: redo step 3-5.</p>
+<h2 id="Debug-configuration"><a href="#Debug-configuration" class="headerlink" title="Debug configuration"></a>Debug configuration</h2><p>此处需要将eclipse的jdk jre compiler全部设为1.8并重新编译，即可解决版本问题。</p>
+<h2 id="optional-Change-the-HTTP-port-from-8080-to-80"><a href="#optional-Change-the-HTTP-port-from-8080-to-80" class="headerlink" title="(optional) Change the HTTP port from 8080 to 80"></a>(optional) Change the HTTP port from 8080 to 80</h2><p>Step 1, On the remote command-line terminal, edit the tomcat configuration by:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /opt/tomcat/conf/server.xml</span><br></pre></td></tr></table></figure>
+<p>Step 2, Press i to enter edit mode, scroll down to find the following line (around line 69):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">change &quot;8080&quot; to &quot;80&quot;</span><br></pre></td></tr></table></figure>
+<p>Step 3, Press <code>ESC</code> to exit edit mode, then type <code>:wq</code> to save and exit.</p>
+<p>Step 4, Restart tomcat by:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo /opt/tomcat/bin/shutdown.sh</span><br><span class="line">sudo /opt/tomcat/bin/startup.sh</span><br></pre></td></tr></table></figure>
+<p>Step 5, Visit <a href="http://YOUR_IP_ADDRESS/Jupiter/" target="_blank" rel="noopener">http://YOUR_IP_ADDRESS/Jupiter/</a> to see if the server is started correctly.</p>
+<blockquote>
+<p>此处端口设为80，以后访问时就不需要再额外输入端口号了</p>
+</blockquote>
+<h2 id="optional-Make-tomcat-auto-start-when-Linux-boots"><a href="#optional-Make-tomcat-auto-start-when-Linux-boots" class="headerlink" title="(optional) Make tomcat auto start when Linux boots"></a>(optional) Make tomcat auto start when Linux boots</h2><p>Step 1, On you instance’s terminal, type the following command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/init.d/tomcat</span><br></pre></td></tr></table></figure>
+<p>Step 2, Press i to enter the INSERT mode, then paste the following contents:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### BEGIN INIT INFO</span></span><br><span class="line"><span class="comment"># Provides: tomcat</span></span><br><span class="line"><span class="comment"># Required-Start: $network</span></span><br><span class="line"><span class="comment"># Required-Stop: $network</span></span><br><span class="line"><span class="comment"># Default-Start: 2 3 4 5</span></span><br><span class="line"><span class="comment"># Default-Stop: 0 1 6</span></span><br><span class="line"><span class="comment"># Short-Description: Start/Stop Tomcat server</span></span><br><span class="line"><span class="comment">### END INIT INFO</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PATH=/sbin:/bin:/usr/sbin:/usr/bin</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">start</span></span>() &#123;</span><br><span class="line"> sh /opt/tomcat/bin/startup.sh</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">stop</span></span>() &#123;</span><br><span class="line"> sh /opt/tomcat/bin/shutdown.sh</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span></span><br><span class="line">  start|stop) <span class="variable">$1</span>;;</span><br><span class="line">  restart) stop; start;;</span><br><span class="line">  *) <span class="built_in">echo</span> <span class="string">"Run as <span class="variable">$0</span> &lt;start|stop|restart&gt;"</span>; <span class="built_in">exit</span> 1;;</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
+<p>Step 3, Press Esc to exit INSERT mode, then type <code>:wq</code> to save and quit.</p>
+<p>Step 4, Make the new file executable: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /etc/init.d/tomcat</span><br></pre></td></tr></table></figure>
+<p>Step 5, update <code>bashrc</code> to catch your script:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-rc.d tomcat defaults</span><br></pre></td></tr></table></figure>
+<p>Step 6, (optional) you can use <code>sudo /etc/init.d/tomcat restart</code> to manually restart tomcat.</p>
+<h2 id="optional-Make-tomcat-auto-restart-everyday"><a href="#optional-Make-tomcat-auto-restart-everyday" class="headerlink" title="(optional) Make tomcat auto restart everyday"></a>(optional) Make tomcat auto restart everyday</h2><p>Your web app may be not that stable to run for months. You can restart it every night to keep it healthy.</p>
+<p>Step 1, On you instance’s terminal, type the following command: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo crontab -e</span><br></pre></td></tr></table></figure>
+<p>Step 2, Input <code>3</code> to select <code>vim.basic</code> as the editor</p>
+<p>Step 3, Move the cursor to the end, press i to enter edit mode. Input the following, It means restart tomcat at 1:00 and 13:00 UTC everyday.:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1,13   *   *   *   sudo /etc/init.d/tomcat restart</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>定时在1:00和13:00tomcat重启</p>
+</blockquote>
+<p>Step 4, Press Esc to exit INSERT mode, then type :wq to save and quit.</p>
+<h1 id="Remote-debug"><a href="#Remote-debug" class="headerlink" title="Remote debug:"></a>Remote debug:</h1><p>You can check Java error from Tomcat runtime log. Location:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/tomcat/logs/localhost.&lt;date&gt;.log</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Check tomcat process:<br><code>ps aux|grep tomcat</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root     17273 78.3  7.9 2225932 80404 pts/0   Sl   20:30   0:02 /usr/bin/java -Djava.util.logging.config.file=/opt/tomcat/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /opt/tomcat/bin/bootstrap.jar:/opt/tomcat/bin/tomcat-juli.jar -Dcatalina.base=/opt/tomcat -Dcatalina.home=/opt/tomcat -Djava.io.tmpdir=/opt/tomcat/temp org.apache.catalina.startup.Bootstrap start</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>17273 is the process id</p>
+</blockquote>
+<ul>
+<li>To kill the process</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sudo kill -9 17273</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -3032,286 +3349,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/[Notes] TicketMaster API/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Anda Luo">
-      <meta itemprop="description" content="Notes of study, work and life">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Anda">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/09/[Notes] TicketMaster API/" class="post-title-link" itemprop="url">[Notes] TicketMaster API</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-09 23:19:53" itemprop="dateCreated datePublished" datetime="2019-04-09T23:19:53-07:00">2019-04-09</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-11 11:56:23" itemprop="dateModified" datetime="2019-04-11T11:56:23-07:00">2019-04-11</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">6.5k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">6 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="TicketMaster-API"><a href="#TicketMaster-API" class="headerlink" title="TicketMaster API"></a>TicketMaster API</h1><h2 id="HTML-request-message"><a href="#HTML-request-message" class="headerlink" title="HTML request message"></a>HTML request message</h2><ul>
-<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/4.%20TicketMasterAPI-2019-4-11-11-26-25.png" alt="4. TicketMasterAPI-2019-4-11-11-26-25.png"></li>
-<li>Request structure<ul>
-<li><code>GET /doc/test.html HTTP 1.1</code><br>First part indicates the type of the request, second part indicates the resource it asks for, third part is the version of protocal</li>
-<li>Request Header</li>
-<li>Request Body <code>bookId=12345&amp;author=Tan+Ah+Teck</code><ul>
-<li>Some browser will process the data here.<ul>
-<li>Response structure</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/4.%20TicketMasterAPI-2019-4-11-11-26-38.png" alt="4. TicketMasterAPI-2019-4-11-11-26-38.png"></li>
-<li>Status line <code>HTTP/1.1 200 OK</code><br>200 indicates that the response status number, and the “OK” is the explanation of the status.</li>
-<li>Response Header</li>
-<li>Response Body <code>&lt;h1&gt;Home page&lt;/h1&gt;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="RESTful-API"><a href="#RESTful-API" class="headerlink" title="RESTful API"></a>RESTful API</h2><ul>
-<li>CRUD<ul>
-<li>Create/Read/Update/Delete</li>
-<li>matches HTTP POST/GET/PUT/DELETE</li>
-</ul>
-</li>
-<li>server is stateless<ul>
-<li>No need to involve other requests when handling the request.</li>
-</ul>
-</li>
-</ul>
-<h2 id="TicketMaster-API-1"><a href="#TicketMaster-API-1" class="headerlink" title="TicketMaster API"></a>TicketMaster API</h2><ul>
-<li>Request<ul>
-<li>URL of discover API <code>protocol://hostname:port/endpoint?query</code> :<ul>
-<li>protocol: <code>https</code></li>
-<li>hostname: <code>app.ticketmaster.com</code></li>
-<li>endpoint: <code>/discovery/v2/events.json</code></li>
-<li>query:<ul>
-<li>APIkey: it’s required by TicketMaster API for <code>authn/authz</code></li>
-<li>GeoPoint: <code>lat/long</code> since our search is based on client location</li>
-<li>Radius: radius of search area</li>
-<li>Keyword: search a specific kind of events</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>example <code>https://app.ticketmaster.com/discovery/v2/events.json?apikey=12345&amp;geoPoint=abcd&amp;keyword=music&amp;radius=50</code></li>
-<li>Headers and Body: nothing to set since it’s not required for this API.</li>
-</ul>
-</li>
-<li>Response<ul>
-<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/4.%20TicketMasterAPI-2019-4-11-11-27-25.png" alt="4. TicketMasterAPI-2019-4-11-11-27-25.png"></li>
-<li>data we need is located in <code>_embedded(JSON Object) -&gt; events(JSON Array) -&gt; item object(JSON Object)</code></li>
-</ul>
-</li>
-<li><p>Implementation</p>
-<ul>
-<li>Create a new Package <code>external</code> in src</li>
-<li>Create a new class <code>TicketMasterAPI</code></li>
-<li><p>Add some constants</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">​<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String URL = <span class="string">"https://app.ticketmaster.com/discovery/v2/events.json"</span>;</span><br><span class="line">​<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_KEYWORD = <span class="string">""</span>; <span class="comment">// no restriction</span></span><br><span class="line">​<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String API_KEY = <span class="string">"USE_YOUR_OWN_KEY"</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Add a search function</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Search the keyword through TM API</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> lat latitude</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> lon longitude</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> keyword keyword is optional</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> JSONArray <span class="title">search</span><span class="params">(<span class="keyword">double</span> lat, <span class="keyword">double</span> lon, String keyword)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Add queryAPI helper</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* print the results of search(lat, lon)</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> lat latitude</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> lon longitude</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">queryAPI</span><span class="params">(<span class="keyword">double</span> lat, <span class="keyword">double</span> lon)</span> </span>&#123;</span><br><span class="line">  JSONArray events = search(lat, lon, <span class="keyword">null</span>);</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; events.length(); i++) &#123;</span><br><span class="line">      JSONObject event = events.getJSONObject(i);</span><br><span class="line">      System.out.println(event);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Add GeoHash helper to convert lat, lon to geoPoint. Copy the code from <code>http://developer-should-know.com/post/87283491372/geohash-encoding-and-decoding-algorithm</code></p>
-</li>
-<li><p>Implement search(lat,lon,keyword) function</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Search the JSONArray results through TM API</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> lat latitude</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> lon longitude</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> keyword keyword is optional</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> JSONArray</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> JSONArray <span class="title">search</span><span class="params">(<span class="keyword">double</span> lat, <span class="keyword">double</span> lon, String keyword)</span> </span>&#123;</span><br><span class="line">  JSONArray ret = <span class="keyword">new</span> JSONArray();</span><br><span class="line">  <span class="keyword">if</span> (keyword == <span class="keyword">null</span>) keyword = DEFAULT_KEYWORD;</span><br><span class="line">  <span class="comment">// translate keyword into URL-supported format</span></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    keyword = java.net.URLEncoder.encode(keyword, <span class="string">"UTF-8"</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Get geoPoint</span></span><br><span class="line">  String geoHash = GeoHash.encodeGeohash(lat, lon, <span class="number">8</span>);</span><br><span class="line">  <span class="comment">// Create query</span></span><br><span class="line">  <span class="comment">// 50 is default search radius</span></span><br><span class="line">  String query = String.format(<span class="string">"apikey=%s&amp;geoPoint=%s&amp;keyword=%s&amp;radius=%s"</span>, API_KEY, geoHash, keyword, <span class="number">50</span>);</span><br><span class="line">  <span class="comment">// Create URL</span></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// create a HTTP URL connection</span></span><br><span class="line">    HttpURLConnection connection = (HttpURLConnection) <span class="keyword">new</span> URL(URL + <span class="string">"?"</span> + query).openConnection();</span><br><span class="line">    <span class="comment">// get the response code EG. 200/success, 404/fail</span></span><br><span class="line">    <span class="keyword">int</span> responseCode = connection.getResponseCode();</span><br><span class="line">    <span class="comment">// print res</span></span><br><span class="line">    System.out.println(<span class="string">"\nSending \"GET\" request to URL : "</span> + URL + <span class="string">"?"</span> + query);</span><br><span class="line">    System.out.println(<span class="string">"\nResponse Code: "</span> + responseCode);</span><br><span class="line">    <span class="comment">// check responseCode (Implement it later)</span></span><br><span class="line">    <span class="keyword">if</span> (responseCode != <span class="number">200</span>) &#123;</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// read and write the response content</span></span><br><span class="line">    BufferedReader in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(connection.getInputStream()));</span><br><span class="line">    String inputLine;</span><br><span class="line">    StringBuilder response = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    <span class="keyword">while</span> ((inputLine = in.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">      response.append(inputLine);</span><br><span class="line">    &#125;</span><br><span class="line">    in.close();</span><br><span class="line">    connection.disconnect();</span><br><span class="line">    <span class="comment">// write the response to a JSON object</span></span><br><span class="line">    JSONObject obj = <span class="keyword">new</span> JSONObject(response.toString());</span><br><span class="line">    <span class="comment">// check the result</span></span><br><span class="line">    <span class="keyword">if</span> (obj.isNull(<span class="string">"_embedded"</span>)) &#123;</span><br><span class="line">      <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// get the events from the whole JSON and return the events field of it as a JSON Array.</span></span><br><span class="line">    JSONObject embedded = obj.getJSONObject(<span class="string">"_embedded"</span>);</span><br><span class="line">    JSONArray events = embedded.getJSONArray(<span class="string">"events"</span>);</span><br><span class="line">    ret = events;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Create a new package <code>entity</code> and a new class <code>Item</code>(entity表示servelet储存数据的类)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Item of event</span></span><br><span class="line"><span class="comment">* <span class="doctag">@author</span> andaluo</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Item</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> String itemId;</span><br><span class="line">  <span class="keyword">private</span> String name;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">double</span> rating;</span><br><span class="line">  <span class="keyword">private</span> String address;</span><br><span class="line">  <span class="keyword">private</span> Set&lt;String&gt; categories;</span><br><span class="line">  <span class="keyword">private</span> String imageURL;</span><br><span class="line">  <span class="keyword">private</span> String url;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">double</span> distance;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> JSONObject <span class="title">toJSONObject</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    JSONObject obj = <span class="keyword">new</span> JSONObject();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      obj.put(<span class="string">"item_id"</span>, itemId);</span><br><span class="line">      obj.put(<span class="string">"name"</span>, name);	</span><br><span class="line">      obj.put(<span class="string">"rating"</span>, rating);</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">      &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Use builder pattern to create Item class</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * A helper class to build the Item class</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@author</span> andaluo</span></span><br><span class="line"><span class="comment">  *</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ItemBuilder</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String itemId;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Construct the Item using builder</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Item <span class="title">build</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> Item(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * return the builder itself to support continuous operation.</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> itemId</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ItemBuilder <span class="title">setItemId</span><span class="params">(String itemId)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.itemId = itemId;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;      </span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * Builder pattern to create a class</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@param</span> builder</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Item</span><span class="params">(ItemBuilder builder)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.itemId = builder.itemId;</span><br><span class="line">    <span class="keyword">this</span>.name = builder.name;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// when build the item we get</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">Item item = <span class="keyword">new</span> Item.ItemBuilder().setAddress(<span class="string">"abc"</span>).setDistance(<span class="number">19</span>).build();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3358,7 +3395,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -3418,7 +3455,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -3500,7 +3541,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">97k</span>
+    <span title="Symbols count total">108k</span>
   
 
   
@@ -3509,7 +3550,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">1:28</span>
+    <span title="Reading time total">1:38</span>
   
 </div>
 
