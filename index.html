@@ -294,7 +294,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">16</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">17</span></a>
 
   </li>
 
@@ -368,6 +368,247 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/18/[Notes] AJAX Basic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anda Luo">
+      <meta itemprop="description" content="Notes of study, work and life">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anda">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/18/[Notes] AJAX Basic/" class="post-title-link" itemprop="url">[Notes] AJAX Basic</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-18 02:00:51" itemprop="dateCreated datePublished" datetime="2019-04-18T02:00:51-07:00">2019-04-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-17 19:01:37" itemprop="dateModified" datetime="2019-04-17T19:01:37-07:00">2019-04-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">9.8k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">9 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="What-is-AJAX"><a href="#What-is-AJAX" class="headerlink" title="What is AJAX?"></a>What is AJAX?</h1><p>AJAX is not a programming language.<br>AJAX just uses a combination of:</p>
+<ul>
+<li>A browser built-in XMLHttpRequest object (to request data from a web server)</li>
+<li>JavaScript and HTML DOM (to display or use the data)</li>
+</ul>
+<blockquote>
+<p>AJAX 可以实现异步通信</p>
+</blockquote>
+<h1 id="How-AJAX-Works"><a href="#How-AJAX-Works" class="headerlink" title="How AJAX Works"></a>How AJAX Works</h1><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/13.%20AJAX%20Basic-2019-4-17-13-40-54.png" alt="13. AJAX Basic-2019-4-17-13-40-54.png"></p>
+<h1 id="How-to-use-AJAX"><a href="#How-to-use-AJAX" class="headerlink" title="How to use AJAX"></a>How to use AJAX</h1><p>The keystone of AJAX is the XMLHttpRequest object.</p>
+<h2 id="creating-an-XMLHttpRequest-object"><a href="#creating-an-XMLHttpRequest-object" class="headerlink" title="creating an XMLHttpRequest object"></a>creating an XMLHttpRequest object</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br></pre></td></tr></table></figure>
+<h2 id="send-a-request-to-a-server-we-use-the-open-and-send-methods-of-the-XMLHttpRequest-object"><a href="#send-a-request-to-a-server-we-use-the-open-and-send-methods-of-the-XMLHttpRequest-object" class="headerlink" title="send a request to a server, we use the open() and send() methods of the XMLHttpRequest object"></a>send a request to a server, we use the <code>open()</code> and <code>send()</code> methods of the <code>XMLHttpRequest</code> object</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xhttp.open(<span class="string">"GET"</span>, <span class="string">"ajax_info.txt"</span>, <span class="literal">true</span>);</span><br><span class="line">xhttp.send();</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/13.%20AJAX%20Basic-2019-4-17-13-46-10.png" alt="13. AJAX Basic-2019-4-17-13-46-10.png"></p>
+<h2 id="GET-or-POST"><a href="#GET-or-POST" class="headerlink" title="GET or POST?"></a>GET or POST?</h2><p>GET is simpler and faster than POST, and can be used in most cases.<br>However, always use POST requests when:</p>
+<ul>
+<li>A cached file is not an option (update a file or database on the server).</li>
+<li>Sending a large amount of data to the server (POST has no size limitations).</li>
+<li>Sending user input (which can contain unknown characters), POST is more robust and secure than GET.</li>
+</ul>
+<h2 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h2><p>demo of our web applications: <a href="http://34.211.21.63/Event/" target="_blank" rel="noopener">http://34.211.21.63/Event/</a> </p>
+<h1 id="Complete-HTML-CSS-Javascript-code"><a href="#Complete-HTML-CSS-Javascript-code" class="headerlink" title="Complete HTML/CSS/Javascript code"></a>Complete HTML/CSS/Javascript code</h1><p><a href="http://jsbin.com/hocukukiva/edit?html,css,js" target="_blank" rel="noopener">http://jsbin.com/hocukukiva/edit?html,css,js</a></p>
+<p>将JSBin里面的代码分别放在：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/WebContent/index.html</span><br><span class="line">/WebContent/styles/main.css</span><br><span class="line">/WebContent/scripts/main.js</span><br></pre></td></tr></table></figure></p>
+<p>访问： <a href="http://localhost:8080/Jupiter" target="_blank" rel="noopener">http://localhost:8080/Jupiter</a></p>
+<blockquote>
+<p>自动跳转至index.html<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset</a></p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">font-size</span>: 0<span class="selector-class">.9em</span>; </span><br><span class="line"><span class="comment">/* means 0.9 * parent's font-size  */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.top-nav</span> &#123;</span><br><span class="line">	<span class="comment">/* flex means listed from left to right  */</span></span><br><span class="line">	<span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="Step-1-Run-the-scripts"><a href="#Step-1-Run-the-scripts" class="headerlink" title="Step 1 ()() Run the scripts"></a>Step 1 ()() Run the scripts</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Run all following scripts</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<h2 id="Step-2-Gloval-Variables"><a href="#Step-2-Gloval-Variables" class="headerlink" title="Step 2 Gloval Variables"></a>Step 2 Gloval Variables</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> user_id = <span class="string">'1111'</span>;</span><br><span class="line"><span class="keyword">var</span> user_fullname = <span class="string">'John Smith'</span>;</span><br><span class="line"><span class="keyword">var</span> lng = <span class="number">-122.08</span>;</span><br><span class="line"><span class="keyword">var</span> lat = <span class="number">37.38</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="step3-main-function-entrance"><a href="#step3-main-function-entrance" class="headerlink" title="step3: main function(entrance)"></a>step3: main function(entrance)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">init();</span><br><span class="line"><span class="comment">/* step4: define init function */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Register event listeners</span></span><br><span class="line">  $(<span class="string">'nearby-btn'</span>).addEventListener(<span class="string">'click'</span>, loadNearbyItems);</span><br><span class="line"><span class="comment">//		$('fav-btn').addEventListener('click', loadFavoriteItems);</span></span><br><span class="line"><span class="comment">//		$('recommend-btn').addEventListener('click', loadRecommendedItems);</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> welcomeMsg = $(<span class="string">'welcome-msg'</span>);</span><br><span class="line">          welcomeMsg.innerHTML = <span class="string">'Welcome, '</span> + user_fullname;</span><br><span class="line">      </span><br><span class="line">          <span class="comment">// step 7</span></span><br><span class="line">          initGeoLocation();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="step5-create-function"><a href="#step5-create-function" class="headerlink" title="step5: create $ function"></a>step5: create $ function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * A helper function that creates a DOM element &lt;tag options...&gt;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">tag, options</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!options) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">document</span>.getElementById(tag);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> element = <span class="built_in">document</span>.createElement(tag);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> ( <span class="keyword">var</span> option <span class="keyword">in</span> options) &#123;</span><br><span class="line">    <span class="keyword">if</span> (options.hasOwnProperty(option)) &#123;</span><br><span class="line">      element[option] = options[option];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> element;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="step6-create-AJAX-helper-function"><a href="#step6-create-AJAX-helper-function" class="headerlink" title="step6: create AJAX helper function"></a>step6: create AJAX helper function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param method - GET|POST|PUT|DELETE</span></span><br><span class="line"><span class="comment"> * @param url - API end point</span></span><br><span class="line"><span class="comment"> * @param callback - This the successful callback</span></span><br><span class="line"><span class="comment"> * @param errorHandler - This is the failed callback</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">method, url, data, callback, errorHandler</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"></span><br><span class="line">  xhr.open(method, url, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 判断request</span></span><br><span class="line">  xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 判断 resopnse</span></span><br><span class="line">    <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">      <span class="comment">// callback 属于回调函数</span></span><br><span class="line">      callback(xhr.responseText);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (xhr.status === <span class="number">403</span>) &#123;</span><br><span class="line">      onSessionInvalid();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      errorHandler();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  xhr.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(<span class="string">"The request couldn't be completed."</span>);</span><br><span class="line">    errorHandler();</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (data === <span class="literal">null</span>) &#123;</span><br><span class="line">    xhr.send();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    xhr.setRequestHeader(<span class="string">"Content-Type"</span>,</span><br><span class="line">        <span class="string">"application/json;charset=utf-8"</span>);</span><br><span class="line">    xhr.send(data);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="step-7-initGeoLocation-function"><a href="#step-7-initGeoLocation-function" class="headerlink" title="step 7: initGeoLocation function"></a>step 7: initGeoLocation function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">initGeoLocation</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (navigator.geolocation) &#123;</span><br><span class="line">    <span class="comment">// step 8</span></span><br><span class="line">    <span class="comment">// get current position by browser.</span></span><br><span class="line">    navigator.geolocation.getCurrentPosition(onPositionUpdated,</span><br><span class="line">        onLoadPositionFailed, &#123;</span><br><span class="line">          maximumAge : <span class="number">60000</span></span><br><span class="line">        &#125;);</span><br><span class="line">    showLoadingMessage(<span class="string">'Retrieving your location...'</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// step 9</span></span><br><span class="line">    onLoadPositionFailed();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="step-8-onPositionUpdated-function"><a href="#step-8-onPositionUpdated-function" class="headerlink" title="step 8: onPositionUpdated function"></a>step 8: onPositionUpdated function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onPositionUpdated</span>(<span class="params">position</span>) </span>&#123;</span><br><span class="line">  lat = position.coords.latitude;</span><br><span class="line">  lng = position.coords.longitude;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// step 11</span></span><br><span class="line">  loadNearbyItems();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="step-9-onLoadPositionFailed-function"><a href="#step-9-onLoadPositionFailed-function" class="headerlink" title="step 9: onLoadPositionFailed function"></a>step 9: onLoadPositionFailed function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onLoadPositionFailed</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.warn(<span class="string">'navigator.geolocation is not available'</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//step 10</span></span><br><span class="line">  getLocationFromIP();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="step-10-getLocationFromIP-function"><a href="#step-10-getLocationFromIP-function" class="headerlink" title="step 10: getLocationFromIP function"></a>step 10: getLocationFromIP function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLocationFromIP</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Get location from http://ipinfo.io/json</span></span><br><span class="line">  <span class="keyword">var</span> url = <span class="string">'http://ipinfo.io/json'</span></span><br><span class="line">  <span class="keyword">var</span> req = <span class="literal">null</span>;</span><br><span class="line">  ajax(<span class="string">'GET'</span>, url, req, <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="built_in">JSON</span>.parse(res);</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">'loc'</span> <span class="keyword">in</span> result) &#123;</span><br><span class="line">      <span class="keyword">var</span> loc = result.loc.split(<span class="string">','</span>);</span><br><span class="line">      lat = loc[<span class="number">0</span>];</span><br><span class="line">      lng = loc[<span class="number">1</span>];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.warn(<span class="string">'Getting location by IP failed.'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// step 11</span></span><br><span class="line">    loadNearbyItems();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="step-11-loadNearbyItems-function"><a href="#step-11-loadNearbyItems-function" class="headerlink" title="step 11: loadNearbyItems function"></a>step 11: loadNearbyItems function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * API #1 Load the nearby items API end point: [GET]</span></span><br><span class="line"><span class="comment"> * /Dashi/search?user_id=1111&amp;lat=37.38&amp;lon=-122.08</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadNearbyItems</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'loadNearbyItems'</span>);</span><br><span class="line">  <span class="comment">// step 12</span></span><br><span class="line">  activeBtn(<span class="string">'nearby-btn'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// The request parameters</span></span><br><span class="line">  <span class="keyword">var</span> url = <span class="string">'./search'</span>;</span><br><span class="line">  <span class="keyword">var</span> params = <span class="string">'user_id='</span> + user_id + <span class="string">'&amp;lat='</span> + lat + <span class="string">'&amp;lon='</span> + lng;</span><br><span class="line">  <span class="keyword">var</span> req = <span class="built_in">JSON</span>.stringify(&#123;&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// step 13</span></span><br><span class="line">  <span class="comment">// display loading message</span></span><br><span class="line">  showLoadingMessage(<span class="string">'Loading nearby items...'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// make AJAX call</span></span><br><span class="line">  ajax(<span class="string">'GET'</span>, url + <span class="string">'?'</span> + params, req,</span><br><span class="line">  <span class="comment">// successful callback</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> items = <span class="built_in">JSON</span>.parse(res);</span><br><span class="line">    <span class="keyword">if</span> (!items || items.length === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="comment">// step 14</span></span><br><span class="line">      showWarningMessage(<span class="string">'No nearby item.'</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// step 16</span></span><br><span class="line">      listItems(items);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// failed callback</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// step 15</span></span><br><span class="line">    showErrorMessage(<span class="string">'Cannot load nearby items.'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="step-12-activeBtn-function"><a href="#step-12-activeBtn-function" class="headerlink" title="step 12: activeBtn function"></a>step 12: activeBtn function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * A helper function that makes a navigation button active</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @param btnId - The id of the navigation button</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">activeBtn</span>(<span class="params">btnId</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> btns = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'main-nav-btn'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// deactivate all navigation buttons</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; btns.length; i++) &#123;</span><br><span class="line">    btns[i].className = btns[i].className.replace(<span class="regexp">/\bactive\b/</span>, <span class="string">''</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// active the one that has id = btnId</span></span><br><span class="line">  <span class="keyword">var</span> btn = $(btnId);</span><br><span class="line">  btn.className += <span class="string">' active'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="step-13-showLoadingMessage-function"><a href="#step-13-showLoadingMessage-function" class="headerlink" title="step 13: showLoadingMessage function"></a>step 13: showLoadingMessage function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showLoadingMessage</span>(<span class="params">msg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> itemList = $(<span class="string">'item-list'</span>);</span><br><span class="line">  itemList.innerHTML = <span class="string">'&lt;p class="notice"&gt;&lt;i class="fa fa-spinner fa-spin"&gt;&lt;/i&gt; '</span></span><br><span class="line">      + msg + <span class="string">'&lt;/p&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** step 14: showWarningMessage function **/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showWarningMessage</span>(<span class="params">msg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> itemList = $(<span class="string">'item-list'</span>);</span><br><span class="line">  itemList.innerHTML = <span class="string">'&lt;p class="notice"&gt;&lt;i class="fa fa-exclamation-triangle"&gt;&lt;/i&gt; '</span></span><br><span class="line">      + msg + <span class="string">'&lt;/p&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** step15: showErrorMessage function **/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showErrorMessage</span>(<span class="params">msg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> itemList = $(<span class="string">'item-list'</span>);</span><br><span class="line">  itemList.innerHTML = <span class="string">'&lt;p class="notice"&gt;&lt;i class="fa fa-exclamation-circle"&gt;&lt;/i&gt; '</span></span><br><span class="line">      + msg + <span class="string">'&lt;/p&gt;'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="step16-listItems-function"><a href="#step16-listItems-function" class="headerlink" title="step16: listItems function"></a>step16: listItems function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param items - An array of item JSON objects</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">listItems</span>(<span class="params">items</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Clear the current results</span></span><br><span class="line">  <span class="keyword">var</span> itemList = $(<span class="string">'item-list'</span>);</span><br><span class="line">  itemList.innerHTML = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; items.length; i++) &#123;</span><br><span class="line">    <span class="comment">// step 17</span></span><br><span class="line">    addItem(itemList, items[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="step17-addItem-function"><a href="#step17-addItem-function" class="headerlink" title="step17: addItem function"></a>step17: addItem function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Add item to the list</span></span><br><span class="line"><span class="comment"> * @param itemList - The &lt;ul id="item-list"&gt; tag</span></span><br><span class="line"><span class="comment"> * @param item - The item data (JSON object)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addItem</span>(<span class="params">itemList, item</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> item_id = item.item_id;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// create the &lt;li&gt; tag and specify the id and class attributes</span></span><br><span class="line">  <span class="keyword">var</span> li = $(<span class="string">'li'</span>, &#123;</span><br><span class="line">    id : <span class="string">'item-'</span> + item_id,</span><br><span class="line">    className : <span class="string">'item'</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// set the data attribute</span></span><br><span class="line">  li.dataset.item_id = item_id;</span><br><span class="line">  li.dataset.favorite = item.favorite;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// item image</span></span><br><span class="line">  <span class="keyword">if</span> (item.image_url) &#123;</span><br><span class="line">    li.appendChild($(<span class="string">'img'</span>, &#123;</span><br><span class="line">      src : item.image_url</span><br><span class="line">    &#125;));</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    li.appendChild($(<span class="string">'img'</span>, &#123;</span><br><span class="line">      src : <span class="string">'https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png'</span></span><br><span class="line">    &#125;))</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// section</span></span><br><span class="line">  <span class="keyword">var</span> section = $(<span class="string">'div'</span>, &#123;&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// title</span></span><br><span class="line">  <span class="keyword">var</span> title = $(<span class="string">'a'</span>, &#123;</span><br><span class="line">    href : item.url,</span><br><span class="line">    target : <span class="string">'_blank'</span>,</span><br><span class="line">    className : <span class="string">'item-name'</span></span><br><span class="line">  &#125;);</span><br><span class="line">  title.innerHTML = item.name;</span><br><span class="line">  section.appendChild(title);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// category</span></span><br><span class="line">  <span class="keyword">var</span> category = $(<span class="string">'p'</span>, &#123;</span><br><span class="line">    className : <span class="string">'item-category'</span></span><br><span class="line">  &#125;);</span><br><span class="line">  category.innerHTML = <span class="string">'Category: '</span> + item.categories.join(<span class="string">', '</span>);</span><br><span class="line">  section.appendChild(category);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> stars = $(<span class="string">'div'</span>, &#123;</span><br><span class="line">    className : <span class="string">'stars'</span></span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; item.rating; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> star = $(<span class="string">'i'</span>, &#123;</span><br><span class="line">      className : <span class="string">'fa fa-star'</span></span><br><span class="line">    &#125;);</span><br><span class="line">    stars.appendChild(star);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ((<span class="string">''</span> + item.rating).match(<span class="regexp">/\.5$/</span>)) &#123;</span><br><span class="line">    stars.appendChild($(<span class="string">'i'</span>, &#123;</span><br><span class="line">      className : <span class="string">'fa fa-star-half-o'</span></span><br><span class="line">    &#125;));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  section.appendChild(stars);</span><br><span class="line"></span><br><span class="line">  li.appendChild(section);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// address</span></span><br><span class="line">  <span class="keyword">var</span> address = $(<span class="string">'p'</span>, &#123;</span><br><span class="line">    className : <span class="string">'item-address'</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  address.innerHTML = item.address.replace(<span class="regexp">/,/g</span>, <span class="string">'&lt;br/&gt;'</span>).replace(<span class="regexp">/\"/g</span>,</span><br><span class="line">      <span class="string">''</span>);</span><br><span class="line">  li.appendChild(address);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// favorite link</span></span><br><span class="line">  <span class="keyword">var</span> favLink = $(<span class="string">'p'</span>, &#123;</span><br><span class="line">    className : <span class="string">'fav-link'</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  favLink.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    changeFavoriteItem(item_id);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  favLink.appendChild($(<span class="string">'i'</span>, &#123;</span><br><span class="line">    id : <span class="string">'fav-icon-'</span> + item_id,</span><br><span class="line">    className : item.favorite ? <span class="string">'fa fa-heart'</span> : <span class="string">'fa fa-heart-o'</span></span><br><span class="line">  &#125;));</span><br><span class="line"></span><br><span class="line">  li.appendChild(favLink);</span><br><span class="line"></span><br><span class="line">  itemList.appendChild(li);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2683,7 +2924,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!-- All strong whose parent is p --&gt;</span></span></span><br><span class="line"><span class="undefined">    p &gt; strong &#123;</span></span><br><span class="line"><span class="undefined">        color: red;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    p &gt; span &gt; strong &#123;</span></span><br><span class="line"><span class="undefined">        color: green;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!-- All strong below div --&gt;</span></span></span><br><span class="line"><span class="undefined">    div strong &#123;</span></span><br><span class="line"><span class="undefined">        font-size: 50px;</span></span><br><span class="line"><span class="undefined">    &#125;        </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>   </span><br><span class="line"><span class="comment">&lt;!-- ...  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"aa"</span>&gt;</span>this is <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>strong under span<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>this is paragraph 3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>I am strong under p<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Attribute selector: Use a <code>[]</code> to select attributes</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!-- all p with class attribute --&gt;</span></span></span><br><span class="line"><span class="undefined">    p[class] &#123;</span></span><br><span class="line"><span class="undefined">        color:red;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!-- the class of p is "right --&gt;</span></span></span><br><span class="line"><span class="undefined">    p[class="right"] &#123;</span></span><br><span class="line"><span class="undefined">        color:blue;</span></span><br><span class="line"><span class="undefined">    &#125; </span></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!-- class~="demo means class contains "demo"--&gt;</span></span></span><br><span class="line"><span class="undefined">    p[class~="demo"] &#123;</span></span><br><span class="line"><span class="undefined">        font-size: 60px;</span></span><br><span class="line"><span class="undefined">    &#125;        </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span> i am div1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span> i am div2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"left demo"</span>&gt;</span> i am div3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"side"</span>&gt;</span> i am div4<span class="tag">&lt;/<span class="name">p</span>&gt;</span>        </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!-- all p with class attribute --&gt;</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">p</span><span class="selector-attr">[class]</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span><span class="selector-pseudo">:red</span>;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!-- the class of p is "right --&gt;</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">p</span><span class="selector-attr">[class="right"]</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span><span class="selector-pseudo">:blue</span>;</span></span><br><span class="line"><span class="undefined">    &#125; </span></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!-- class~="demo means class contains "demo"--&gt;</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">p</span><span class="selector-attr">[class~="demo"]</span> &#123;</span></span><br><span class="line"><span class="undefined">        font-size: 60px;</span></span><br><span class="line"><span class="undefined">    &#125;        </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span> i am div1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span> i am div2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"left demo"</span>&gt;</span> i am div3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"side"</span>&gt;</span> i am div4<span class="tag">&lt;/<span class="name">p</span>&gt;</span>        </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Pseudo Classes 伪类</p>
 <ul>
@@ -2693,11 +2934,11 @@
 <li>:visited - (a:visited) selects all visited links\</li>
 <li>:first-child - (p:first-child) selects every <code>&lt;p&gt;</code> element that is the first child of its parent</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  a:link &#123;</span></span><br><span class="line"><span class="undefined">      color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  a:visited &#123;</span></span><br><span class="line"><span class="undefined">      color: yellow;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  a:hover &#123;</span></span><br><span class="line"><span class="undefined">      font-size: 50px;</span></span><br><span class="line"><span class="undefined">      color: blue;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  a:active &#123;</span></span><br><span class="line"><span class="undefined">      color: green;</span></span><br><span class="line"><span class="undefined">  &#125;      </span></span><br><span class="line"><span class="undefined">  p:first-child &#123;</span></span><br><span class="line"><span class="undefined">      background-color: brown;</span></span><br><span class="line"><span class="undefined">  &#125;    </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123;</span></span><br><span class="line"><span class="undefined">      color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123;</span></span><br><span class="line"><span class="undefined">      color: yellow;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="undefined">      font-size: 50px;</span></span><br><span class="line"><span class="undefined">      color: blue;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123;</span></span><br><span class="line"><span class="undefined">      color: green;</span></span><br><span class="line"><span class="undefined">  &#125;      </span></span><br><span class="line"><span class="css">  <span class="selector-tag">p</span><span class="selector-pseudo">:first-child</span> &#123;</span></span><br><span class="line"><span class="undefined">      background-color: brown;</span></span><br><span class="line"><span class="undefined">  &#125;    </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Pesudo Elements</p>
 <ul>
-<li>::first-element (does not work on inline elements, such as span)<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  p::first-letter &#123;</span></span><br><span class="line"><span class="undefined">      font-size: 100px;</span></span><br><span class="line"><span class="undefined">      color: pink;</span></span><br><span class="line"><span class="undefined">  &#125;     </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li>::first-element (does not work on inline elements, such as span)<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-tag">p</span><span class="selector-pseudo">::first-letter</span> &#123;</span></span><br><span class="line"><span class="undefined">      font-size: 100px;</span></span><br><span class="line"><span class="undefined">      color: pink;</span></span><br><span class="line"><span class="undefined">  &#125;     </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -2747,7 +2988,7 @@
 </li>
 <li><img src="https://raw.githubusercontent.com/Luorinz/images/master/5.%20CSS%20Basic-2019-4-11-11-28-42.png" alt="5. CSS Basic-2019-4-11-11-28-42.png"></li>
 <li>If there’s still collision, last style wins</li>
-<li><code>!important;</code> This is an overruling specificity, it means ‘this is important, ignore subsequent rules, and any usual specificity issues, apply this rule!’ For example:<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">.nav a &#123; color: red; &#125;</span></span><br><span class="line"><span class="undefined">a &#123; color: blue !important; &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li><code>!important;</code> This is an overruling specificity, it means ‘this is important, ignore subsequent rules, and any usual specificity issues, apply this rule!’ For example:<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.nav</span> <span class="selector-tag">a</span> &#123; <span class="attribute">color</span>: red; &#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span> &#123; <span class="attribute">color</span>: blue <span class="meta">!important</span>; &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -3071,214 +3312,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/How to Reverse A Linked List/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Anda Luo">
-      <meta itemprop="description" content="Notes of study, work and life">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Anda">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/09/How to Reverse A Linked List/" class="post-title-link" itemprop="url">How to Reverse A Linked List</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-09 17:04:54 / Modified: 10:09:05" itemprop="dateCreated datePublished" datetime="2019-04-09T17:04:54-07:00">2019-04-09</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">780</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">1 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Reverse-linked-list"><a href="#Reverse-linked-list" class="headerlink" title="Reverse linked list"></a>Reverse linked list</h1><ol>
-<li><p>corner case</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dummy-&gt;1-&gt;null</span><br><span class="line">dummy-&gt;null</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>general case</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dummy-&gt; 1 -&gt;   2      -&gt; 3 -&gt; null</span><br><span class="line">pre    cur  nextNode</span><br><span class="line"></span><br><span class="line">dummy -&gt;  2   -&gt; 1 -&gt; 3 -&gt; null</span><br><span class="line">pre     nextNode cur  </span><br><span class="line"></span><br><span class="line">dummy -&gt;  2   -&gt; 1 -&gt;   3   -&gt; null</span><br><span class="line">pre             cur  nextNode</span><br><span class="line"></span><br><span class="line">dummy -&gt;  3   -&gt; 2 -&gt;   1   -&gt; null</span><br><span class="line">pre                    cur      nextNode</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<ol>
-<li>link cur to the next node <code>cur.next = nextNode.next</code></li>
-<li>link nextNode to the head of the reversed part <code>nextNode.next = pre.next</code></li>
-<li>link pre to the nextNode <code>pre.next = nextNode</code></li>
-<li>update nextNode to next <code>nextNode = cur.next</code></li>
-<li>when nextNode gets to the end, exit</li>
-</ol>
-<hr>
-<blockquote>
-<p>cur represents the tail, and pre represents the the dummy, nextNode represents the node waiting to be added to the head of the list.</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3325,7 +3358,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -3467,7 +3500,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">87k</span>
+    <span title="Symbols count total">97k</span>
   
 
   
@@ -3476,7 +3509,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">1:19</span>
+    <span title="Reading time total">1:28</span>
   
 </div>
 
