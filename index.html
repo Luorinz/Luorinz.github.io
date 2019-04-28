@@ -256,7 +256,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">14</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">16</span></a>
 
   </li>
         
@@ -294,7 +294,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">20</span></a>
 
   </li>
 
@@ -384,6 +384,273 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/28/Go Basic & Around project/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anda Luo">
+      <meta itemprop="description" content="Notes of study, work and life">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anda">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/28/Go Basic & Around project/" class="post-title-link" itemprop="url">Go Basic &amp; Around project</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-28 20:25:31 / Modified: 13:26:45" itemprop="dateCreated datePublished" datetime="2019-04-28T20:25:31-07:00">2019-04-28</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">8.6k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">8 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Project-Introduction"><a href="#Project-Introduction" class="headerlink" title="Project Introduction"></a>Project Introduction</h1><p><strong>Around</strong>: a Geo-index based social network</p>
+<p>•    Built a scalable web service in Go to handle posts and deployed to Google Cloud (GAE flex) for better scaling</p>
+<p>•    Utilized ElasticSearch (GCE) to provide geo-location based search functions such that users can search nearby posts within a distance (e.g. 200km)</p>
+<p>•    Used Google Dataflow to implement a daily dump of posts to BigQuery table for offline analysis</p>
+<p>•    Aggregated the data at the post level and user level to improve the keyword based spam detection (BigQuery)</p>
+<p><strong><code>constants.js</code></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export const API_ROOT = &apos;https://around-75015.appspot.com&apos;;</span><br><span class="line">export const TOKEN_KEY = &apos;TOKEN&apos;;</span><br><span class="line">export const AUTH_PREFIX = &apos;Bearer&apos;;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/1.%20Go%20and%20Web%20Service-2019-4-27-13-55-46.png" alt="1. Go and Web Service-2019-4-27-13-55-46.png"></p>
+<h1 id="Why-we-need-to-learn-about-Go"><a href="#Why-we-need-to-learn-about-Go" class="headerlink" title="Why we need to learn about Go?"></a>Why we need to learn about Go?</h1><p><strong>Answer</strong>: server language for next generation (both computer friendly and developer friendly)</p>
+<h2 id="Who-is-using-Golang"><a href="#Who-is-using-Golang" class="headerlink" title="Who is using Golang"></a>Who is using Golang</h2><ul>
+<li>Google (Creator), Uber, AirBnb</li>
+<li>Dropbox, Facebook, eBay, Heroku, Douban, Jingdong, Meituan</li>
+</ul>
+<p>As opposed to Java, Go is compiled to machine code and is executed directly. Much like C. </p>
+<p>Go example</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f, err := os.Open(<span class="string">"filename.ext"</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        log.Fatal(err)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>Other benefits</p>
+<ul>
+<li>Multiple return values</li>
+<li>Multi-threading<ul>
+<li>Go Routine</li>
+<li>Channels</li>
+</ul>
+</li>
+<li>Has borrowed many good ideas from python</li>
+</ul>
+<p>Python is really easy to break.</p>
+<ul>
+<li>Does not compile. You will never know it breaks until it breaks.</li>
+<li>Language is confusing.</li>
+<li>Good for testing and evaluation with many excellent machine learning libraries.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = set([<span class="string">'hippo'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">set([<span class="string">'hippo'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = set(<span class="string">'hippo'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">set([<span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'p'</span>, <span class="string">'o'</span>])</span><br></pre></td></tr></table></figure>
+<h1 id="Setup-Local-Environment-Go"><a href="#Setup-Local-Environment-Go" class="headerlink" title="Setup Local Environment (Go)"></a>Setup Local Environment (Go)</h1><p>Make sure you have installed Go based on Prerequisite.<br>Mac Users (Windows User wait a minute)</p>
+<p>Step 1.1.1 Open Terminal, enter</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go version</span><br></pre></td></tr></table></figure>
+<p>It should show something like <code>go version go1.10.2 darwin/amd64</code>.</p>
+<p>Step 1.1.2(Optional: GOPATH default to ~/go) In the same Terminal, enter</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/go</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">export</span> GOPATH=~/go &gt;&gt; ~/.bash_profile</span><br><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$GOPATH</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>In here we must not overwrite the bin of go, add <code>export PATH=$PATH:/usr/local/go/bin to .bash_profile and update zsh profile</code></p>
+</blockquote>
+<p>Step 1.1.3 In the same Terminal, enter</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p  ~/Documents/Around/service</span><br><span class="line"><span class="built_in">cd</span>  ~/Documents/Around/service</span><br><span class="line">vim main.go</span><br></pre></td></tr></table></figure>
+<p>Step 1.1.4 Type ‘a’ or ‘i’ and then copy a hello world program into main.go</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"Hello, world"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Step 1.1.5 Exit with <code>:wq</code> , in the terminal, type</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go run main.go</span><br></pre></td></tr></table></figure>
+<p>You should be able to see the output of <code>“Hello, world”</code></p>
+<h1 id="First-Go-program"><a href="#First-Go-program" class="headerlink" title="First Go program"></a>First Go program</h1><p>First, we need to define some objects in a Go program to represent the data we store. </p>
+<p>Step 1.3.1 let’s define the struct for post and location. </p>
+<p>Encode json object (<a href="https://golang.org/pkg/encoding/json/" target="_blank" rel="noopener">https://golang.org/pkg/encoding/json/</a>)</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Location <span class="keyword">struct</span> &#123;</span><br><span class="line">      Lat <span class="keyword">float64</span> <span class="string">`json:"lat"`</span></span><br><span class="line">      Lon <span class="keyword">float64</span> <span class="string">`json:"lon"`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Post <span class="keyword">struct</span> &#123;</span><br><span class="line">      <span class="comment">// `json:"user"` is for the json parsing of this User field. Otherwise, by default it's 'User'.</span></span><br><span class="line">      User     <span class="keyword">string</span> <span class="string">`json:"user"`</span></span><br><span class="line">      Message  <span class="keyword">string</span>  <span class="string">`json:"message"`</span></span><br><span class="line">      Location Location <span class="string">`json:"location"`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">"Hello, world"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Step 1.3.2 Add one method <code>handlerPost()</code> after <code>main()</code> to handle Post. </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">"Hello, world"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">handlerPost</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">      <span class="comment">// Parse from body of request to get a json object.</span></span><br><span class="line">      fmt.Println(<span class="string">"Received one post request"</span>)</span><br><span class="line">      decoder := json.NewDecoder(r.Body)</span><br><span class="line">      <span class="keyword">var</span> p Post</span><br><span class="line">      <span class="keyword">if</span> err := decoder.Decode(&amp;p); err != <span class="literal">nil</span> &#123;</span><br><span class="line">             <span class="built_in">panic</span>(err)</span><br><span class="line">             <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      fmt.Fprintf(w, <span class="string">"Post received: %s\n"</span>, p.Message)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>In here if you add rawString <code>json:&quot;lat&quot;</code> after variable, it will parse it automatically</p>
+</blockquote>
+<p>What does this method do? If user sends a http request with a body as</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  “user”: “jack”</span><br><span class="line">  “message”: “this is a message”</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Then it will automatically construct a Post object named <code>p</code> and update its values to be <code>p.User = “jack”</code> and <code>p.Message = “this  is a message”</code></p>
+<p><code>Fmt</code> <code>%s</code> means string</p>
+<p>Just one line of code to decode json object into go object. In comparison, if you do it in java. </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">JSONObject venue = getVenue(event);</span><br><span class="line">      <span class="keyword">if</span> (venue != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!venue.isNull(<span class="string">"address"</span>)) &#123;</span><br><span class="line">          JSONObject address = venue.getJSONObject(<span class="string">"address"</span>);</span><br><span class="line">          StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">          <span class="keyword">if</span> (!address.isNull(<span class="string">"line1"</span>)) &#123;</span><br><span class="line"></span><br><span class="line">            sb.append(address.getString(<span class="string">"line1"</span>));</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (!address.isNull(<span class="string">"line2"</span>)) &#123;</span><br><span class="line">            sb.append(address.getString(<span class="string">"line2"</span>));</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (!address.isNull(<span class="string">"line3"</span>)) &#123;</span><br><span class="line">            sb.append(address.getString(<span class="string">"line3"</span>));</span><br><span class="line">          &#125;</span><br><span class="line">          builder.setAddress(sb.toString());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!venue.isNull(<span class="string">"city"</span>)) &#123;</span><br><span class="line">          JSONObject city = venue.getJSONObject(<span class="string">"city"</span>);</span><br><span class="line">          builder.setCity(getStringFieldOrNull(city, <span class="string">"name"</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!venue.isNull(<span class="string">"country"</span>)) &#123;</span><br><span class="line">          JSONObject country = venue.getJSONObject(<span class="string">"country"</span>);</span><br><span class="line">          builder.setCountry(getStringFieldOrNull(country, <span class="string">"name"</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!venue.isNull(<span class="string">"state"</span>)) &#123;</span><br><span class="line">          JSONObject state = venue.getJSONObject(<span class="string">"state"</span>);</span><br><span class="line">          builder.setState(getStringFieldOrNull(state, <span class="string">"name"</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        builder.setZipcode(getStringFieldOrNull(venue, <span class="string">"postalCode"</span>));</span><br><span class="line">        <span class="keyword">if</span> (!venue.isNull(<span class="string">"location"</span>)) &#123;</span><br><span class="line">          JSONObject location = venue.getJSONObject(<span class="string">"location"</span>);</span><br><span class="line">          builder.setLatitude(getNumericFieldOrNull(location, <span class="string">"latitude"</span>));</span><br><span class="line">          builder.setLongitude(getNumericFieldOrNull(location, <span class="string">"longitude"</span>));</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<p>Step 1.3.3 Replace main function to call handlerPost when started. Final version:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">      <span class="string">"fmt"</span></span><br><span class="line">      <span class="string">"net/http"</span></span><br><span class="line">      <span class="string">"encoding/json"</span></span><br><span class="line">      <span class="string">"log"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">"started-service"</span>)</span><br><span class="line">      http.HandleFunc(<span class="string">"/post"</span>, handlerPost)</span><br><span class="line">      log.Fatal(http.ListenAndServe(<span class="string">":8080"</span>, <span class="literal">nil</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Step 1.3.5 Open your postman,<br>Choose ‘POST’, the url is <a href="http://localhost:8080/post" target="_blank" rel="noopener">http://localhost:8080/post</a>, in the request body, enter<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"user"</span>:<span class="string">"1111"</span>,</span><br><span class="line">	<span class="attr">"message"</span>:<span class="string">"一生必去的100个地方"</span>,</span><br><span class="line">	<span class="attr">"location"</span>:&#123;</span><br><span class="line">		<span class="attr">"lat"</span>:<span class="number">37.5</span>,</span><br><span class="line">		<span class="attr">"lon"</span>:<span class="number">-120.1</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Click ‘Send’, you should be able to see a response with</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Post received: 一生必去的100个地方</span><br></pre></td></tr></table></figure>
+<p>Add another handler for <code>search</code> (called it <code>handlerSearch</code>), the request has a url pattern like<br><a href="http://localhost:8080/search?lat=10.0&amp;lon=20.0" target="_blank" rel="noopener">http://localhost:8080/search?lat=10.0&amp;lon=20.0</a>. Parse it and then print out the lat and lon.</p>
+<p>Note: to get request parameters from url</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lat := r.URL.Query().Get(<span class="string">"lat"</span>)</span><br></pre></td></tr></table></figure>
+<p>Step 1.3.6 Answer<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">"started-service"</span>)</span><br><span class="line">      http.HandleFunc(<span class="string">"/post"</span>, handlerPost)</span><br><span class="line">      http.HandleFunc(<span class="string">"/search"</span>, handlerSearch)</span><br><span class="line">      log.Fatal(http.ListenAndServe(<span class="string">":8080"</span>, <span class="literal">nil</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">handlerSearch</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">"Received one request for search"</span>)</span><br><span class="line">      lat := r.URL.Query().Get(<span class="string">"lat"</span>)</span><br><span class="line">      lon := r.URL.Query().Get(<span class="string">"lon"</span>)</span><br><span class="line"></span><br><span class="line">      fmt.Fprintf(w, <span class="string">"Search received: %s %s"</span>, lat, lon)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Step 1.3.7  return a JSON object. Change handlerSearch to be</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">Import (</span><br><span class="line">      …</span><br><span class="line">      <span class="string">"strconv"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">      DISTANCE = <span class="string">"200km"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">handlerSearch</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">"Received one request for search"</span>)</span><br><span class="line">      lat, _ := strconv.ParseFloat(r.URL.Query().Get(<span class="string">"lat"</span>), <span class="number">64</span>)</span><br><span class="line">      lon, _ := strconv.ParseFloat(r.URL.Query().Get(<span class="string">"lon"</span>), <span class="number">64</span>)</span><br><span class="line">      <span class="comment">// range is optional </span></span><br><span class="line">      ran := DISTANCE </span><br><span class="line">      <span class="keyword">if</span> val := r.URL.Query().Get(<span class="string">"range"</span>); val != <span class="string">""</span> &#123; </span><br><span class="line">         ran = val + <span class="string">"km"</span> </span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      fmt.Println(<span class="string">"range is "</span>, ran)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Return a fake post</span></span><br><span class="line">      p := &amp;Post&#123;</span><br><span class="line">             User:<span class="string">"1111"</span>,</span><br><span class="line">             Message:<span class="string">"一生必去的100个地方"</span>,</span><br><span class="line">             Location: Location&#123;</span><br><span class="line">                    Lat:lat,</span><br><span class="line">                    Lon:lon,</span><br><span class="line">             &#125;,</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      js, err := json.Marshal(p)</span><br><span class="line">      <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">             <span class="built_in">panic</span>(err)</span><br><span class="line">             <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      w.Header().Set(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>)</span><br><span class="line">      w.Write(js)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在Go里面，变量必须得用到，不然会报错，除非用下划线做变量名</p>
+</blockquote>
+<p>Step 1.3.8 Open Postman, url is <a href="http://localhost:8080/search?lat=10.0&amp;lon=20.0&amp;range=300" target="_blank" rel="noopener">http://localhost:8080/search?lat=10.0&amp;lon=20.0&amp;range=300</a> click send again. You should see something like this</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"user"</span>: <span class="string">"1111"</span>,</span><br><span class="line">    <span class="attr">"message"</span>: <span class="string">"一生必去的100个地方"</span>,</span><br><span class="line">    <span class="attr">"location"</span>: &#123;</span><br><span class="line">        <span class="attr">"lat"</span>: <span class="number">10</span>,</span><br><span class="line">        <span class="attr">"lon"</span>: <span class="number">20</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/28/[Notes] Git notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +696,7 @@
                 
               
 
-              <time title="Created: 2019-04-28 00:02:06 / Modified: 10:54:26" itemprop="dateCreated datePublished" datetime="2019-04-28T00:02:06-07:00">2019-04-28</time>
+              <time title="Created: 2019-04-28 00:02:06 / Modified: 10:55:50" itemprop="dateCreated datePublished" datetime="2019-04-28T00:02:06-07:00">2019-04-28</time>
             
 
             
@@ -2963,235 +3230,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/12/[Notes] TicketMaster API 2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Anda Luo">
-      <meta itemprop="description" content="Notes of study, work and life">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Anda">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/12/[Notes] TicketMaster API 2/" class="post-title-link" itemprop="url">[Notes] TicketMaster API 2</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-12 22:55:51 / Modified: 15:56:29" itemprop="dateCreated datePublished" datetime="2019-04-12T22:55:51-07:00">2019-04-12</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">7.8k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">7 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="TicketMaster-API-2"><a href="#TicketMaster-API-2" class="headerlink" title="TicketMaster API 2"></a>TicketMaster API 2</h1><h2 id="Benifits-of-builder-class"><a href="#Benifits-of-builder-class" class="headerlink" title="Benifits of builder class"></a>Benifits of builder class</h2><hr>
-<ul>
-<li>Easier to use  because you don’t need to call a constructor with long parameter list</li>
-<li>Easier to implement because  you don’t need to provide constructors with different combinations of private fields.</li>
-</ul>
-<h2 id="TicketMasterAPI-java"><a href="#TicketMasterAPI-java" class="headerlink" title="TicketMasterAPI.java"></a>TicketMasterAPI.java</h2><hr>
-<h3 id="Add-getAddress"><a href="#Add-getAddress" class="headerlink" title="Add getAddress"></a>Add getAddress</h3>  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* get the Address from the JSONObject</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> event</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> A String of address</span></span><br><span class="line"><span class="comment">* <span class="doctag">@throws</span> JSONException</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> String <span class="title">getAddress</span><span class="params">(JSONObject event)</span> <span class="keyword">throws</span> JSONException </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!event.isNull(<span class="string">"_embedded"</span>)) &#123;</span><br><span class="line">    JSONObject embedded = event.getJSONObject(<span class="string">"_embedded"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (!embedded.isNull(<span class="string">"venues"</span>)) &#123;</span><br><span class="line">      JSONArray venues = embedded.getJSONArray(<span class="string">"venues"</span>);</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; venues.length(); ++i) &#123;</span><br><span class="line">        JSONObject venue = venues.getJSONObject(i);</span><br><span class="line">        </span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (!venue.isNull(<span class="string">"address"</span>)) &#123;</span><br><span class="line">          JSONObject address = venue.getJSONObject(<span class="string">"address"</span>);</span><br><span class="line">          </span><br><span class="line">          <span class="keyword">if</span> (!address.isNull(<span class="string">"line1"</span>)) &#123;</span><br><span class="line">            sb.append(address.getString(<span class="string">"line1"</span>));</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (!address.isNull(<span class="string">"line2"</span>)) &#123;</span><br><span class="line">            sb.append(<span class="string">" "</span>);</span><br><span class="line">            sb.append(address.getString(<span class="string">"line2"</span>));</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (!address.isNull(<span class="string">"line3"</span>)) &#123;</span><br><span class="line">            sb.append(<span class="string">" "</span>);</span><br><span class="line">            sb.append(address.getString(<span class="string">"line3"</span>));</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (!venue.isNull(<span class="string">"city"</span>)) &#123;</span><br><span class="line">          JSONObject city = venue.getJSONObject(<span class="string">"city"</span>);</span><br><span class="line">          </span><br><span class="line">          <span class="keyword">if</span> (!city.isNull(<span class="string">"name"</span>)) &#123;</span><br><span class="line">            sb.append(<span class="string">" "</span>);</span><br><span class="line">            sb.append(city.getString(<span class="string">"name"</span>));</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (!sb.toString().equals(<span class="string">""</span>)) &#123;</span><br><span class="line">          <span class="keyword">return</span> sb.toString();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Add-getImageURL"><a href="#Add-getImageURL" class="headerlink" title="Add getImageURL"></a>Add getImageURL</h3>  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &#123;"images": [&#123;"url": "www.example.com/my_image.jpg"&#125;, ...]&#125;</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Get the image URL from a JSONOBject</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> event</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> A String of image URL</span></span><br><span class="line"><span class="comment">* <span class="doctag">@throws</span> JSONException</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> String <span class="title">getImageUrl</span><span class="params">(JSONObject event)</span> <span class="keyword">throws</span> JSONException </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!event.isNull(<span class="string">"images"</span>)) &#123;</span><br><span class="line">    JSONArray images = event.getJSONArray(<span class="string">"images"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; images.length(); ++i) &#123;</span><br><span class="line">      JSONObject image = images.getJSONObject(i);</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span> (!image.isNull(<span class="string">"url"</span>)) &#123;</span><br><span class="line">        <span class="keyword">return</span> image.getString(<span class="string">"url"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Add-getCategories"><a href="#Add-getCategories" class="headerlink" title="Add getCategories"></a>Add getCategories</h3>  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &#123;"classifications" : [&#123;"segment": &#123;"name": "music"&#125;&#125;, ...]&#125;</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Get a set of categories from a JSONObject </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> event</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> A set of string</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> JSONException</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Set&lt;String&gt; <span class="title">getCategories</span><span class="params">(JSONObject event)</span> <span class="keyword">throws</span> JSONException </span>&#123;</span><br><span class="line">	Set&lt;String&gt; categories = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">	<span class="keyword">if</span> (!event.isNull(<span class="string">"classifications"</span>)) &#123;</span><br><span class="line">		JSONArray classifications = event.getJSONArray(<span class="string">"classifications"</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; classifications.length(); i++) &#123;</span><br><span class="line">			JSONObject classification = classifications.getJSONObject(i);</span><br><span class="line">			<span class="keyword">if</span> (!classification.isNull(<span class="string">"segment"</span>)) &#123;</span><br><span class="line">				JSONObject segment = classification.getJSONObject(<span class="string">"segment"</span>);</span><br><span class="line">				<span class="keyword">if</span> (!segment.isNull(<span class="string">"name"</span>)) &#123;</span><br><span class="line">					String name = segment.getString(<span class="string">"name"</span>);</span><br><span class="line">					categories.add(name);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> categories;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Add-getItemList"><a href="#Add-getItemList" class="headerlink" title="Add getItemList"></a>Add getItemList</h3>  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Convert JSONArray to a list of item objects.</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Convert JSONArray to a list of item objects</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> events</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> A list of Item objects</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> JSONException</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> List&lt;Item&gt; <span class="title">getItemList</span><span class="params">(JSONArray events)</span> <span class="keyword">throws</span> JSONException </span>&#123;</span><br><span class="line">	List&lt;Item&gt; itemList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; events.length(); ++i) &#123;</span><br><span class="line">		JSONObject event = events.getJSONObject(i);</span><br><span class="line">		</span><br><span class="line">		ItemBuilder builder = <span class="keyword">new</span> ItemBuilder();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (!event.isNull(<span class="string">"name"</span>)) &#123;</span><br><span class="line">			builder.setName(event.getString(<span class="string">"name"</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (!event.isNull(<span class="string">"id"</span>)) &#123;</span><br><span class="line">			builder.setItemId(event.getString(<span class="string">"id"</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (!event.isNull(<span class="string">"url"</span>)) &#123;</span><br><span class="line">			builder.setUrl(event.getString(<span class="string">"url"</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (!event.isNull(<span class="string">"rating"</span>)) &#123;</span><br><span class="line">			builder.setRating(event.getDouble(<span class="string">"rating"</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (!event.isNull(<span class="string">"distance"</span>)) &#123;</span><br><span class="line">			builder.setDistance(event.getDouble(<span class="string">"distance"</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		builder.setCategories(getCategories(event));</span><br><span class="line">		builder.setAddress(getAddress(event));</span><br><span class="line">		builder.setImageUrl(getImageUrl(event));</span><br><span class="line">		</span><br><span class="line">		itemList.add(builder.build());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> itemList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Modify-Search"><a href="#Modify-Search" class="headerlink" title="Modify Search()"></a>Modify Search()</h3>  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Search the JSONArray results through TM API</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> lat latitude</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> lon longitude</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> keyword keyword is optional</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> JSONArray</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Item&gt; <span class="title">search</span><span class="params">(<span class="keyword">double</span> lat, <span class="keyword">double</span> lon, String keyword)</span> </span>&#123;</span><br><span class="line">	List&lt;Item&gt; ret = <span class="keyword">new</span> ArrayList&lt;Item&gt;();</span><br><span class="line">	<span class="keyword">if</span> (keyword == <span class="keyword">null</span>) keyword = DEFAULT_KEYWORD;</span><br><span class="line">	<span class="comment">// translate keyword into URL-supported format</span></span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		keyword = java.net.URLEncoder.encode(keyword, <span class="string">"UTF-8"</span>);</span><br><span class="line">	&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// Get geoPoint</span></span><br><span class="line">	String geoHash = GeoHash.encodeGeohash(lat, lon, <span class="number">8</span>);</span><br><span class="line">	<span class="comment">// Create query</span></span><br><span class="line">	<span class="comment">// 50 is default search radius</span></span><br><span class="line">	String query = String.format(<span class="string">"apikey=%s&amp;geoPoint=%s&amp;keyword=%s&amp;radius=%s"</span>, API_KEY, geoHash, keyword, <span class="number">50</span>);</span><br><span class="line">	<span class="comment">// Create URL</span></span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="comment">// create a HTTP URL connection</span></span><br><span class="line">		HttpURLConnection connection = (HttpURLConnection) <span class="keyword">new</span> URL(URL + <span class="string">"?"</span> + query).openConnection();</span><br><span class="line">		<span class="comment">// get the response code EG. 200/success, 404/fail</span></span><br><span class="line">		<span class="keyword">int</span> responseCode = connection.getResponseCode();</span><br><span class="line">		<span class="comment">// print res</span></span><br><span class="line">		System.out.println(<span class="string">"\nSending \"GET\" request to URL : "</span> + URL + <span class="string">"?"</span> + query);</span><br><span class="line">		System.out.println(<span class="string">"\nResponse Code: "</span> + responseCode);</span><br><span class="line">		<span class="comment">// check responseCode (Implement it later)</span></span><br><span class="line">		<span class="keyword">if</span> (responseCode != <span class="number">200</span>) &#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// read and write the response content</span></span><br><span class="line">		BufferedReader in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(connection.getInputStream()));</span><br><span class="line">		String inputLine;</span><br><span class="line">		StringBuilder response = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">		<span class="keyword">while</span> ((inputLine = in.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">			response.append(inputLine);</span><br><span class="line">		&#125;</span><br><span class="line">		in.close();</span><br><span class="line">		connection.disconnect();</span><br><span class="line">		<span class="comment">// write the response to a JSON object</span></span><br><span class="line">		JSONObject obj = <span class="keyword">new</span> JSONObject(response.toString());</span><br><span class="line">		<span class="comment">// check the result</span></span><br><span class="line">		<span class="keyword">if</span> (obj.isNull(<span class="string">"_embedded"</span>)) &#123;</span><br><span class="line">			<span class="keyword">return</span> ret;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// get the events from the whole JSON and return the events field of it as a JSON Array.</span></span><br><span class="line">		JSONObject embedded = obj.getJSONObject(<span class="string">"_embedded"</span>);</span><br><span class="line">		JSONArray events = embedded.getJSONArray(<span class="string">"events"</span>);</span><br><span class="line">		ret = getItemList(events);</span><br><span class="line">	&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Modify-doGet-in-searchItem-Servlet"><a href="#Modify-doGet-in-searchItem-Servlet" class="headerlink" title="Modify doGet() in searchItem Servlet"></a>Modify doGet() in searchItem Servlet</h2><hr>
-<pre><code class="java"><span class="comment">/**</span>
-<span class="comment"> * <span class="doctag">@see</span> HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>{
-    <span class="comment">// TODO Auto-generated method stub</span>
-
-    <span class="keyword">double</span> lat = Double.parseDouble(request.getParameter(<span class="string">"lat"</span>));
-    <span class="keyword">double</span> lon = Double.parseDouble(request.getParameter(<span class="string">"lon"</span>));
-
-    String keyword = request.getParameter(<span class="string">"term"</span>);
-    TicketMasterAPI tmAPI = <span class="keyword">new</span> TicketMasterAPI();
-    List&lt;Item&gt; items = tmAPI.search(lat, lon, keyword);
-
-    JSONArray array = <span class="keyword">new</span> JSONArray();
-    <span class="keyword">try</span> {
-        <span class="keyword">for</span> (Item item : items) {
-            JSONObject obj = item.toJSONObject();
-            array.put(obj);
-        }
-    } <span class="keyword">catch</span> (Exception e) {
-        e.printStackTrace();
-    }
-    RpcHelper.writeJSONArray(response, array);
-}
-</code></pre>
-<h2 id="Test-result"><a href="#Test-result" class="headerlink" title="Test result"></a>Test result</h2><ul>
-<li>test on <a href="http://localhost:8080/Jupiter/search?lat=37.38&amp;lon=-122.08" target="_blank" rel="noopener">http://localhost:8080/Jupiter/search?lat=37.38&amp;lon=-122.08</a> </li>
-<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/6.%20TicketMasterAPI%202-2019-4-12-15-47-9.png" alt="6. TicketMasterAPI 2-2019-4-12-15-47-9.png"></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3238,7 +3276,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -3304,7 +3342,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -3386,7 +3428,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">109k</span>
+    <span title="Symbols count total">117k</span>
   
 
   
@@ -3395,7 +3437,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">1:39</span>
+    <span title="Reading time total">1:47</span>
   
 </div>
 
