@@ -256,7 +256,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>Tags<span class="badge">16</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>Tags<span class="badge">18</span></a>
 
   </li>
         
@@ -294,7 +294,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives<span class="badge">20</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives<span class="badge">21</span></a>
 
   </li>
 
@@ -370,6 +370,328 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/[Notes] CSS Basic 2/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anda Luo"/>
+      <meta itemprop="description" content="Notes of study, work and life"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anda"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/13/[Notes] CSS Basic 2/" class="post-title-link" itemprop="url">[Notes] CSS Basic 2</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-13 04:22:37" itemprop="dateCreated datePublished" datetime="2019-04-13T04:22:37-07:00">2019-04-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-12 21:23:57" itemprop="dateModified" datetime="2019-04-12T21:23:57-07:00">2019-04-12</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">5k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">5 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Box-Model"><a href="#Box-Model" class="headerlink" title="Box Model"></a>Box Model</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
+<li>The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content. </li>
+</ul>
+<h2 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h2><ul>
+<li>Content - The content of the box, where text and images appear</li>
+<li>Padding - Clears an area around the content. The padding is transparent</li>
+<li>Border - A border that goes around the padding and content</li>
+<li>Margin - Clears an area outside the border. The margin is transparent</li>
+<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-18-45-25.png" alt="7. CSS Basic 2-2019-4-12-18-45-25.png"></li>
+</ul>
+<blockquote>
+<p>Every element on a page is a rectangular box.</p>
+</blockquote>
+<h2 id="Types-of-box-model"><a href="#Types-of-box-model" class="headerlink" title="Types of box model"></a>Types of box model</h2><p>There are actually two types of box model, one is W3C standard, the other is IE model. Basically they all calculate the element width and height based on the content width, content height, padding and border, but their formula are different:</p>
+<ol>
+<li><p>W3C standard</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">outer box (element space size)</span><br><span class="line">Element space width = content width + padding + border + margin</span><br><span class="line">Element space height = content height + padding + border + margin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">inner box (element size)</span><br><span class="line">Element width = content width + padding + border</span><br><span class="line">Element height = content height + padding + border</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>IE box model</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">outer box (element space size)</span><br><span class="line">Element space width = content width + margin </span><br><span class="line">Element space height = content height + margin</span><br><span class="line">(content width including padding and border)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-19-6-37.png" alt="7. CSS Basic 2-2019-4-12-19-6-37.png"></li>
+<li>In order to make sure we apply the same box model to all browsers, CSS3 provides us with the new box-sizing property: <code>box-sizing: content-box || border-box || inherit</code></li>
+</ul>
+<h2 id="Margin-Collapsing"><a href="#Margin-Collapsing" class="headerlink" title="Margin Collapsing"></a>Margin Collapsing</h2><ul>
+<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-19-35-16.png" alt="7. CSS Basic 2-2019-4-12-19-35-16.png"></li>
+<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-19-35-26.png" alt="7. CSS Basic 2-2019-4-12-19-35-26.png"></li>
+</ul>
+<h1 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h1><ul>
+<li>Definition: the “display” property</li>
+</ul>
+<h2 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h2><ul>
+<li>A block-level element starts on a new line and stretches out to the left and right as far as it can.</li>
+</ul>
+<h2 id="Inline"><a href="#Inline" class="headerlink" title="Inline"></a>Inline</h2><ul>
+<li>An inline element can wrap some text inside a paragraph without disrupting the flow of that paragraph.</li>
+</ul>
+<h2 id="center-element"><a href="#center-element" class="headerlink" title="center element"></a>center element</h2><ul>
+<li>margin: 0 auto; Centers the block elements to the center of the container.</li>
+<li>text-align: center; Centers the text content.</li>
+<li>display:flex; justify-content: center; Centers the items in a flex box horizontally.</li>
+<li>display:flex; align-items: center; Centers the items in a flex box vertically.</li>
+</ul>
+<h1 id="Floating"><a href="#Floating" class="headerlink" title="Floating"></a>Floating</h1><h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><ul>
+<li><p>The float CSS property specifies that an element should be placed along the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the web page, though still remaining a part of the flow.</p>
+</li>
+<li><p>How floated elements are positioned: when an element is floated, it is taken out of the normal flow of the document (though still remaining part of it). It is shifted to the left, or right, until it touches the edge of its containing box, or another floated element.</p>
+</li>
+</ul>
+<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><ul>
+<li><p><code>float: none|left|right|initial|inherit;</code></p>
+</li>
+<li><p>The float property can have one of the following values:</p>
+<ul>
+<li>left - The element floats to the left of its container</li>
+<li>right- The element floats to the right of its container</li>
+<li>none - The element does not float (will be displayed just where it occurs in the text). This is default</li>
+<li>inherit - The element inherits the float value of its parent</li>
+</ul>
+</li>
+</ul>
+<h2 id="Important-Facts"><a href="#Important-Facts" class="headerlink" title="Important Facts"></a>Important Facts</h2><ol>
+<li><p>float first</p>
+<ul>
+<li><p>When a container has multiple elements, some of them are floating, some of them are not, remember to put all the floating elements in front of the non-floating ones! Browsers try to figure out the spacing for those floating ones first.</p>
+</li>
+<li><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-20-18-51.png" alt="7. CSS Basic 2-2019-4-12-20-18-51.png"></p>
+</li>
+</ul>
+</li>
+<li><p>clear</p>
+<ul>
+<li>The clear property specifies on which sides of an element the floating elements are not allowed to float.</li>
+<li><code>.clear { clear: both; /* it can be left|right|both */ }</code></li>
+</ul>
+</li>
+<li><p>inline-block</p>
+<ul>
+<li><p>Floating works great, but as you see we need to apply the .clear to clear out the floating even for a block element. There is another way to achieve the floating effect, that is to use inline-block display.</p>
+</li>
+<li><p>similar to inline, inline-block allows multiple elements to layout on the same line, the beauty of it is that elements can automatically wrap around if the wrapper container is too small, and if you add a block element right after an inline-block element, we don’t need to use the ugly .clear fix.</p>
+</li>
+<li><p>可实现左右排版</p>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Position"><a href="#Position" class="headerlink" title="Position"></a>Position</h1><h2 id="static-default"><a href="#static-default" class="headerlink" title="static (default)"></a>static (default)</h2><ul>
+<li>Default value, means the element is not positioned! A static element is said to be not positioned and an element with its position set to anything else is said to be positioned.</li>
+</ul>
+<h2 id="relative"><a href="#relative" class="headerlink" title="relative"></a>relative</h2><ul>
+<li>The top, right, bottom and left properties of a relatively-positioned element will cause it to be adjusted away from its original position. Other content will not be adjusted to fit into any gap left by the element.</li>
+<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-20-47-22.png" alt="7. CSS Basic 2-2019-4-12-20-47-22.png"></li>
+</ul>
+<h2 id="absolute"><a href="#absolute" class="headerlink" title="absolute"></a>absolute</h2><ul>
+<li>The top, right, bottom and left properties of an absolute-positioned element will cause it to be positioned relatively to the nearest positioned ancestor.</li>
+<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-20-48-9.png" alt="7. CSS Basic 2-2019-4-12-20-48-9.png"></li>
+</ul>
+<h2 id="fixed"><a href="#fixed" class="headerlink" title="fixed"></a>fixed</h2><ul>
+<li>A fixed element is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. </li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-20-53-11.png" alt="7. CSS Basic 2-2019-4-12-20-53-11.png"></li>
+<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-20-53-25.png" alt="7. CSS Basic 2-2019-4-12-20-53-25.png"></li>
+<li><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-20-53-36.png" alt="7. CSS Basic 2-2019-4-12-20-53-36.png"></p>
+</li>
+<li><p>Trick: 子容器绝对定位（相对于父容器）， 父容器相对定位。</p>
+</li>
+</ul>
+<h1 id="Z-index"><a href="#Z-index" class="headerlink" title="Z-index"></a>Z-index</h1><h2 id="Definition-1"><a href="#Definition-1" class="headerlink" title="Definition"></a>Definition</h2><ul>
+<li><p>The z-index property specifies the stack order of an element.</p>
+</li>
+<li><p>An element with greater stack order is always in front of an element with a lower stack order.</p>
+</li>
+<li>Note: z-index only works on positioned elements (position:absolute, position:relative, or position:fixed).</li>
+<li><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-21-21-49.png" alt="7. CSS Basic 2-2019-4-12-21-21-49.png"></p>
+</li>
+<li><p>Code <a href="http://jsbin.com/rafomem/20/edit?html,css,output" target="_blank" rel="noopener">http://jsbin.com/rafomem/20/edit?html,css,output</a></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2672,219 +2994,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/3. Longest Substring Without Repeating Characters/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Anda Luo"/>
-      <meta itemprop="description" content="Notes of study, work and life"/>
-      <meta itemprop="image" content="/images/avatar.gif"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Anda"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/28/3. Longest Substring Without Repeating Characters/" class="post-title-link" itemprop="url">[Leetcode] 3. Longest Substring Without Repeating Characters</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-28 12:13:17" itemprop="dateCreated datePublished" datetime="2019-03-28T12:13:17-07:00">2019-03-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-09 10:08:15" itemprop="dateModified" datetime="2019-04-09T10:08:15-07:00">2019-04-09</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">2.3k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">2 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="meidum"><a href="#meidum" class="headerlink" title="meidum"></a>meidum</h3><p>Given a string, find the length of the <strong>longest substring</strong> without repeating characters.</p>
-<p><strong>Example 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;abcabcbb&quot;</span><br><span class="line">Output: 3 </span><br><span class="line">Explanation: The answer is &quot;abc&quot;, with the length of 3.</span><br></pre></td></tr></table></figure>
-<p><strong>Example 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;bbbbb&quot;</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: The answer is &quot;b&quot;, with the length of 1.</span><br></pre></td></tr></table></figure>
-<p><strong>Example 3:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;pwwkew&quot;</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: The answer is &quot;wke&quot;, with the length of 3. </span><br><span class="line">             Note that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring.</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution1</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment"># DFS solution O(n2)</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        memo = set()</span><br><span class="line">        self.max_length = float(<span class="string">'-inf'</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">            <span class="keyword">if</span> self.max_length &gt;= len(s) - i:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            self.helper(<span class="string">""</span>, i, s, memo)</span><br><span class="line">        <span class="keyword">return</span> self.max_length</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(self, path, ind, string, memo)</span>:</span></span><br><span class="line">        self.max_length = max(self.max_length, len(path))</span><br><span class="line">        <span class="keyword">if</span> ind &gt;= len(string):</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> string[ind] <span class="keyword">not</span> <span class="keyword">in</span> path:</span><br><span class="line">            path+=string[ind]</span><br><span class="line">            <span class="comment"># print(path)</span></span><br><span class="line">            self.helper(path, ind+<span class="number">1</span>, string, memo)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution2</span>:</span></span><br><span class="line">    <span class="comment"># sliding window</span></span><br><span class="line">    <span class="comment"># O(2n) time O(min(m, n)) space. m is 26, n is len of str</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        i = j = <span class="number">0</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        memo = set()</span><br><span class="line">        <span class="keyword">while</span> i &lt; len(s) <span class="keyword">and</span> j &lt; len(s):</span><br><span class="line">            <span class="keyword">if</span> s[j] <span class="keyword">not</span> <span class="keyword">in</span> memo:</span><br><span class="line">                memo.add(s[j])</span><br><span class="line">                res = max(res, j - i + <span class="number">1</span>)</span><br><span class="line">                j+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                memo.remove(s[i])</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="comment"># sliding window optimized using map</span></span><br><span class="line">    <span class="comment"># O(n) time O(min(m, n)) space. m is 26, n is len of str</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        i = j = <span class="number">0</span></span><br><span class="line">        dic = &#123;&#125;</span><br><span class="line">        <span class="keyword">while</span> j &lt; len(s):</span><br><span class="line">            <span class="keyword">if</span> s[j] <span class="keyword">in</span> dic:</span><br><span class="line">                i = max(dic[s[j]], i)</span><br><span class="line">            res = max(res, j - i + <span class="number">1</span>)</span><br><span class="line">            dic[s[j]] = j + <span class="number">1</span></span><br><span class="line">            j+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2926,7 +3040,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2996,7 +3110,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -3078,7 +3196,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">117k</span>
+    <span title="Symbols count total">133k</span>
   
 
   
@@ -3087,7 +3205,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">1:47</span>
+    <span title="Reading time total">2:01</span>
   
 </div>
 

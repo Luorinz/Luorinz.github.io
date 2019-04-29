@@ -256,7 +256,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">16</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">18</span></a>
 
   </li>
         
@@ -294,7 +294,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">20</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">21</span></a>
 
   </li>
 
@@ -368,6 +368,357 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/29/ElasticSearch and GCE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anda Luo">
+      <meta itemprop="description" content="Notes of study, work and life">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anda">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/29/ElasticSearch and GCE/" class="post-title-link" itemprop="url">ElasticSearch and GCE</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-29 02:41:05" itemprop="dateCreated datePublished" datetime="2019-04-29T02:41:05-07:00">2019-04-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-28 19:42:36" itemprop="dateModified" datetime="2019-04-28T19:42:36-07:00">2019-04-28</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">15k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">14 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Introduction-to-Around"><a href="#Introduction-to-Around" class="headerlink" title="Introduction to Around"></a>Introduction to Around</h1><p>Demo: <a href="http://recordit.co/awrQb1zn2I" target="_blank" rel="noopener">http://recordit.co/awrQb1zn2I</a></p>
+<p><code>Around</code>: a Geo-index based social network</p>
+<p>•    Built a scalable web service in Go to handle posts and deployed to Google Cloud (GAE flex) for better scaling</p>
+<p>•    Utilized ElasticSearch (GCE) to provide geo-location based search functions such that users can search nearby posts within a distance (e.g. 200km)</p>
+<p>•    Used Google Dataflow to implement a daily dump of posts to BigQuery table for offline analysis</p>
+<p>•    Aggregated the data at the post level and user level to improve the keyword based spam detection (BigQuery)</p>
+<h1 id="Create-a-new-cloud-project"><a href="#Create-a-new-cloud-project" class="headerlink" title="Create a new cloud project."></a>Create a new cloud project.</h1><p>Step 2.1.1 Open <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">https://console.cloud.google.com/</a> and sign in with your gmail account. </p>
+<p>Choose Sign up for free trial, enter a credit card (Must do). GCP has $300 discount for new users, which is enough for project purpose. </p>
+<p>Step 2.1.2 Click ‘My Project’. Create a new Project called ‘Around’. Google Cloud will automatically generate a new project id for you. </p>
+<h1 id="Geo-Index-and-ElasticSearch"><a href="#Geo-Index-and-ElasticSearch" class="headerlink" title="Geo-Index and ElasticSearch"></a>Geo-Index and ElasticSearch</h1><p>how to perform 1-d range search? For example, given a 1-d binary search tree, find all the values between [3, 18].<br><img src="https://raw.githubusercontent.com/Luorinz/images/master/ElasticSearch%20and%20GCE-2019-4-28-14-47-57.png" alt="ElasticSearch and GCE-2019-4-28-14-47-57.png"></p>
+<p>What about 2d data? </p>
+<ul>
+<li>Geo index: lat between [10.2, 10.3] and lon between [120.0, 120.5]</li>
+<li>Price between [$10, $100], date between [Jan-01-2017, Jun-01-2017]</li>
+<li>Weight between [120pb,140pb], height between [150cm, 180cm]</li>
+<li>…</li>
+</ul>
+<p>K-D tree is one implementation to solve such k-dimensional search problem. </p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/ElasticSearch%20and%20GCE-2019-4-28-14-48-11.png" alt="ElasticSearch and GCE-2019-4-28-14-48-11.png"></p>
+<p>Then we choose one median point and split the space into two parts horizontally. </p>
+<p> <img src="https://raw.githubusercontent.com/Luorinz/images/master/ElasticSearch%20and%20GCE-2019-4-28-14-48-18.png" alt="ElasticSearch and GCE-2019-4-28-14-48-18.png"></p>
+<p>Continue to split them into more parts (vertically)</p>
+<p> <img src="https://raw.githubusercontent.com/Luorinz/images/master/ElasticSearch%20and%20GCE-2019-4-28-14-48-25.png" alt="ElasticSearch and GCE-2019-4-28-14-48-25.png"></p>
+<p>Question: how to find all the points within a Range (R)?</p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/ElasticSearch%20and%20GCE-2019-4-28-14-48-32.png" alt="ElasticSearch and GCE-2019-4-28-14-48-32.png"></p>
+<p>Range Search Algorithm:</p>
+<ul>
+<li>If query box doesn’t overlap bounding box, stop recursion </li>
+<li>If bounding box is a subset of query box, report all the points in current subtree</li>
+<li>If bounding box overlaps query box, recurse left and right</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/ElasticSearch%20and%20GCE-2019-4-28-14-48-40.png" alt="ElasticSearch and GCE-2019-4-28-14-48-40.png"></p>
+<h2 id="ELK-ElasticSearch-Logstash-and-Kibana"><a href="#ELK-ElasticSearch-Logstash-and-Kibana" class="headerlink" title="ELK (ElasticSearch, Logstash and Kibana)"></a>ELK (ElasticSearch, Logstash and Kibana)</h2><p><code>Elasticsearch</code> is an open source, distributed, RESTful search engine. As the heart of the Elastic Stack, it centrally stores your data so you can query the data quickly.</p>
+<blockquote>
+<p>SQL is slower. Since ELK uses a pair to search directly.</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> LOCATIONS <span class="keyword">WHERE</span> lat &lt;= <span class="number">12</span> <span class="keyword">AND</span> lat &gt;= <span class="number">10</span> <span class="keyword">AND</span> lon &gt;= <span class="number">120</span> <span class="keyword">AND</span> lon &lt;= <span class="number">130</span></span><br></pre></td></tr></table></figure>
+<h1 id="Google-Compute-Engine-GCE"><a href="#Google-Compute-Engine-GCE" class="headerlink" title="Google Compute Engine (GCE)"></a>Google Compute Engine (GCE)</h1><h2 id="Cloud-Model"><a href="#Cloud-Model" class="headerlink" title="Cloud Model"></a>Cloud Model</h2><ul>
+<li>IaaS (Infrastructure as a service)</li>
+</ul>
+<p>Offers virtual machines (Xen, KVM, VirtualBox, VMware ESX, etc.). Amazon EC2 and Google Compute Engine belong to IaaS as well. </p>
+<ul>
+<li>PaaS (Platform as a service)</li>
+</ul>
+<p>computing platform including programming language execution environment, database and web server. Develop and run their software solutions on a cloud platform without the cost and complexity of buying and managing hardware and software layers Microsoft Azure, Google App Engine</p>
+<ul>
+<li>SaaS (Software as a service)</li>
+</ul>
+<p>users are provided access to application software and databases.<br>Google Apps, GoToMeeting</p>
+<p>The overall structure (tech stack) of our project:</p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/1.%20Go%20and%20Web%20Service-2019-4-27-13-55-46.png" alt="1. Go and Web Service-2019-4-27-13-55-46.png"></p>
+<p><strong>Question</strong>: why we need such a complicated infrastructure</p>
+<p><strong>Answer</strong>: because in industry, we need to handle very different requirements compared to in school. </p>
+<h2 id="Configure"><a href="#Configure" class="headerlink" title="Configure"></a>Configure</h2><h3 id="Find-NETWORKING-gt-VPC-network-gt-Firewall-rules"><a href="#Find-NETWORKING-gt-VPC-network-gt-Firewall-rules" class="headerlink" title="Find NETWORKING -&gt; VPC network -&gt; Firewall rules"></a>Find NETWORKING -&gt; VPC network -&gt; Firewall rules</h3><p>Click <code>CREATE FIREWALL RULE</code></p>
+<p>In the next page, give it a name like <code>‘elasticsearch’</code>. Set the Target tags to be <code>‘es’</code>, source IP ranges to be <code>‘0.0.0.0/0’</code>, and the specified protocols and ports to be <code>‘tcp:9200’</code>. </p>
+<p>Wait until the firewall rules is created. </p>
+<h3 id="Find-Compute-Engine-gt-VM-instances"><a href="#Find-Compute-Engine-gt-VM-instances" class="headerlink" title="Find Compute Engine-&gt;VM instances"></a>Find Compute Engine-&gt;VM instances</h3><p>Choose ‘Change’ and switch to Ubuntu 16. Keep the size of 10GB is fine. </p>
+<p>Then in the Networking -&gt; Network tags, set it to be <code>‘es’</code> (the firewall rule that we created). </p>
+<h3 id="After-one-minute-you-will-see-the-instance-is-started-Choose-‘SSH’-and-then-‘Open-in-browser-window’"><a href="#After-one-minute-you-will-see-the-instance-is-started-Choose-‘SSH’-and-then-‘Open-in-browser-window’" class="headerlink" title="After one minute, you will see the instance is started. Choose ‘SSH’ and then ‘Open in browser window’."></a>After one minute, you will see the instance is started. Choose <code>‘SSH’</code> and then ‘Open in browser window’.</h3><h3 id="In-the-terminal-enter"><a href="#In-the-terminal-enter" class="headerlink" title="In the terminal, enter"></a>In the terminal, enter</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install default-jre</span><br></pre></td></tr></table></figure>
+<p>It will install java to your vm. To verify, enter <code>‘which java’</code> and <code>‘java -version’</code> to check</p>
+<p>Install ElasticSearch as below </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.1/elasticsearch-2.3.1.deb</span><br><span class="line">sudo dpkg -i elasticsearch-2.3.1.deb</span><br><span class="line">sudo systemctl enable elasticsearch.service</span><br></pre></td></tr></table></figure>
+<p>Edit the configuration file</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/elasticsearch/elasticsearch.yml</span><br></pre></td></tr></table></figure>
+<p>Add two lines to the config, to allow all traffic and listen on port 9200.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">network.host: 0.0.0.0</span><br><span class="line">http.port: 9200</span><br></pre></td></tr></table></figure>
+<p>Save this and Start ElasticSearch</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service elasticsearch start</span><br></pre></td></tr></table></figure>
+<p>Check the status of ElasticSearch<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service elasticsearch status</span><br></pre></td></tr></table></figure></p>
+<p>You should be able to see ‘active’ in the status</p>
+<p>Back to your console.cloud.google.com, find the public IP address(external)</p>
+<p>Put the IP address and port together (:9200) in a new tab and see whether the server is on. The name or version might be different.</p>
+<blockquote>
+<p>NOTE: Don’t use https! Should use http.</p>
+</blockquote>
+<p>You should get something like this:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span> : <span class="string">"Honey Lemon"</span>,</span><br><span class="line">  <span class="attr">"cluster_name"</span> : <span class="string">"elasticsearch"</span>,</span><br><span class="line">  <span class="attr">"version"</span> : &#123;</span><br><span class="line">    <span class="attr">"number"</span> : <span class="string">"2.3.1"</span>,</span><br><span class="line">    <span class="attr">"build_hash"</span> : <span class="string">"bd980929010aef404e7cb0843e61d0665269fc39"</span>,</span><br><span class="line">    <span class="attr">"build_timestamp"</span> : <span class="string">"2016-04-04T12:25:05Z"</span>,</span><br><span class="line">    <span class="attr">"build_snapshot"</span> : <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"lucene_version"</span> : <span class="string">"5.5.0"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"tagline"</span> : <span class="string">"You Know, for Search"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Which means your ES server is running as expected. </p>
+<h2 id="Update-Go-Code"><a href="#Update-Go-Code" class="headerlink" title="Update Go Code"></a>Update Go Code</h2><h3 id="Update-handlerSearch"><a href="#Update-handlerSearch" class="headerlink" title="Update handlerSearch"></a>Update handlerSearch</h3><p>Original source of codes (<a href="https://olivere.github.io/elastic/" target="_blank" rel="noopener">https://olivere.github.io/elastic/</a>)  </p>
+<blockquote>
+<p>In here we have to import source code of elastic.(v3)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">To get the package, execute:</span><br><span class="line"></span><br><span class="line">go get gopkg.in/olivere/elastic.v3</span><br><span class="line"></span><br><span class="line">To import this package, add the following line to your code:</span><br><span class="line"></span><br><span class="line">import &quot;gopkg.in/olivere/elastic.v3&quot;</span><br><span class="line"></span><br><span class="line">Refer to it as elastic.</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">handlerSearch</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">"Received one request for search"</span>)</span><br><span class="line">      lat, _ := strconv.ParseFloat(r.URL.Query().Get(<span class="string">"lat"</span>), <span class="number">64</span>)</span><br><span class="line">      lon, _ := strconv.ParseFloat(r.URL.Query().Get(<span class="string">"lon"</span>), <span class="number">64</span>)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// range is optional </span></span><br><span class="line">      ran := DISTANCE </span><br><span class="line">      <span class="keyword">if</span> val := r.URL.Query().Get(<span class="string">"range"</span>); val != <span class="string">""</span> &#123; </span><br><span class="line">         ran = val + <span class="string">"km"</span> </span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">     fmt.Printf( <span class="string">"Search received: %f %f %s\n"</span>, lat, lon, ran)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Create a client</span></span><br><span class="line">      client, err := elastic.NewClient(elastic.SetURL(ES_URL), elastic.SetSniff(<span class="literal">false</span>))</span><br><span class="line">      <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">             <span class="built_in">panic</span>(err)</span><br><span class="line">             <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Define geo distance query as specified in</span></span><br><span class="line">      <span class="comment">// https://www.elastic.co/guide/en/elasticsearch/reference/5.2/query-dsl-geo-distance-query.html</span></span><br><span class="line">      q := elastic.NewGeoDistanceQuery(<span class="string">"location"</span>)</span><br><span class="line">      q = q.Distance(ran).Lat(lat).Lon(lon)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Some delay may range from seconds to minutes. So if you don't get enough results. Try it later.</span></span><br><span class="line">      searchResult, err := client.Search().</span><br><span class="line">             Index(INDEX).</span><br><span class="line">             Query(q).</span><br><span class="line">             Pretty(<span class="literal">true</span>).</span><br><span class="line">             Do()</span><br><span class="line">      <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">             <span class="comment">// Handle error</span></span><br><span class="line">             <span class="built_in">panic</span>(err)</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// searchResult is of type SearchResult and returns hits, suggestions,</span></span><br><span class="line">      <span class="comment">// and all kinds of other information from Elasticsearch.</span></span><br><span class="line">      fmt.Printf(<span class="string">"Query took %d milliseconds\n"</span>, searchResult.TookInMillis)</span><br><span class="line">      <span class="comment">// TotalHits is another convenience function that works even when something goes wrong.</span></span><br><span class="line">      fmt.Printf(<span class="string">"Found a total of %d post\n"</span>, searchResult.TotalHits())</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Each is a convenience function that iterates over hits in a search result.</span></span><br><span class="line">      <span class="comment">// It makes sure you don't need to check for nil values in the response.</span></span><br><span class="line">      <span class="comment">// However, it ignores errors in serialization.</span></span><br><span class="line">      <span class="keyword">var</span> typ Post</span><br><span class="line">      <span class="keyword">var</span> ps []Post</span><br><span class="line">      <span class="keyword">for</span> _, item := <span class="keyword">range</span> searchResult.Each(reflect.TypeOf(typ)) &#123; <span class="comment">// instance of</span></span><br><span class="line">             p := item.(Post) <span class="comment">// p = (Post) item</span></span><br><span class="line">             fmt.Printf(<span class="string">"Post by %s: %s at lat %v and lon %v\n"</span>, p.User, p.Message, p.Location.Lat, p.Location.Lon)</span><br><span class="line">             <span class="comment">// TODO(student homework): Perform filtering based on keywords such as web spam etc.</span></span><br><span class="line">             ps = <span class="built_in">append</span>(ps, p)</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">      js, err := json.Marshal(ps)</span><br><span class="line">      <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">             <span class="built_in">panic</span>(err)</span><br><span class="line">             <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      w.Header().Set(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>)</span><br><span class="line">      w.Header().Set(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>)</span><br><span class="line">      w.Write(js)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Code-explanation"><a href="#Code-explanation" class="headerlink" title="Code explanation"></a>Code explanation</h2><p>Let’s explain these codes line by line<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client, err := elastic.NewClient(elastic.SetURL(ES_URL), elastic.SetSniff(<span class="literal">false</span>))</span><br></pre></td></tr></table></figure></p>
+<p>It means we create a connection to ES. If there is err, return. </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">q := elastic.NewGeoDistanceQuery(<span class="string">"location"</span>)</span><br></pre></td></tr></table></figure>
+<p>Prepare a geo based query to find posts within a geo box.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">searchResult, err := client.Search().</span><br><span class="line">             Index(INDEX).</span><br><span class="line">             Query(q).</span><br><span class="line">             Pretty(<span class="literal">true</span>).</span><br><span class="line">             Do()</span><br></pre></td></tr></table></figure>
+<p>Get the results based on <code>Index</code> (similar to <code>dataset</code>) and <code>query</code> (<code>q</code> that we just prepared). <code>Pretty</code> means to format the output. </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> _, item := <span class="keyword">range</span> searchResult.Each(reflect.TypeOf(typ)) &#123;</span><br></pre></td></tr></table></figure>
+<p>Iterate the result in results which are type of Post (typ)</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p := item.(Post)</span><br></pre></td></tr></table></figure>
+<p>Cast an item to Post, equals to <code>p = (Post) item</code>  in java</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps = <span class="built_in">append</span>(ps, p)</span><br></pre></td></tr></table></figure>
+<p>Add the p to an array, equals <code>ps.add(p)</code> in java</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">js, err := json.Marshal(ps)</span><br></pre></td></tr></table></figure>
+<p>Convert the go object(array) to a string<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">w.Header().Set(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>Allow cross domain visit for javascript.</p>
+<p>We also need to put ES library in import<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">      elastic <span class="string">"gopkg.in/olivere/elastic.v3"</span></span><br><span class="line">      <span class="string">"fmt"</span></span><br><span class="line">      <span class="string">"net/http"</span></span><br><span class="line">      <span class="string">"encoding/json"</span></span><br><span class="line">      <span class="string">"log"</span></span><br><span class="line">      <span class="string">"strconv"</span></span><br><span class="line">      <span class="string">"reflect"</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>Add const before main function</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">      INDEX = <span class="string">"around"</span></span><br><span class="line">      TYPE = <span class="string">"post"</span></span><br><span class="line">      DISTANCE = <span class="string">"200km"</span></span><br><span class="line">      <span class="comment">// Needs to update</span></span><br><span class="line">      <span class="comment">//PROJECT_ID = "around-xxx"</span></span><br><span class="line">      <span class="comment">//BT_INSTANCE = "around-post"</span></span><br><span class="line">      <span class="comment">// Needs to update this URL if you deploy it to cloud.</span></span><br><span class="line">      ES_URL = <span class="string">"http://YOUR_ES_IP_ADDRESS:9200"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">"started-service"</span>)</span><br><span class="line">      http.HandleFunc(<span class="string">"/post"</span>, handlerPost)</span><br><span class="line">      http.HandleFunc(<span class="string">"/search"</span>, handlerSearch)</span><br><span class="line">      log.Fatal(http.ListenAndServe(<span class="string">":8080"</span>, <span class="literal">nil</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Replace <code>YOUR_ES_IP_ADDRESS</code> with your ES address (public IP).</p>
+<blockquote>
+<p><a href="http://externalIp:9200" target="_blank" rel="noopener">http://externalIp:9200</a></p>
+</blockquote>
+<p>Step 2.2.5 Open your terminal (Mac and Windows). Enter</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get  gopkg.in/olivere/elastic.v3</span><br></pre></td></tr></table></figure>
+<p>Once it is done, you won’t be able to see any more compile errors in Intellij. If it does not work (elastic is still red), try to restart it. </p>
+<p>More readings</p>
+<ul>
+<li>Reflect type <a href="https://golang.org/pkg/reflect/" target="_blank" rel="noopener">https://golang.org/pkg/reflect/</a> </li>
+<li>ES in Go <a href="https://github.com/olivere/elastic" target="_blank" rel="noopener">https://github.com/olivere/elastic</a> </li>
+</ul>
+<p>Step 2.2.6 In order to create index in ES, we need to update main</p>
+<p><strong>What’s mapping in ES?</strong> It tells you what’s the type of a variable if not default.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">// Create a client</span></span><br><span class="line">	client, err := elastic.NewClient(elastic.SetURL(ES_URL), elastic.SetSniff(<span class="literal">false</span>))</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(err)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Use the IndexExists service to check if a specified index exists.</span></span><br><span class="line">	exists, err := client.IndexExists(INDEX).Do()</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(err)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> !exists &#123;</span><br><span class="line">		<span class="comment">// Create a new index.</span></span><br><span class="line">		mapping := <span class="string">`&#123;</span></span><br><span class="line"><span class="string">			"mappings":&#123;</span></span><br><span class="line"><span class="string">				"post":&#123;</span></span><br><span class="line"><span class="string">					"properties":&#123;</span></span><br><span class="line"><span class="string">						"location":&#123;</span></span><br><span class="line"><span class="string">							"type":"geo_point"</span></span><br><span class="line"><span class="string">						&#125;</span></span><br><span class="line"><span class="string">					&#125;</span></span><br><span class="line"><span class="string">				&#125;</span></span><br><span class="line"><span class="string">			&#125;</span></span><br><span class="line"><span class="string">		&#125;`</span></span><br><span class="line">		_, err := client.CreateIndex(INDEX).Body(mapping).Do()</span><br><span class="line">		<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">			<span class="comment">// Handle error</span></span><br><span class="line">			<span class="built_in">panic</span>(err)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Println(<span class="string">"started-service"</span>)</span><br><span class="line">	http.HandleFunc(<span class="string">"/post"</span>, handlerPost)</span><br><span class="line">	http.HandleFunc(<span class="string">"/search"</span>, handlerSearch)</span><br><span class="line">	log.Fatal(http.ListenAndServe(<span class="string">":8080"</span>, <span class="literal">nil</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exists, err := client.IndexExists(INDEX).Do()</span><br></pre></td></tr></table></figure>
+<p>Check if the index exists. </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mapping := <span class="string">`&#123;</span></span><br><span class="line"><span class="string">                    "mappings":&#123;</span></span><br><span class="line"><span class="string">                           "post":&#123;</span></span><br><span class="line"><span class="string">                                  "properties":&#123;</span></span><br><span class="line"><span class="string">                                         "location":&#123;</span></span><br><span class="line"><span class="string">                                                "type":"geo_point"</span></span><br><span class="line"><span class="string">                                         &#125;</span></span><br><span class="line"><span class="string">                                  &#125;</span></span><br><span class="line"><span class="string">                           &#125;</span></span><br><span class="line"><span class="string">                    &#125;</span></span><br></pre></td></tr></table></figure>
+<p>If not, create a new mapping. For other fields (user, message, etc.) no need to have mapping as they are default. For geo location (lat, lon), we need to tell ES that they are geo points instead of two float points such that ES will use Geo-indexing for them (K-D tree)</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_, err := client.CreateIndex(INDEX).Body(mapping).Do()</span><br></pre></td></tr></table></figure>
+<p>Create this index</p>
+<p>More readings</p>
+<ul>
+<li>ES in Go <a href="https://github.com/olivere/elastic" target="_blank" rel="noopener">https://github.com/olivere/elastic</a> </li>
+<li>Mapping in ES <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html</a> </li>
+</ul>
+<p>Step 2.2.7 Update handlerPost</p>
+<p>Add external import of uuid</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">      elastic <span class="string">"gopkg.in/olivere/elastic.v3"</span></span><br><span class="line">      <span class="string">"fmt"</span></span><br><span class="line">      <span class="string">"net/http"</span></span><br><span class="line">      <span class="string">"encoding/json"</span></span><br><span class="line">      <span class="string">"log"</span></span><br><span class="line">      <span class="string">"strconv"</span></span><br><span class="line">      <span class="string">"reflect"</span></span><br><span class="line">      <span class="string">"github.com/pborman/uuid"</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>How to add a new document to the index?</p>
+<p><a href="https://github.com/olivere/elastic" target="_blank" rel="noopener">https://github.com/olivere/elastic</a> has an example</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Add a document to the index</span></span><br><span class="line"><span class="comment">// Refresh(true) means if duplicate appears, overwrite it</span></span><br><span class="line">tweet := Tweet&#123;User: <span class="string">"olivere"</span>, Message: <span class="string">"Take Five"</span>&#125;</span><br><span class="line">_, err = client.Index().</span><br><span class="line">    Index(<span class="string">"twitter"</span>).</span><br><span class="line">    Type(<span class="string">"tweet"</span>).</span><br><span class="line">    Id(<span class="string">"1"</span>).</span><br><span class="line">    BodyJson(tweet).</span><br><span class="line">    Refresh(<span class="literal">true</span>).</span><br><span class="line">    Do(ctx)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="comment">// Handle error</span></span><br><span class="line">    <span class="built_in">panic</span>(err)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Student Question: how to complete this one?</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">handlerPost</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">      <span class="comment">// Parse from body of request to get a json object.</span></span><br><span class="line">      fmt.Println(<span class="string">"Received one post request"</span>)</span><br><span class="line">      decoder := json.NewDecoder(r.Body)</span><br><span class="line">      <span class="keyword">var</span> p Post</span><br><span class="line">      <span class="keyword">if</span> err := decoder.Decode(&amp;p); err != <span class="literal">nil</span> &#123;</span><br><span class="line">             <span class="built_in">panic</span>(err)</span><br><span class="line">             <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line">      id := uuid.New()</span><br><span class="line">      <span class="comment">// Save to ES.</span></span><br><span class="line">      saveToES(&amp;p, id)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Save a post to ElasticSearch</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">saveToES</span><span class="params">(p *Post, id <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">	<span class="comment">// Create a client</span></span><br><span class="line">	es_client, err := elastic.NewClient(elastic.SetURL(ES_URL), elastic.SetSniff(<span class="literal">false</span>))</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(err)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Save it to index</span></span><br><span class="line">	_, err = es_client.Index().</span><br><span class="line">		Index(INDEX).</span><br><span class="line">		Type(TYPE).</span><br><span class="line">		Id(id).</span><br><span class="line">		BodyJson(p).</span><br><span class="line">		Refresh(<span class="literal">true</span>).</span><br><span class="line">		Do()</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(err)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Printf(<span class="string">"Post is saved to Index: %s\n"</span>, p.Message)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Step 2.2.8 Open terminal, enter</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get github.com/pborman/uuid</span><br></pre></td></tr></table></figure>
+<p>Make sure your ES_URL is updated from your aws instance in step 1.</p>
+<p>Step 2.2.9 Run your main.go again</p>
+<h2 id="Errors"><a href="#Errors" class="headerlink" title="Errors"></a>Errors</h2><p>If you have such an error, your ES_URL is incorrect.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">panic: no Elasticsearch node available</span><br></pre></td></tr></table></figure>
+<p>If you have such error, you have started two <code>main.go</code>, stop the other one.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2017/06/30 07:07:01 listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.</span><br><span class="line">exit status 1</span><br></pre></td></tr></table></figure>
+<p>If you have such error, you forgot to comment one line <code>fmt.Fprintf(w, &quot;Search received: %s %s %s&quot;, lat, lon, ran)</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Search received: %!s(float64=37.4) %...</span><br></pre></td></tr></table></figure>
+<p>Step 2.2.10 Open Postman, find the post query from history. (POST, <a href="http://localhost:8080/post" target="_blank" rel="noopener">http://localhost:8080/post</a>)</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"user"</span>:<span class="string">"1111"</span>,</span><br><span class="line">	<span class="attr">"message"</span>:<span class="string">"一生必去的100个地方"</span>,</span><br><span class="line">	<span class="attr">"location"</span>:&#123;</span><br><span class="line">		<span class="attr">"lat"</span>:<span class="number">37.5</span>,</span><br><span class="line">		<span class="attr">"lon"</span>:<span class="number">-120.1</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>And then find the get query from history. (GET, url=<a href="http://localhost:8080/search?lat=37.5&amp;lon=-120" target="_blank" rel="noopener">http://localhost:8080/search?lat=37.5&amp;lon=-120</a>)<br>You should get the results back</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">"user"</span>: <span class="string">"1111"</span>,</span><br><span class="line">        <span class="attr">"message"</span>: <span class="string">"一生必去的100个地方"</span>,</span><br><span class="line">        <span class="attr">"location"</span>: &#123;</span><br><span class="line">            <span class="attr">"lat"</span>: <span class="number">37.5</span>,</span><br><span class="line">            <span class="attr">"lon"</span>: <span class="number">-120.1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>Post more examples with different locations and then get with different lat/lon to see how many results you may get. If you have zero result back and no error, probably your geo location is wrong.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2908,333 +3259,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/[Notes] CSS Basic 2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Anda Luo">
-      <meta itemprop="description" content="Notes of study, work and life">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Anda">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/13/[Notes] CSS Basic 2/" class="post-title-link" itemprop="url">[Notes] CSS Basic 2</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-13 04:22:37" itemprop="dateCreated datePublished" datetime="2019-04-13T04:22:37-07:00">2019-04-13</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-12 21:23:57" itemprop="dateModified" datetime="2019-04-12T21:23:57-07:00">2019-04-12</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">5k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">5 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Box-Model"><a href="#Box-Model" class="headerlink" title="Box Model"></a>Box Model</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
-<li>The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content. </li>
-</ul>
-<h2 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h2><ul>
-<li>Content - The content of the box, where text and images appear</li>
-<li>Padding - Clears an area around the content. The padding is transparent</li>
-<li>Border - A border that goes around the padding and content</li>
-<li>Margin - Clears an area outside the border. The margin is transparent</li>
-<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-18-45-25.png" alt="7. CSS Basic 2-2019-4-12-18-45-25.png"></li>
-</ul>
-<blockquote>
-<p>Every element on a page is a rectangular box.</p>
-</blockquote>
-<h2 id="Types-of-box-model"><a href="#Types-of-box-model" class="headerlink" title="Types of box model"></a>Types of box model</h2><p>There are actually two types of box model, one is W3C standard, the other is IE model. Basically they all calculate the element width and height based on the content width, content height, padding and border, but their formula are different:</p>
-<ol>
-<li><p>W3C standard</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">outer box (element space size)</span><br><span class="line">Element space width = content width + padding + border + margin</span><br><span class="line">Element space height = content height + padding + border + margin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">inner box (element size)</span><br><span class="line">Element width = content width + padding + border</span><br><span class="line">Element height = content height + padding + border</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>IE box model</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">outer box (element space size)</span><br><span class="line">Element space width = content width + margin </span><br><span class="line">Element space height = content height + margin</span><br><span class="line">(content width including padding and border)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ul>
-<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-19-6-37.png" alt="7. CSS Basic 2-2019-4-12-19-6-37.png"></li>
-<li>In order to make sure we apply the same box model to all browsers, CSS3 provides us with the new box-sizing property: <code>box-sizing: content-box || border-box || inherit</code></li>
-</ul>
-<h2 id="Margin-Collapsing"><a href="#Margin-Collapsing" class="headerlink" title="Margin Collapsing"></a>Margin Collapsing</h2><ul>
-<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-19-35-16.png" alt="7. CSS Basic 2-2019-4-12-19-35-16.png"></li>
-<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-19-35-26.png" alt="7. CSS Basic 2-2019-4-12-19-35-26.png"></li>
-</ul>
-<h1 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h1><ul>
-<li>Definition: the “display” property</li>
-</ul>
-<h2 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h2><ul>
-<li>A block-level element starts on a new line and stretches out to the left and right as far as it can.</li>
-</ul>
-<h2 id="Inline"><a href="#Inline" class="headerlink" title="Inline"></a>Inline</h2><ul>
-<li>An inline element can wrap some text inside a paragraph without disrupting the flow of that paragraph.</li>
-</ul>
-<h2 id="center-element"><a href="#center-element" class="headerlink" title="center element"></a>center element</h2><ul>
-<li>margin: 0 auto; Centers the block elements to the center of the container.</li>
-<li>text-align: center; Centers the text content.</li>
-<li>display:flex; justify-content: center; Centers the items in a flex box horizontally.</li>
-<li>display:flex; align-items: center; Centers the items in a flex box vertically.</li>
-</ul>
-<h1 id="Floating"><a href="#Floating" class="headerlink" title="Floating"></a>Floating</h1><h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><ul>
-<li><p>The float CSS property specifies that an element should be placed along the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the web page, though still remaining a part of the flow.</p>
-</li>
-<li><p>How floated elements are positioned: when an element is floated, it is taken out of the normal flow of the document (though still remaining part of it). It is shifted to the left, or right, until it touches the edge of its containing box, or another floated element.</p>
-</li>
-</ul>
-<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><ul>
-<li><p><code>float: none|left|right|initial|inherit;</code></p>
-</li>
-<li><p>The float property can have one of the following values:</p>
-<ul>
-<li>left - The element floats to the left of its container</li>
-<li>right- The element floats to the right of its container</li>
-<li>none - The element does not float (will be displayed just where it occurs in the text). This is default</li>
-<li>inherit - The element inherits the float value of its parent</li>
-</ul>
-</li>
-</ul>
-<h2 id="Important-Facts"><a href="#Important-Facts" class="headerlink" title="Important Facts"></a>Important Facts</h2><ol>
-<li><p>float first</p>
-<ul>
-<li><p>When a container has multiple elements, some of them are floating, some of them are not, remember to put all the floating elements in front of the non-floating ones! Browsers try to figure out the spacing for those floating ones first.</p>
-</li>
-<li><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-20-18-51.png" alt="7. CSS Basic 2-2019-4-12-20-18-51.png"></p>
-</li>
-</ul>
-</li>
-<li><p>clear</p>
-<ul>
-<li>The clear property specifies on which sides of an element the floating elements are not allowed to float.</li>
-<li><code>.clear { clear: both; /* it can be left|right|both */ }</code></li>
-</ul>
-</li>
-<li><p>inline-block</p>
-<ul>
-<li><p>Floating works great, but as you see we need to apply the .clear to clear out the floating even for a block element. There is another way to achieve the floating effect, that is to use inline-block display.</p>
-</li>
-<li><p>similar to inline, inline-block allows multiple elements to layout on the same line, the beauty of it is that elements can automatically wrap around if the wrapper container is too small, and if you add a block element right after an inline-block element, we don’t need to use the ugly .clear fix.</p>
-</li>
-<li><p>可实现左右排版</p>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="Position"><a href="#Position" class="headerlink" title="Position"></a>Position</h1><h2 id="static-default"><a href="#static-default" class="headerlink" title="static (default)"></a>static (default)</h2><ul>
-<li>Default value, means the element is not positioned! A static element is said to be not positioned and an element with its position set to anything else is said to be positioned.</li>
-</ul>
-<h2 id="relative"><a href="#relative" class="headerlink" title="relative"></a>relative</h2><ul>
-<li>The top, right, bottom and left properties of a relatively-positioned element will cause it to be adjusted away from its original position. Other content will not be adjusted to fit into any gap left by the element.</li>
-<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-20-47-22.png" alt="7. CSS Basic 2-2019-4-12-20-47-22.png"></li>
-</ul>
-<h2 id="absolute"><a href="#absolute" class="headerlink" title="absolute"></a>absolute</h2><ul>
-<li>The top, right, bottom and left properties of an absolute-positioned element will cause it to be positioned relatively to the nearest positioned ancestor.</li>
-<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-20-48-9.png" alt="7. CSS Basic 2-2019-4-12-20-48-9.png"></li>
-</ul>
-<h2 id="fixed"><a href="#fixed" class="headerlink" title="fixed"></a>fixed</h2><ul>
-<li>A fixed element is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. </li>
-</ul>
-<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
-<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-20-53-11.png" alt="7. CSS Basic 2-2019-4-12-20-53-11.png"></li>
-<li><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-20-53-25.png" alt="7. CSS Basic 2-2019-4-12-20-53-25.png"></li>
-<li><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-20-53-36.png" alt="7. CSS Basic 2-2019-4-12-20-53-36.png"></p>
-</li>
-<li><p>Trick: 子容器绝对定位（相对于父容器）， 父容器相对定位。</p>
-</li>
-</ul>
-<h1 id="Z-index"><a href="#Z-index" class="headerlink" title="Z-index"></a>Z-index</h1><h2 id="Definition-1"><a href="#Definition-1" class="headerlink" title="Definition"></a>Definition</h2><ul>
-<li><p>The z-index property specifies the stack order of an element.</p>
-</li>
-<li><p>An element with greater stack order is always in front of an element with a lower stack order.</p>
-</li>
-<li>Note: z-index only works on positioned elements (position:absolute, position:relative, or position:fixed).</li>
-<li><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/7.%20CSS%20Basic%202-2019-4-12-21-21-49.png" alt="7. CSS Basic 2-2019-4-12-21-21-49.png"></p>
-</li>
-<li><p>Code <a href="http://jsbin.com/rafomem/20/edit?html,css,output" target="_blank" rel="noopener">http://jsbin.com/rafomem/20/edit?html,css,output</a></p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -3276,7 +3305,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -3346,7 +3375,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -3428,7 +3461,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">117k</span>
+    <span title="Symbols count total">133k</span>
   
 
   
@@ -3437,7 +3470,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">1:47</span>
+    <span title="Reading time total">2:01</span>
   
 </div>
 
