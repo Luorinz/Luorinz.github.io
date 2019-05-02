@@ -294,7 +294,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">23</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">24</span></a>
 
   </li>
 
@@ -368,6 +368,342 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/02/Authentication/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anda Luo">
+      <meta itemprop="description" content="Notes of study, work and life">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anda">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/02/Authentication/" class="post-title-link" itemprop="url">Authentication</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-02 00:22:08" itemprop="dateCreated datePublished" datetime="2019-05-02T00:22:08-07:00">2019-05-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-01 17:24:59" itemprop="dateModified" datetime="2019-05-01T17:24:59-07:00">2019-05-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">15k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">14 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Credential-based-Authentication"><a href="#Credential-based-Authentication" class="headerlink" title="Credential based Authentication"></a>Credential based Authentication</h1><h1 id="Login-each-time-when-you-need-to-operate-something"><a href="#Login-each-time-when-you-need-to-operate-something" class="headerlink" title="Login each time when you need to operate something"></a>Login each time when you need to operate something</h1><h1 id="Cookie-Based-Authentication"><a href="#Cookie-Based-Authentication" class="headerlink" title="Cookie Based Authentication"></a>Cookie Based Authentication</h1><ul>
+<li>The traditional approach of authentication</li>
+<li>Stateful. This means that an authentication record or session must be kept both server and client-side. The server needs to keep track of active sessions in a database (memory/local store), while on the front-end a cookie is created that holds a session identifier, thus the name cookie based authentication. </li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/5.%20Authentication%20(Sign-in%2C%20Sign-up" alt="5. Authentication (Sign-in, Sign-up)-2019-4-30-15-20-48.png">-2019-4-30-15-20-48.png)</p>
+<ol>
+<li>User enters their login credentials</li>
+<li>Server verifies the credentials are correct and creates a session which is then stored in a database</li>
+<li>A cookie with the session ID is placed in the users browser</li>
+<li>On subsequent requests, the session ID is verified against the database and if valid the request processed</li>
+<li>Once a user logs out of the app, the session is destroyed both client and server side</li>
+</ol>
+<p>Question: what’s the problem of this method?</p>
+<p>Imagine when you need to replace your ID?</p>
+<ol>
+<li>Go to government, apply for a temporary ID.</li>
+<li>It may take them 1 months to send you a new ID.</li>
+<li>During this period, you may use your temporary ID for some purposes. </li>
+</ol>
+<h1 id="Token-Based-Authentication"><a href="#Token-Based-Authentication" class="headerlink" title="Token-Based Authentication"></a>Token-Based Authentication</h1><ul>
+<li>More and more popular (Yelp API, etc.)</li>
+<li>Usually JSON Web Tokens (JWTs).</li>
+</ul>
+<h2 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works"></a>How it works</h2><ul>
+<li>User enters their login credentials (=username + password)</li>
+<li>Server verifies the credentials are correct and returns an encrypted and signed token with a private key. <ul>
+<li>Text: (JSON = {username: “abcd”, uuid=”1.2.3.4”}, private key) =&gt; token</li>
+<li>Code: abccdeedddee</li>
+<li>Decode: JSON = {username: “abcd”,  uuid=”1.2.3.4”}</li>
+<li>Symmetric vs Asymmetric encryption.</li>
+<li>This token is stored client-side, most commonly in local storage - but can be stored in session storage or a cookie as well</li>
+</ul>
+</li>
+<li>Subsequent requests to the server include this token as an additional Authorization header or through one of the other methods mentioned above</li>
+<li>The server decodes the JWT and if the token is valid processes the request</li>
+<li>Once a user logs out, the token is destroyed client-side, no interaction with the server is necessary</li>
+</ul>
+<p>Encryption using asymmetric keys.</p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/5.%20Authentication%20(Sign-in%2C%20Sign-up" alt="5. Authentication (Sign-in, Sign-up)-2019-4-30-16-13-48.png">-2019-4-30-16-13-48.png)</p>
+<p>Sign using asymmetric keys:</p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/5.%20Authentication%20(Sign-in%2C%20Sign-up" alt="5. Authentication (Sign-in, Sign-up)-2019-4-30-16-16-4.png">-2019-4-30-16-16-4.png)</p>
+<p>More reading (symmetric vs asymmetric encryption):<br><a href="https://www.ssl2buy.com/wiki/symmetric-vs-asymmetric-encryption-what-are-differences" target="_blank" rel="noopener">https://www.ssl2buy.com/wiki/symmetric-vs-asymmetric-encryption-what-are-differences</a></p>
+<h2 id="Advantages-of-Token-Based-Authentication"><a href="#Advantages-of-Token-Based-Authentication" class="headerlink" title="Advantages of Token-Based Authentication"></a>Advantages of Token-Based Authentication</h2><h3 id="Stateless-Scalable-and-Decoupled"><a href="#Stateless-Scalable-and-Decoupled" class="headerlink" title="Stateless, Scalable and Decoupled"></a>Stateless, Scalable and Decoupled</h3><ul>
+<li>Stateless: The back-end does not need to keep a record of tokens. </li>
+<li>Self-contained, containing all the data required to check its validity..</li>
+<li>No DB look up is needed. </li>
+</ul>
+<h3 id="Store-Data-in-the-JWT"><a href="#Store-Data-in-the-JWT" class="headerlink" title="Store Data in the JWT"></a>Store Data in the JWT</h3><ul>
+<li>With a cookie based approach, you simply store the session id in a cookie. </li>
+<li>JWT’s on the other hand allow you to store any type of metadata, as long as it’s valid JSON. (username in our project, for example)</li>
+</ul>
+<h3 id="Mobile-Friendly"><a href="#Mobile-Friendly" class="headerlink" title="Mobile Friendly"></a>Mobile Friendly</h3><ul>
+<li>Native mobile platforms and cookies do not mix well. </li>
+<li>In our project, the same Go backend will serve traffic to both iOS and browser (React JS)<h2 id="Disadvantages-of-Token-Based-Authentication"><a href="#Disadvantages-of-Token-Based-Authentication" class="headerlink" title="Disadvantages of Token-Based Authentication"></a>Disadvantages of Token-Based Authentication</h2></li>
+<li>Usually the size of token is larger than a session id.</li>
+</ul>
+<h1 id="Auth0-and-Golang"><a href="#Auth0-and-Golang" class="headerlink" title="Auth0 and Golang"></a>Auth0 and Golang</h1><p>Source of codes: <a href="https://auth0.com/blog/authentication-in-golang/" target="_blank" rel="noopener">https://auth0.com/blog/authentication-in-golang/</a> </p>
+<p><code>JWT</code> = <code>JSON Web Toolkit</code></p>
+<h3 id="use-jwt-to-protect-post-and-search-endpoints-reject-if-without-auth-token"><a href="#use-jwt-to-protect-post-and-search-endpoints-reject-if-without-auth-token" class="headerlink" title="use jwt to protect post and search endpoints (reject if without auth token)"></a>use jwt to protect post and search endpoints (reject if without auth token)</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">      <span class="comment">// new libs</span></span><br><span class="line">      <span class="string">"github.com/auth0/go-jwt-middleware"</span></span><br><span class="line">      <span class="string">"github.com/dgrijalva/jwt-go"</span></span><br><span class="line">      <span class="string">"github.com/gorilla/mux"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Other codes</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> mySigningKey = []<span class="keyword">byte</span>(<span class="string">"secret"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">      <span class="comment">// Create a client</span></span><br><span class="line">      client, err := elastic.NewClient(elastic.SetURL(ES_URL), elastic.SetSniff(<span class="literal">false</span>))</span><br><span class="line">     ….      </span><br><span class="line">      fmt.Println(<span class="string">"Started service successfully"</span>)</span><br><span class="line">      <span class="comment">// Here we are instantiating the gorilla/mux router</span></span><br><span class="line">      r := mux.NewRouter()</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> jwtMiddleware = jwtmiddleware.New(jwtmiddleware.Options&#123;</span><br><span class="line">             ValidationKeyGetter: <span class="function"><span class="keyword">func</span><span class="params">(token *jwt.Token)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span></span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> mySigningKey, <span class="literal">nil</span></span><br><span class="line">             &#125;,</span><br><span class="line">             SigningMethod: jwt.SigningMethodHS256,</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">      r.Handle(<span class="string">"/post"</span>, jwtMiddleware.Handler(http.HandlerFunc(handlerPost))).Methods(<span class="string">"POST"</span>)</span><br><span class="line">      r.Handle(<span class="string">"/search"</span>, jwtMiddleware.Handler(http.HandlerFunc(handlerSearch))).Methods(<span class="string">"GET"</span>)</span><br><span class="line">      r.Handle(<span class="string">"/login"</span>, http.HandlerFunc(loginHandler)).Methods(<span class="string">"POST"</span>)</span><br><span class="line">      r.Handle(<span class="string">"/signup"</span>, http.HandlerFunc(signupHandler)).Methods(<span class="string">"POST"</span>)</span><br><span class="line"></span><br><span class="line">      http.Handle(<span class="string">"/"</span>, r)</span><br><span class="line">      log.Fatal(http.ListenAndServe(<span class="string">":8080"</span>, <span class="literal">nil</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Let’s explain these codes line by line</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r := mux.NewRouter()</span><br></pre></td></tr></table></figure>
+<p>Create a new router on top of the existing http router as we need to check auth.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jwtMiddleware = jwtmiddleware.New(jwtmiddleware.Options&#123;</span><br><span class="line">             ValidationKeyGetter: <span class="function"><span class="keyword">func</span><span class="params">(token *jwt.Token)</span> <span class="params">(<span class="keyword">interface</span>&#123;&#125;, error)</span></span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> mySigningKey, <span class="literal">nil</span></span><br><span class="line">             &#125;,</span><br><span class="line">             SigningMethod: jwt.SigningMethodHS256,</span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure>
+<p>Create a new JWT middleware with a Option that uses the key ‘mySigningKey’ such that we know this token is from our server. The signing method is the default HS256 algorithm such that data is encrypted.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r.Handle(<span class="string">"/post"</span>, jwtMiddleware.Handler(http.HandlerFunc(handlerPost))).Methods(<span class="string">"POST"</span>)</span><br></pre></td></tr></table></figure>
+<p>It means we use jwt middleware to manage these endpoints and if they don’t have valid token, we will reject them.</p>
+<blockquote>
+<p>First handle the jwt, then chandle the normal http request</p>
+</blockquote>
+<p>Question: if we reject it, what HttpResponse code we should return?<br><a href="https://golang.org/src/net/http/status.go" target="_blank" rel="noopener">https://golang.org/src/net/http/status.go</a></p>
+<h3 id="Install-new-packages"><a href="#Install-new-packages" class="headerlink" title="Install new packages"></a>Install new packages</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">go get &quot;github.com/auth0/go-jwt-middleware&quot;</span><br><span class="line">go get &quot;github.com/dgrijalva/jwt-go&quot;</span><br><span class="line">go get &quot;github.com/gorilla/mux&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="Under-the-same-folder-add-a-new-file-called-user-go"><a href="#Under-the-same-folder-add-a-new-file-called-user-go" class="headerlink" title="Under the same folder, add a new file called user.go"></a>Under the same folder, add a new file called user.go</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">      elastic <span class="string">"gopkg.in/olivere/elastic.v3"</span></span><br><span class="line"></span><br><span class="line">      <span class="string">"encoding/json"</span></span><br><span class="line">      <span class="string">"fmt"</span></span><br><span class="line">      <span class="string">"net/http"</span></span><br><span class="line">      <span class="string">"reflect"</span></span><br><span class="line">      <span class="string">"regexp"</span></span><br><span class="line">      <span class="string">"time"</span></span><br><span class="line"></span><br><span class="line">      <span class="string">"github.com/dgrijalva/jwt-go"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">      TYPE_USER = <span class="string">"user"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">      usernamePattern = regexp.MustCompile(<span class="string">`^[a-z0-9_]+$`</span>).MatchString</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> User <span class="keyword">struct</span> &#123;</span><br><span class="line">      Username <span class="keyword">string</span> <span class="string">`json:"username"`</span></span><br><span class="line">      Password <span class="keyword">string</span> <span class="string">`json:"password"`</span></span><br><span class="line">      Age <span class="keyword">int</span> <span class="string">`json:"age"`</span></span><br><span class="line">      Gender <span class="keyword">string</span> <span class="string">`json:"gender"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Implement-checkUser-method-in-user-go"><a href="#Implement-checkUser-method-in-user-go" class="headerlink" title="Implement checkUser method in user.go."></a>Implement checkUser method in user.go.</h3><p>What does this method do? </p>
+<p>We need to check whether a pair of username and password is stored in <code>ES</code>.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// checkUser checks whether user is valid</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">checkUser</span><span class="params">(username, password <span class="keyword">string</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">      es_client, err := elastic.NewClient(elastic.SetURL(ES_URL), elastic.SetSniff(<span class="literal">false</span>))</span><br><span class="line">      <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">             fmt.Printf(<span class="string">"ES is not setup %v\n"</span>, err)</span><br><span class="line">             <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Search with a term query</span></span><br><span class="line">      termQuery := elastic.NewTermQuery(<span class="string">"username"</span>, username)</span><br><span class="line">      queryResult, err := es_client.Search().</span><br><span class="line">             Index(INDEX).</span><br><span class="line">             Query(termQuery).</span><br><span class="line">             Pretty(<span class="literal">true</span>).</span><br><span class="line">             Do()</span><br><span class="line">      <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">             fmt.Printf(<span class="string">"ES query failed %v\n"</span>, err)</span><br><span class="line">             <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> tyu User</span><br><span class="line">      <span class="keyword">for</span> _, item := <span class="keyword">range</span> queryResult.Each(reflect.TypeOf(tyu)) &#123;</span><br><span class="line">             u := item.(User)</span><br><span class="line">             <span class="keyword">return</span> u.Password == password &amp;&amp; u.Username == username</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// If no user exist, return false.</span></span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Implement-addUser-method"><a href="#Implement-addUser-method" class="headerlink" title="Implement addUser method."></a>Implement addUser method.</h3><p>Student question</p>
+<ol>
+<li>After we send the term query, how do we know whether this user has existed?</li>
+<li>How to insert this user into ES? </li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Add a new user. Return true if successfully.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">addUser</span><span class="params">(user User)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	es_client, err := elastic.NewClient(elastic.SetURL(ES_URL), elastic.SetSniff(<span class="literal">false</span>))</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		fmt.Printf(<span class="string">"ES is not setup %v\n"</span>, err)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	termQuery := elastic.NewTermQuery(<span class="string">"username"</span>, user.Username)</span><br><span class="line">	queryResult, err := es_client.Search().</span><br><span class="line">		Index(INDEX).</span><br><span class="line">		Query(termQuery).</span><br><span class="line">		Pretty(<span class="literal">true</span>).</span><br><span class="line">		Do()</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		fmt.Printf(<span class="string">"ES query failed %v\n"</span>, err)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> queryResult.TotalHits() &gt; <span class="number">0</span> &#123;</span><br><span class="line">		fmt.Printf(<span class="string">"User %s already exists, cannot create duplicate user.\n"</span>, user.Username)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	_, err = es_client.Index().</span><br><span class="line">		Index(INDEX).</span><br><span class="line">		Type(TYPE_USER).</span><br><span class="line">		Id(user.Username).</span><br><span class="line">		BodyJson(user).</span><br><span class="line">		Refresh(<span class="literal">true</span>).</span><br><span class="line">		Do()</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		fmt.Printf(<span class="string">"ES save user failed %v\n"</span>, err)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Implement-signupHandler-method"><a href="#Implement-signupHandler-method" class="headerlink" title="Implement signupHandler method."></a>Implement signupHandler method.</h3><p>Student question: finish this method to support</p>
+<ol>
+<li>Decode a user from request (POST)</li>
+<li>Check whether username and password are empty, if any of them is empty, call <code>http.Error(w, &quot;Empty password or username&quot;, http.StatusInternalServerError)</code></li>
+<li>Otherwise, call addUser, if true, return a message “User added successfully”</li>
+<li>If else, call http.Error(w, “Failed to add a new user”, http.StatusInternalServerError)</li>
+<li>Set header to be  w.Header().Set(“Content-Type”, “text/plain”)  w.Header().Set(“Access-Control-Allow-Origin”, “*”)</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// If signup is successful, a new session is created.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">signupHandler</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">"Received one signup request"</span>)</span><br><span class="line"></span><br><span class="line">      decoder := json.NewDecoder(r.Body)</span><br><span class="line">      <span class="keyword">var</span> u User</span><br><span class="line">      <span class="keyword">if</span> err := decoder.Decode(&amp;u); err != <span class="literal">nil</span> &#123;</span><br><span class="line">             <span class="built_in">panic</span>(err)</span><br><span class="line">             <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> u.Username != <span class="string">""</span> &amp;&amp; u.Password != <span class="string">""</span> &amp;&amp; usernamePattern(u.Username) &#123;</span><br><span class="line">             <span class="keyword">if</span> addUser(u) &#123;</span><br><span class="line">                    fmt.Println(<span class="string">"User added successfully."</span>)</span><br><span class="line">                    w.Write([]<span class="keyword">byte</span>(<span class="string">"User added successfully."</span>))</span><br><span class="line">             &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    fmt.Println(<span class="string">"Failed to add a new user."</span>)</span><br><span class="line">                    http.Error(w, <span class="string">"Failed to add a new user"</span>, http.StatusInternalServerError)</span><br><span class="line">             &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">             fmt.Println(<span class="string">"Empty password or username."</span>)</span><br><span class="line">             http.Error(w, <span class="string">"Empty password or username"</span>, http.StatusInternalServerError)</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      w.Header().Set(<span class="string">"Content-Type"</span>, <span class="string">"text/plain"</span>)</span><br><span class="line">      w.Header().Set(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Implement-loginHandler"><a href="#Implement-loginHandler" class="headerlink" title="Implement loginHandler"></a>Implement loginHandler</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// If login is successful, a new token is created.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">loginHandler</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">"Received one login request"</span>)</span><br><span class="line"></span><br><span class="line">      decoder := json.NewDecoder(r.Body)</span><br><span class="line">      <span class="keyword">var</span> u User</span><br><span class="line">      <span class="keyword">if</span> err := decoder.Decode(&amp;u); err != <span class="literal">nil</span> &#123;</span><br><span class="line">             <span class="built_in">panic</span>(err)</span><br><span class="line">             <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> checkUser(u.Username, u.Password) &#123;</span><br><span class="line">             token := jwt.New(jwt.SigningMethodHS256)</span><br><span class="line">             claims := token.Claims.(jwt.MapClaims)</span><br><span class="line">             <span class="comment">/* Set token claims */</span></span><br><span class="line">             claims[<span class="string">"username"</span>] = u.Username</span><br><span class="line">             claims[<span class="string">"exp"</span>] = time.Now().Add(time.Hour * <span class="number">24</span>).Unix()</span><br><span class="line"></span><br><span class="line">             <span class="comment">/* Sign the token with our secret */</span></span><br><span class="line">             tokenString, _ := token.SignedString(mySigningKey)</span><br><span class="line"></span><br><span class="line">             <span class="comment">/* Finally, write the token to the browser window */</span></span><br><span class="line">             w.Write([]<span class="keyword">byte</span>(tokenString))</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">             fmt.Println(<span class="string">"Invalid password or username."</span>)</span><br><span class="line">             http.Error(w, <span class="string">"Invalid password or username"</span>, http.StatusForbidden)</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      w.Header().Set(<span class="string">"Content-Type"</span>, <span class="string">"text/plain"</span>)</span><br><span class="line">      w.Header().Set(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Let’s explain the codes</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">decoder := json.NewDecoder(r.Body)</span><br><span class="line">      <span class="keyword">var</span> u User</span><br><span class="line">      <span class="keyword">if</span> err := decoder.Decode(&amp;u); err != <span class="literal">nil</span> &#123;</span><br><span class="line">             <span class="built_in">panic</span>(err)</span><br><span class="line">             <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<p>Decode a user from request’s body<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> checkUser(u.Username, u.Password) &#123;</span><br></pre></td></tr></table></figure></p>
+<p>Make sure user credential is correct.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">token := jwt.New(jwt.SigningMethodHS256)</span><br></pre></td></tr></table></figure>
+<p>Create a new token object to store.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">claims := token.Claims.(jwt.MapClaims)</span><br></pre></td></tr></table></figure>
+<p>Convert it into a map for lookup</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">claims[<span class="string">"username"</span>] = u.Username</span><br><span class="line">claims[<span class="string">"exp"</span>] = time.Now().Add(time.Hour * <span class="number">24</span>).Unix()</span><br></pre></td></tr></table></figure>
+<p>Store username and expiration into it.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tokenString, _ := token.SignedString(mySigningKey)</span><br></pre></td></tr></table></figure>
+<p>Sign (Encrypt) and token such that only server knows it.</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">w.Write([]<span class="keyword">byte</span>(tokenString))</span><br></pre></td></tr></table></figure>
+<p>Write it into response</p>
+<h3 id="Update-handlerPost-in-main-go-to-populate-username"><a href="#Update-handlerPost-in-main-go-to-populate-username" class="headerlink" title="Update handlerPost in main.go to populate username"></a>Update handlerPost in main.go to populate username</h3><p>Question: why use the username in context? Why not ask user to send it as param?</p>
+<p>Answer: </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">handlerPost</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">      <span class="comment">// other codes</span></span><br><span class="line">      user := r.Context().Value(<span class="string">"user"</span>)</span><br><span class="line">      claims := user.(*jwt.Token).Claims</span><br><span class="line">      username := claims.(jwt.MapClaims)[<span class="string">"username"</span>]</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 32 &lt;&lt; 20 is the maxMemory param for ParseMultipartForm</span></span><br><span class="line">      <span class="comment">// After you call ParseMultipartForm, the file will be saved in the server memory with maxMemory size.</span></span><br><span class="line">      <span class="comment">// If the file size is larger than maxMemory, the rest of the data will be saved in a system temporary file.</span></span><br><span class="line">      r.ParseMultipartForm(<span class="number">32</span> &lt;&lt; <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">      <span class="comment">// Parse from form data.</span></span><br><span class="line">      fmt.Printf(<span class="string">"Received one post request %s\n"</span>, r.FormValue(<span class="string">"message"</span>))</span><br><span class="line">      lat, _ := strconv.ParseFloat(r.FormValue(<span class="string">"lat"</span>), <span class="number">64</span>)</span><br><span class="line">      lon, _ := strconv.ParseFloat(r.FormValue(<span class="string">"lon"</span>), <span class="number">64</span>)</span><br><span class="line">      p := &amp;Post&#123;</span><br><span class="line">             User:    username.(<span class="keyword">string</span>),</span><br><span class="line">             Message: r.FormValue(<span class="string">"message"</span>),</span><br><span class="line">             Location: Location&#123;</span><br><span class="line">                    Lat: lat,</span><br><span class="line">                    Lon: lon,</span><br><span class="line">             &#125;,</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1><h2 id="Local-test"><a href="#Local-test" class="headerlink" title="Local test"></a>Local test</h2><h3 id="In-the-same-folder-where-you-have-main-go-and-user-go"><a href="#In-the-same-folder-where-you-have-main-go-and-user-go" class="headerlink" title="In the same folder where you have main.go and user.go"></a>In the same folder where you have main.go and user.go</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go run *.go</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>In windows, execute <code>go run main.go users.go</code></p>
+</blockquote>
+<h3 id="Open-Postman-and-enter-‘http-localhost-8080-signup’-in-the-url-in-the-Body-add-a-new-json-object-as"><a href="#Open-Postman-and-enter-‘http-localhost-8080-signup’-in-the-url-in-the-Body-add-a-new-json-object-as" class="headerlink" title="Open Postman and enter ‘http://localhost:8080/signup’ in the url, in the Body add a new json object as"></a>Open Postman and enter ‘<a href="http://localhost:8080/signup’" target="_blank" rel="noopener">http://localhost:8080/signup’</a> in the url, in the Body add a new json object as</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"username"</span>:<span class="string">"jack"</span>,</span><br><span class="line">	<span class="attr">"password"</span>:<span class="string">"ABCD"</span>,</span><br><span class="line">	<span class="attr">"age"</span>:<span class="number">16</span>,</span><br><span class="line">	<span class="attr">"gender"</span>:<span class="string">"female"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Click Send and you should see a message like ‘User added successfully’. </p>
+<h3 id="Change-the-url-to-be-‘http-localhost-8080-login’-and-in-the-body-use-the-same-json-object"><a href="#Change-the-url-to-be-‘http-localhost-8080-login’-and-in-the-body-use-the-same-json-object" class="headerlink" title="Change the url to be ‘http://localhost:8080/login’, and in the body use the same json object."></a>Change the url to be ‘<a href="http://localhost:8080/login’" target="_blank" rel="noopener">http://localhost:8080/login’</a>, and in the body use the same json object.</h3><p>It will return a token as response copy it</p>
+<h3 id="Post"><a href="#Post" class="headerlink" title="Post"></a>Post</h3><p>change the url to ‘<code>http://localhost:8080/post</code>’ and then in the header add a new key value with a key as ‘<code>Authorization</code>’ and a value as ‘<code>Bearer YOUR_TOKEN</code>’. In the body, still add related input params and an image file. </p>
+<blockquote>
+<p>bearer is also fine</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/5.%20Authentication-2019-5-1-15-39-33.png" alt="5. Authentication-2019-5-1-15-39-33.png"></p>
+<p>Click Send and make it works. </p>
+<blockquote>
+<p>在这里elastic search默认只显示10条结果，需要在search handler那里修改一下结果数量。</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/5.%20Authentication-2019-5-1-17-21-39.png" alt="5. Authentication-2019-5-1-17-21-39.png"></p>
+<h3 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h3><p>change the url to ‘<a href="http://localhost:8080/search?lat=37.5&amp;lon=-120.5&amp;range=200’" target="_blank" rel="noopener">http://localhost:8080/search?lat=37.5&amp;lon=-120.5&amp;range=200’</a> and the method to be GET. Then in the Headers, similarly, add a new Authorization key value pair if not there. </p>
+<p>Click send and you should get the same results as last time.<br>You can also verify the signed content on:<br><a href="https://jwt.io/" target="_blank" rel="noopener">https://jwt.io/</a></p>
+<h2 id="Remote-test-Homework"><a href="#Remote-test-Homework" class="headerlink" title="Remote test (Homework)"></a>Remote test (Homework)</h2><p>Deploy a new instance in GCloud and then test it again</p>
+<p>REMEMBER: Install new packages on Google Cloud Shell!<br>Note: some new package may need to be installed on Google cloud shell:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">go get github.com/googleapis/gax-go</span><br><span class="line">go get google.golang.org/api/googleapi</span><br><span class="line">go get go.opencensus.io/trace</span><br></pre></td></tr></table></figure>
+<p>Homework</p>
+<ol>
+<li>Try to send some random string and see what’s the response</li>
+<li>Why we don’t protect the two endpoints of ‘login’ and ‘signup’?</li>
+<li>How to protect credentials from man-in-the-middle attack?</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2881,250 +3217,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/16/[Notes] MySQL Basic 2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Anda Luo">
-      <meta itemprop="description" content="Notes of study, work and life">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Anda">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/16/[Notes] MySQL Basic 2/" class="post-title-link" itemprop="url">[Notes] MySQL Basic 2</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-16 21:27:17 / Modified: 14:29:55" itemprop="dateCreated datePublished" datetime="2019-04-16T21:27:17-07:00">2019-04-16</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">9.1k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">8 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Save-search-results-to-database"><a href="#Save-search-results-to-database" class="headerlink" title="Save search results to database"></a>Save search results to database</h1><ol>
-<li>Under <code>db.mysql</code> package, create class/<code>MySQLConnection.java</code>. </li>
-<li>Implement <code>DBConnection</code> interface</li>
-<li>Implement both <code>close</code> method and <code>constructor</code>.</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// connection</span></span><br><span class="line"><span class="keyword">private</span> Connection conn;</span><br><span class="line"></span><br><span class="line"><span class="comment">// constructor</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">MySQLConnection</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>).newInstance();</span><br><span class="line">        conn = DriverManager.getConnection(MySQLDBUtil.URL);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * close the connection</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            conn.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>implement <code>searchItems()</code> in <code>MySQLConnection</code>. Previously we call <code>TicketMasterAPI.search</code> from our <code>SearchItem</code> servlet directly. But actually our recommendation code also needs to call the same search function, so we make a designated function here to do the search call.<br>The code is simply copied from what we’ve already had in <code>SearchItem.java</code>.</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Search Item. Same as TMAPI search item.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Item&gt; <span class="title">searchItems</span><span class="params">(<span class="keyword">double</span> lat, <span class="keyword">double</span> lon, String term)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Get the items from TM</span></span><br><span class="line">    TicketMasterAPI tmAPI = <span class="keyword">new</span> TicketMasterAPI();</span><br><span class="line">    List&lt;Item&gt; items = tmAPI.search(lat, lon, term);</span><br><span class="line">    <span class="comment">// Save the items to the db</span></span><br><span class="line">    <span class="keyword">for</span> (Item item: items) &#123;</span><br><span class="line">        saveItem(item);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> items;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>after <code>searchItem</code>, let’s try <code>saveItem</code> to save data into database. Again, careful with the import suggestions. Always choose <code>java.sql.*</code>.</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Save single item into db</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">saveItem</span><span class="params">(Item item)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (conn == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        String sql = <span class="string">"INSERT IGNORE INTO items VALUES (?, ?, ?, ?, ?, ?, ?)"</span>;</span><br><span class="line">        PreparedStatement stmt = conn.prepareStatement(sql);</span><br><span class="line">        <span class="comment">// Index starts from 1</span></span><br><span class="line">        stmt.setString(<span class="number">1</span>, item.getItemId());</span><br><span class="line">        stmt.setString(<span class="number">2</span>, item.getName());</span><br><span class="line">        stmt.setDouble(<span class="number">3</span>, item.getRating());</span><br><span class="line">        stmt.setString(<span class="number">4</span>, item.getAddress());</span><br><span class="line">        stmt.setString(<span class="number">5</span>, item.getImageURL());</span><br><span class="line">        stmt.setString(<span class="number">6</span>, item.getUrl());</span><br><span class="line">        stmt.setDouble(<span class="number">7</span>,  item.getDistance());</span><br><span class="line">        stmt.execute();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// set categories</span></span><br><span class="line">        sql = <span class="string">"INSERT IGNORE INTO categories VALUES(?, ?)"</span>;</span><br><span class="line">        stmt = conn.prepareStatement(sql);</span><br><span class="line">        <span class="keyword">for</span> (String category: item.getCategories()) &#123;</span><br><span class="line">            stmt.setString(<span class="number">1</span>, item.getItemId());</span><br><span class="line">            stmt.setString(<span class="number">2</span>, category);</span><br><span class="line">            stmt.execute();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Use PreparedStatement and stmt.settring() can effectively avoid SQL injection.</p>
-</blockquote>
-<blockquote>
-<p>PreparedStatement is faster than raw String. Only have to create it once.</p>
-</blockquote>
-<ol start="6">
-<li>SQL injection. Turns the input to the SQL statement, and makes the query always true.</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// SQL injection</span></span><br><span class="line"><span class="comment">// Example:</span></span><br><span class="line"><span class="comment">// SELECT * FROM users WHERE username = '&lt;username&gt;' AND password = '&lt;password&gt;';</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// sql = "SELECT * FROM users WHERE username = '" + username + "'</span></span><br><span class="line"><span class="comment">//       AND password = '" + password + "'"</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// username: aoweifjoawefijwaoeifj</span></span><br><span class="line"><span class="comment">// password: 123456' OR '1' = '1</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// SELECT * FROM users WHERE username = 'aoweifjoawefijwaoeifj' AND password = '123456' OR '1' = '1'</span></span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>update <code>DBConnectionFactory</code>.</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> DBConnection <span class="title">getConnection</span><span class="params">(String db)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (db) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"mysql"</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> MySQLConnection();</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"mongodb"</span>:</span><br><span class="line">        <span class="comment">// return new MongoDBConnection();</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Invalid db: "</span> + db);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="8">
-<li>In <code>src/rpc/SearchItem.java</code>, add a private <code>dbconnection</code> field and update <code>doGet()</code>.</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@see</span> HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">double</span> lat = Double.parseDouble(request.getParameter(<span class="string">"lat"</span>));</span><br><span class="line">    <span class="keyword">double</span> lon = Double.parseDouble(request.getParameter(<span class="string">"lon"</span>));</span><br><span class="line">    </span><br><span class="line">    String keyword = request.getParameter(<span class="string">"term"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Connect db first then search</span></span><br><span class="line">    DBConnection conn = DBConnectionFactory.getConnection();</span><br><span class="line">    List&lt;Item&gt; items = conn.searchItems(lat, lon, keyword);</span><br><span class="line">    </span><br><span class="line">    JSONArray array = <span class="keyword">new</span> JSONArray();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (Item item : items) &#123;</span><br><span class="line">            JSONObject obj = item.toJSONObject();</span><br><span class="line">            array.put(obj);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    RpcHelper.writeJSONArray(response, array);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="Implement-set-unset-favorite-related-functions"><a href="#Implement-set-unset-favorite-related-functions" class="headerlink" title="Implement set/unset favorite related functions"></a>Implement set/unset favorite related functions</h1><ol>
-<li>let’s try setFavoriteItem and unsetFavoriteItem</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Operate on History table.</span></span><br><span class="line"><span class="comment">    * insert favorite information.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFavoriteItems</span><span class="params">(String userId, List&lt;String&gt; itemIds)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (conn == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        String sql = <span class="string">"INSERT IGNORE INTO history (?, ?)"</span>;</span><br><span class="line">        PreparedStatement stmt = conn.prepareStatement(sql);</span><br><span class="line">        <span class="keyword">for</span> (String itemId: itemIds) &#123;</span><br><span class="line">            stmt.setString(<span class="number">1</span>, userId);</span><br><span class="line">            stmt.setString(<span class="number">2</span>, itemId);</span><br><span class="line">            stmt.execute();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Delete favorite information</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unsetFavoriteItems</span><span class="params">(String userId, List&lt;String&gt; itemIds)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (conn == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        String sql = <span class="string">"DELETE FROM history WHERE user_id = ? AND item_id = ?"</span>;</span><br><span class="line">        PreparedStatement stmt = conn.prepareStatement(sql);</span><br><span class="line">        <span class="keyword">for</span> (String itemId: itemIds) &#123;</span><br><span class="line">            stmt.setString(<span class="number">1</span>, userId);</span><br><span class="line">            stmt.setString(<span class="number">2</span>, itemId);</span><br><span class="line">            stmt.execute();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li><p>create a new servlet called <code>ItemHistory</code>, update the url mapping to <code>\history</code></p>
-</li>
-<li><p>create a new function in RpcHelper.java  to parse HTTP request body. Imagine the input HTTP request looks like:</p>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    user_id = “<span class="number">1111</span>”,</span><br><span class="line">    favorite = [</span><br><span class="line">        “abcd”,</span><br><span class="line">        “efgh”,</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Read the http request and parse it as a JSONObject.</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> request</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> JSONObject <span class="title">readJsonObject</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">    StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        BufferedReader reader = request.getReader();</span><br><span class="line">        String line = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            sb.append(line);</span><br><span class="line">        &#125;</span><br><span class="line">        reader.close();</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> JSONObject(sb.toString());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>update <code>doPost()</code> and <code>doDelete</code> in <code>ItemHistory.java</code> to use this new function. </li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Get the set favourite request and do the corresponding operation</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// get userId, itemIDs from request</span></span><br><span class="line">        JSONObject input = RpcHelper.readJsonObject(request);</span><br><span class="line">        String userId = input.getString(<span class="string">"user_id"</span>);</span><br><span class="line">        JSONArray fav_array = input.getJSONArray(<span class="string">"favorite"</span>);</span><br><span class="line">        List&lt;String&gt; itemIds = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; fav_array.length(); i++) &#123;</span><br><span class="line">            itemIds.add(fav_array.get(i).toString());</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// connect db and update the table</span></span><br><span class="line">        DBConnection conn = DBConnectionFactory.getConnection();</span><br><span class="line">        conn.setFavoriteItems(userId, itemIds);</span><br><span class="line">        conn.close();</span><br><span class="line">        RpcHelper.writeJSONObject(response, <span class="keyword">new</span> JSONObject().put(<span class="string">"result"</span>, <span class="string">"SUCCESS"</span>));</span><br><span class="line">        </span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Same as doPost(), but change setFavoriteItems() to unsetFavoriteItems()</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doDelete</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>open postman, switch to <code>post</code> method, use <a href="http://localhost:8080/Jupiter/history" target="_blank" rel="noopener">http://localhost:8080/Jupiter/history</a>, then copy the following JSON object into body. Replace <code>item_id1</code> and <code>item_id2</code> with the real <code>item_id</code> exist in your item table.</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     'user_id':'1111',</span><br><span class="line">     'favorite' : [</span><br><span class="line">         'item_id1',</span><br><span class="line">         'item_id2'</span><br><span class="line">     ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>now let’s send another request to test our delete function. Open another tab in postman, switch method to <code>delete</code>, use <a href="http://localhost:8080/Jupiter/history" target="_blank" rel="noopener">http://localhost:8080/Jupiter/history</a>, then copy the following JSON object into body. Again replace <code>item_id1</code> with the real <code>item_id</code> exist in your history table.<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     'user_id':'1111',</span><br><span class="line">     'favorite' : [</span><br><span class="line">         'item_id1',</span><br><span class="line">     ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3171,7 +3263,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -3331,7 +3423,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">155k</span>
+    <span title="Symbols count total">170k</span>
   
 
   
@@ -3340,7 +3432,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">2:21</span>
+    <span title="Reading time total">2:35</span>
   
 </div>
 

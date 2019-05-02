@@ -294,7 +294,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives<span class="badge">23</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives<span class="badge">24</span></a>
 
   </li>
 
@@ -370,6 +370,250 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/16/[Notes] MySQL Basic 2/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anda Luo"/>
+      <meta itemprop="description" content="Notes of study, work and life"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anda"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/16/[Notes] MySQL Basic 2/" class="post-title-link" itemprop="url">[Notes] MySQL Basic 2</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-16 21:27:17 / Modified: 14:29:55" itemprop="dateCreated datePublished" datetime="2019-04-16T21:27:17-07:00">2019-04-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">9.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">8 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Save-search-results-to-database"><a href="#Save-search-results-to-database" class="headerlink" title="Save search results to database"></a>Save search results to database</h1><ol>
+<li>Under <code>db.mysql</code> package, create class/<code>MySQLConnection.java</code>. </li>
+<li>Implement <code>DBConnection</code> interface</li>
+<li>Implement both <code>close</code> method and <code>constructor</code>.</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// connection</span></span><br><span class="line"><span class="keyword">private</span> Connection conn;</span><br><span class="line"></span><br><span class="line"><span class="comment">// constructor</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">MySQLConnection</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>).newInstance();</span><br><span class="line">        conn = DriverManager.getConnection(MySQLDBUtil.URL);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * close the connection</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            conn.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>implement <code>searchItems()</code> in <code>MySQLConnection</code>. Previously we call <code>TicketMasterAPI.search</code> from our <code>SearchItem</code> servlet directly. But actually our recommendation code also needs to call the same search function, so we make a designated function here to do the search call.<br>The code is simply copied from what we’ve already had in <code>SearchItem.java</code>.</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Search Item. Same as TMAPI search item.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Item&gt; <span class="title">searchItems</span><span class="params">(<span class="keyword">double</span> lat, <span class="keyword">double</span> lon, String term)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Get the items from TM</span></span><br><span class="line">    TicketMasterAPI tmAPI = <span class="keyword">new</span> TicketMasterAPI();</span><br><span class="line">    List&lt;Item&gt; items = tmAPI.search(lat, lon, term);</span><br><span class="line">    <span class="comment">// Save the items to the db</span></span><br><span class="line">    <span class="keyword">for</span> (Item item: items) &#123;</span><br><span class="line">        saveItem(item);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> items;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>after <code>searchItem</code>, let’s try <code>saveItem</code> to save data into database. Again, careful with the import suggestions. Always choose <code>java.sql.*</code>.</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Save single item into db</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">saveItem</span><span class="params">(Item item)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (conn == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        String sql = <span class="string">"INSERT IGNORE INTO items VALUES (?, ?, ?, ?, ?, ?, ?)"</span>;</span><br><span class="line">        PreparedStatement stmt = conn.prepareStatement(sql);</span><br><span class="line">        <span class="comment">// Index starts from 1</span></span><br><span class="line">        stmt.setString(<span class="number">1</span>, item.getItemId());</span><br><span class="line">        stmt.setString(<span class="number">2</span>, item.getName());</span><br><span class="line">        stmt.setDouble(<span class="number">3</span>, item.getRating());</span><br><span class="line">        stmt.setString(<span class="number">4</span>, item.getAddress());</span><br><span class="line">        stmt.setString(<span class="number">5</span>, item.getImageURL());</span><br><span class="line">        stmt.setString(<span class="number">6</span>, item.getUrl());</span><br><span class="line">        stmt.setDouble(<span class="number">7</span>,  item.getDistance());</span><br><span class="line">        stmt.execute();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// set categories</span></span><br><span class="line">        sql = <span class="string">"INSERT IGNORE INTO categories VALUES(?, ?)"</span>;</span><br><span class="line">        stmt = conn.prepareStatement(sql);</span><br><span class="line">        <span class="keyword">for</span> (String category: item.getCategories()) &#123;</span><br><span class="line">            stmt.setString(<span class="number">1</span>, item.getItemId());</span><br><span class="line">            stmt.setString(<span class="number">2</span>, category);</span><br><span class="line">            stmt.execute();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Use PreparedStatement and stmt.settring() can effectively avoid SQL injection.</p>
+</blockquote>
+<blockquote>
+<p>PreparedStatement is faster than raw String. Only have to create it once.</p>
+</blockquote>
+<ol start="6">
+<li>SQL injection. Turns the input to the SQL statement, and makes the query always true.</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// SQL injection</span></span><br><span class="line"><span class="comment">// Example:</span></span><br><span class="line"><span class="comment">// SELECT * FROM users WHERE username = '&lt;username&gt;' AND password = '&lt;password&gt;';</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// sql = "SELECT * FROM users WHERE username = '" + username + "'</span></span><br><span class="line"><span class="comment">//       AND password = '" + password + "'"</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// username: aoweifjoawefijwaoeifj</span></span><br><span class="line"><span class="comment">// password: 123456' OR '1' = '1</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// SELECT * FROM users WHERE username = 'aoweifjoawefijwaoeifj' AND password = '123456' OR '1' = '1'</span></span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>update <code>DBConnectionFactory</code>.</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> DBConnection <span class="title">getConnection</span><span class="params">(String db)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (db) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"mysql"</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> MySQLConnection();</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"mongodb"</span>:</span><br><span class="line">        <span class="comment">// return new MongoDBConnection();</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Invalid db: "</span> + db);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>In <code>src/rpc/SearchItem.java</code>, add a private <code>dbconnection</code> field and update <code>doGet()</code>.</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@see</span> HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">double</span> lat = Double.parseDouble(request.getParameter(<span class="string">"lat"</span>));</span><br><span class="line">    <span class="keyword">double</span> lon = Double.parseDouble(request.getParameter(<span class="string">"lon"</span>));</span><br><span class="line">    </span><br><span class="line">    String keyword = request.getParameter(<span class="string">"term"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Connect db first then search</span></span><br><span class="line">    DBConnection conn = DBConnectionFactory.getConnection();</span><br><span class="line">    List&lt;Item&gt; items = conn.searchItems(lat, lon, keyword);</span><br><span class="line">    </span><br><span class="line">    JSONArray array = <span class="keyword">new</span> JSONArray();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (Item item : items) &#123;</span><br><span class="line">            JSONObject obj = item.toJSONObject();</span><br><span class="line">            array.put(obj);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    RpcHelper.writeJSONArray(response, array);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Implement-set-unset-favorite-related-functions"><a href="#Implement-set-unset-favorite-related-functions" class="headerlink" title="Implement set/unset favorite related functions"></a>Implement set/unset favorite related functions</h1><ol>
+<li>let’s try setFavoriteItem and unsetFavoriteItem</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Operate on History table.</span></span><br><span class="line"><span class="comment">    * insert favorite information.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFavoriteItems</span><span class="params">(String userId, List&lt;String&gt; itemIds)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (conn == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        String sql = <span class="string">"INSERT IGNORE INTO history (?, ?)"</span>;</span><br><span class="line">        PreparedStatement stmt = conn.prepareStatement(sql);</span><br><span class="line">        <span class="keyword">for</span> (String itemId: itemIds) &#123;</span><br><span class="line">            stmt.setString(<span class="number">1</span>, userId);</span><br><span class="line">            stmt.setString(<span class="number">2</span>, itemId);</span><br><span class="line">            stmt.execute();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Delete favorite information</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unsetFavoriteItems</span><span class="params">(String userId, List&lt;String&gt; itemIds)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (conn == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        String sql = <span class="string">"DELETE FROM history WHERE user_id = ? AND item_id = ?"</span>;</span><br><span class="line">        PreparedStatement stmt = conn.prepareStatement(sql);</span><br><span class="line">        <span class="keyword">for</span> (String itemId: itemIds) &#123;</span><br><span class="line">            stmt.setString(<span class="number">1</span>, userId);</span><br><span class="line">            stmt.setString(<span class="number">2</span>, itemId);</span><br><span class="line">            stmt.execute();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>create a new servlet called <code>ItemHistory</code>, update the url mapping to <code>\history</code></p>
+</li>
+<li><p>create a new function in RpcHelper.java  to parse HTTP request body. Imagine the input HTTP request looks like:</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    user_id = “<span class="number">1111</span>”,</span><br><span class="line">    favorite = [</span><br><span class="line">        “abcd”,</span><br><span class="line">        “efgh”,</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Read the http request and parse it as a JSONObject.</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> request</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> JSONObject <span class="title">readJsonObject</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">    StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        BufferedReader reader = request.getReader();</span><br><span class="line">        String line = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            sb.append(line);</span><br><span class="line">        &#125;</span><br><span class="line">        reader.close();</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> JSONObject(sb.toString());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>update <code>doPost()</code> and <code>doDelete</code> in <code>ItemHistory.java</code> to use this new function. </li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Get the set favourite request and do the corresponding operation</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// get userId, itemIDs from request</span></span><br><span class="line">        JSONObject input = RpcHelper.readJsonObject(request);</span><br><span class="line">        String userId = input.getString(<span class="string">"user_id"</span>);</span><br><span class="line">        JSONArray fav_array = input.getJSONArray(<span class="string">"favorite"</span>);</span><br><span class="line">        List&lt;String&gt; itemIds = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; fav_array.length(); i++) &#123;</span><br><span class="line">            itemIds.add(fav_array.get(i).toString());</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// connect db and update the table</span></span><br><span class="line">        DBConnection conn = DBConnectionFactory.getConnection();</span><br><span class="line">        conn.setFavoriteItems(userId, itemIds);</span><br><span class="line">        conn.close();</span><br><span class="line">        RpcHelper.writeJSONObject(response, <span class="keyword">new</span> JSONObject().put(<span class="string">"result"</span>, <span class="string">"SUCCESS"</span>));</span><br><span class="line">        </span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Same as doPost(), but change setFavoriteItems() to unsetFavoriteItems()</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doDelete</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>open postman, switch to <code>post</code> method, use <a href="http://localhost:8080/Jupiter/history" target="_blank" rel="noopener">http://localhost:8080/Jupiter/history</a>, then copy the following JSON object into body. Replace <code>item_id1</code> and <code>item_id2</code> with the real <code>item_id</code> exist in your item table.</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     'user_id':'1111',</span><br><span class="line">     'favorite' : [</span><br><span class="line">         'item_id1',</span><br><span class="line">         'item_id2'</span><br><span class="line">     ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>now let’s send another request to test our delete function. Open another tab in postman, switch method to <code>delete</code>, use <a href="http://localhost:8080/Jupiter/history" target="_blank" rel="noopener">http://localhost:8080/Jupiter/history</a>, then copy the following JSON object into body. Again replace <code>item_id1</code> with the real <code>item_id</code> exist in your history table.<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     'user_id':'1111',</span><br><span class="line">     'favorite' : [</span><br><span class="line">         'item_id1',</span><br><span class="line">     ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -3096,255 +3340,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/04/[Notes] Web Application Basic/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Anda Luo"/>
-      <meta itemprop="description" content="Notes of study, work and life"/>
-      <meta itemprop="image" content="/images/avatar.gif"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Anda"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/04/[Notes] Web Application Basic/" class="post-title-link" itemprop="url">[Notes] Web Application Basic</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-04 00:23:27 / Modified: 20:19:22" itemprop="dateCreated datePublished" datetime="2019-04-04T00:23:27-07:00">2019-04-04</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">2.7k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">2 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Web-Application"><a href="#Web-Application" class="headerlink" title="Web Application"></a>Web Application</h1><h2 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies:"></a>Dependencies:</h2><ol>
-<li>Java 8</li>
-<li>Eclipse EE</li>
-<li>Postman</li>
-<li>Tomcat</li>
-</ol>
-<h2 id="Web-Application-Clients-gt-Internet-gt-Server"><a href="#Web-Application-Clients-gt-Internet-gt-Server" class="headerlink" title="Web Application: Clients -&gt;Internet-&gt; Server"></a>Web Application: Clients -&gt;Internet-&gt; Server</h2><ul>
-<li>Server(Backend)</li>
-<li>Client(Frontend): User interface</li>
-<li>Internet</li>
-</ul>
-<h2 id="TCP-IP区别："><a href="#TCP-IP区别：" class="headerlink" title="TCP/IP区别："></a>TCP/IP区别：</h2><ul>
-<li>IP对应特定机器的地址，TCP对应特定机器特定进程的地址</li>
-<li>TCP通过端口来监听请求，请求包括IP和端口号</li>
-</ul>
-<h2 id="在浏览器输入www-example-com会发生什么？"><a href="#在浏览器输入www-example-com会发生什么？" class="headerlink" title="在浏览器输入www.example.com会发生什么？"></a>在浏览器输入<a href="http://www.example.com会发生什么？" target="_blank" rel="noopener">www.example.com会发生什么？</a></h2><ol>
-<li>(client) client opens browser and goes to an Internet address (IP address/URL/hostname) and asks for page for (<a href="http://www.example.com)" target="_blank" rel="noopener">http://www.example.com)</a>, which means “I want to see ‘<a href="http://www.example.com/index.html’”" target="_blank" rel="noopener">http://www.example.com/index.html’”</a></li>
-<li>(network) Internet redirects your request “I want to see ‘<a href="http://www.example.com’”" target="_blank" rel="noopener">http://www.example.com’”</a> to example’s server (a set of web servers)</li>
-<li>(server) One of example’s server sends a response to your Internet address (ip address). The response contains a HTML page. We will talk about HTML later.</li>
-<li>(network) The response goes through the Internet and received by your browser.</li>
-<li>(client) Your browser receives the response from example’s server and the HTML page contained in it. Render the page view and present to you. How to view the HTML page source? (Right click, and view page source) </li>
-</ol>
-<h2 id="如何设计web-app-三层结构"><a href="#如何设计web-app-三层结构" class="headerlink" title="如何设计web app? 三层结构"></a>如何设计web app? 三层结构</h2><ol>
-<li>presentation tier 直接与用户交互</li>
-<li>logic tier 应用具体的逻辑</li>
-<li>data tier 数据库</li>
-</ol>
-<h2 id="Tomcat-提供web-server"><a href="#Tomcat-提供web-server" class="headerlink" title="Tomcat 提供web server"></a>Tomcat 提供web server</h2><ol>
-<li>RPC(remote procedure call) 调用一个远端机器上的API</li>
-<li>Java Servlet 服务器端负责处理RPC的java class</li>
-<li>Tomcat 存放servlet的环境，负责接受请求并分配到对应的servlet处理,把处理的结果传给正确的客户</li>
-</ol>
-<h2 id="Tomcat配置"><a href="#Tomcat配置" class="headerlink" title="Tomcat配置"></a>Tomcat配置</h2><ol>
-<li>在properties里面点一下switch location找配置文件</li>
-<li>server location改成 use tomcat installation</li>
-<li>地址localhost:8080</li>
-</ol>
-<h2 id="Http-request-methods"><a href="#Http-request-methods" class="headerlink" title="Http request methods"></a>Http request methods</h2><ol>
-<li>GET(read in general)</li>
-<li>POST(write in general)</li>
-<li>PUT(write)</li>
-<li>DELETE(write)</li>
-</ol>
-<h2 id="URL-Unique-Resource-Locator"><a href="#URL-Unique-Resource-Locator" class="headerlink" title="URL(Unique Resource Locator)"></a>URL(Unique Resource Locator)</h2><ol>
-<li><p>format: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">+ protocal(http/https)</span><br><span class="line">+ hostname(www.youtube.com)</span><br><span class="line">+ port(8080): which process</span><br><span class="line">+ endpoint: The name and location of the requested resource, under the server base directory. 相当于要触发的服务或功能</span><br><span class="line">+ query: separated from the preceding part by a question mark (?), containing a query string of attribute–value pairs separated by a delimiter. 相当于参数</span><br><span class="line">+ example: ```https://www.youtube.com/results?search_query=example</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><p>example: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2. url会自动将空格转码成```&quot;20%&quot;</span><br></pre></td></tr></table></figure></p>
-</li>
-<li><p>如果要inplace操作的话，先扫一遍找出空格数，然后再扩容字符串，然后冲后往前填。</p>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="http-request-body-包含http-request的数据"><a href="#http-request-body-包含http-request的数据" class="headerlink" title="http request body: 包含http request的数据"></a>http request body: 包含http request的数据</h2><ul>
-<li>POST的body信息通常是隐藏的,GET通常没有必要隐藏</li>
-<li><p>request例子</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">JSON(JavaScript Object Notation)</span><br><span class="line">&#123;</span><br><span class="line">“instructor”: </span><br><span class="line">&#123;</span><br><span class="line">    &quot;company&quot;: &quot;Laioffer&quot;,</span><br><span class="line">    &quot;course&quot;: “Project” ,</span><br><span class="line">    &quot;name&quot;: “Vincent”</span><br><span class="line">&#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Alternative formats</span><br><span class="line"></span><br><span class="line">XML: eXtensible Markup Language</span><br><span class="line">&lt;instructor&gt;</span><br><span class="line">&lt;company&gt;Laioffer&lt;/company&gt;</span><br><span class="line">&lt;course&gt;Project&lt;/course&gt;</span><br><span class="line">&lt;name&gt;Vincent&lt;/name&gt;</span><br><span class="line">&lt;/instructor&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ProtocolBuffer</span><br><span class="line">Instructor &#123;</span><br><span class="line">company = “Laioffer”,</span><br><span class="line">course= “Project”</span><br><span class="line">name= “Vincent”</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>JSON简洁一些，xml长一些，ProtocalBuffer更新效率更高。前两种都是字符串，后一种是java class，相当于二进制文件，需要额外支持。</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3391,7 +3386,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -3551,7 +3546,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">155k</span>
+    <span title="Symbols count total">170k</span>
   
 
   
@@ -3560,7 +3555,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">2:21</span>
+    <span title="Reading time total">2:35</span>
   
 </div>
 
