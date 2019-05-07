@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false,"dimmer":true},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Class 1 05/06/2019Fibonacci numbersFibonacci numbers (Exponential Algorithm)1234560, 1, 1, 2, 3, 5, 8, 13, 21a0, a1, a3, a3, a4, a5, a6, a7an = an-1 + an-2a0 = 0a1 = 1 Code123456fib1(int n) &amp;#123;">
+<meta name="keywords" content="Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notes of Algorithm">
+<meta property="og:url" content="http://yoursite.com/2019/05/07/[Notes] Notes of Algorithm CS5800/index.html">
+<meta property="og:site_name" content="Anda">
+<meta property="og:description" content="Class 1 05/06/2019Fibonacci numbersFibonacci numbers (Exponential Algorithm)1234560, 1, 1, 2, 3, 5, 8, 13, 21a0, a1, a3, a3, a4, a5, a6, a7an = an-1 + an-2a0 = 0a1 = 1 Code123456fib1(int n) &amp;#123;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-07T20:56:25.853Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Notes of Algorithm">
+<meta name="twitter:description" content="Class 1 05/06/2019Fibonacci numbersFibonacci numbers (Exponential Algorithm)1234560, 1, 1, 2, 3, 5, 8, 13, 21a0, a1, a3, a3, a4, a5, a6, a7an = an-1 + an-2a0 = 0a1 = 1 Code123456fib1(int n) &amp;#123;">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/05/07/[Notes] Notes of Algorithm CS5800/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Notes of Algorithm | Anda</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Anda</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Notes of study, work and life</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">22</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">2</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">26</span></a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/Luorinz" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/07/[Notes] Notes of Algorithm CS5800/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anda Luo">
+      <meta itemprop="description" content="Notes of study, work and life">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anda">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Notes of Algorithm
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-07 20:41:45 / Modified: 13:56:25" itemprop="dateCreated datePublished" datetime="2019-05-07T20:41:45-07:00">2019-05-07</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">6.8k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">6 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Class-1-05-06-2019"><a href="#Class-1-05-06-2019" class="headerlink" title="Class 1 05/06/2019"></a>Class 1 05/06/2019</h1><h2 id="Fibonacci-numbers"><a href="#Fibonacci-numbers" class="headerlink" title="Fibonacci numbers"></a>Fibonacci numbers</h2><h3 id="Fibonacci-numbers-Exponential-Algorithm"><a href="#Fibonacci-numbers-Exponential-Algorithm" class="headerlink" title="Fibonacci numbers (Exponential Algorithm)"></a>Fibonacci numbers (Exponential Algorithm)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">0, 1, 1, 2, 3, 5, 8, 13, 21</span><br><span class="line">a0, a1, a3, a3, a4, a5, a6, a7</span><br><span class="line"></span><br><span class="line">an = an-1 + an-2</span><br><span class="line">a0 = 0</span><br><span class="line">a1 = 1</span><br></pre></td></tr></table></figure>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fib1(<span class="keyword">int</span> n) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span> || n == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fib1(n-<span class="number">1</span>) + fib1(n-<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Time-Complexity"><a href="#Time-Complexity" class="headerlink" title="Time Complexity"></a>Time Complexity</h3><p>Answer <code>O(2^n)</code></p>
+<p>Less intuitive, not like<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    a[i] = a[i<span class="number">-1</span>] + <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Recursion-Tree"><a href="#Recursion-Tree" class="headerlink" title="Recursion Tree"></a>Recursion Tree</h2><p><code>T(n) = runtime of fibl given n</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">              T(n)</span><br><span class="line">       /              \</span><br><span class="line">    T(n-1)           T(n-2)</span><br><span class="line">   /     \           /     \</span><br><span class="line">T(n-2)   T(n-3)    T(n-3)   T(n-4)</span><br><span class="line">            ......</span><br><span class="line">T(1)    T(0)    T(1)    T(0) ...</span><br></pre></td></tr></table></figure>
+<p>When hit 0 or 1, the recursion ends.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">            /\</span><br><span class="line">           /  \</span><br><span class="line">          /____\</span><br><span class="line">         /     /</span><br><span class="line">        /  _ /</span><br><span class="line">       / _/</span><br><span class="line">      /_/</span><br><span class="line">left side = n</span><br><span class="line">right side = n/2</span><br><span class="line"></span><br><span class="line">T(n) = num of nodes in this recursion tree</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">in first half of this tree</span><br><span class="line">            /\</span><br><span class="line">           /  \</span><br><span class="line">          /____\</span><br><span class="line">num of nodes = 2^k-1 = 2 ^ (n/2) - 1</span><br></pre></td></tr></table></figure>
+<p>Thus we have</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 ^ (n/2) &lt;= T(n) &lt;= 2 ^n</span><br></pre></td></tr></table></figure>
+<p>Therefore </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 ^ (n/2) = (sqrt(2)) ^ n ~= 1.4(n)</span><br></pre></td></tr></table></figure>
+<p>Clearly, this is a bad time complexity algorithm.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">                  T(n)</span><br><span class="line">           /              \</span><br><span class="line">        T(n-1)           T(n-2)</span><br><span class="line">       /     \           /     \</span><br><span class="line">    T(n-2)   T(n-3)    T(n-3)   T(n-4)</span><br><span class="line"></span><br><span class="line">There are a lot of repetition in the process of calculation. </span><br><span class="line"></span><br><span class="line">e.g. T(n-2) T(n-3)</span><br></pre></td></tr></table></figure>
+<h2 id="Linear-algorithm"><a href="#Linear-algorithm" class="headerlink" title="Linear algorithm"></a>Linear algorithm</h2><h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fib2(<span class="keyword">int</span> n) &#123;</span><br><span class="line">    <span class="keyword">int</span>[] A = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">    A[<span class="number">0</span>] = <span class="number">0</span>; A[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        A[i] = A[i-<span class="number">1</span>] + A[i-<span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> A[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Time-Complexity-1"><a href="#Time-Complexity-1" class="headerlink" title="Time Complexity"></a>Time Complexity</h3><p>Linear time: <code>O(n)</code></p>
+<h2 id="Constant-space-algorithm"><a href="#Constant-space-algorithm" class="headerlink" title="Constant space algorithm"></a>Constant space algorithm</h2><h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fib2(<span class="keyword">int</span> n) &#123;</span><br><span class="line">    <span class="keyword">int</span>[] A = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">    A[<span class="number">0</span>] = <span class="number">0</span>; A[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        A[i%<span class="number">2</span>] = A[(i-<span class="number">1</span>)%<span class="number">2</span>] + A[(i-<span class="number">2</span>)%<span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> A[n%<span class="number">2</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">i varies between 0 and 1</span><br><span class="line">A[1] = A[0] + A[1]</span><br><span class="line">A[0] = A[1] + A[0]</span><br></pre></td></tr></table></figure>
+<h2 id="Matrix-solution"><a href="#Matrix-solution" class="headerlink" title="Matrix solution"></a>Matrix solution</h2><h3 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">A = | 1  1 | = | a2  a1 |</span><br><span class="line">    | 1  0 |   | a1  a0 |</span><br><span class="line"></span><br><span class="line">A^2 = | 1  1 |    | 1  1 |      | 2  1 |   | a3  a2 |</span><br><span class="line">      | 1  0 | *  | 1  0 |  =   | 1  1 | = | a2  a1 |</span><br><span class="line"></span><br><span class="line">A^3 = | 2  1 |    | 1  1 |      | 3  2 |   | a4  a5 |</span><br><span class="line">      | 1  1 | *  | 1  0 |  =   | 2  1 | = | a3  a2 |           </span><br><span class="line"></span><br><span class="line">.....</span><br><span class="line"></span><br><span class="line"> A^k = | a(k+1)  ak   |   </span><br><span class="line">       | ak      ak-1 |</span><br></pre></td></tr></table></figure>
+<h3 id="Time-Complexity-2"><a href="#Time-Complexity-2" class="headerlink" title="Time Complexity"></a>Time Complexity</h3><p>Basic: <code>O(n)</code></p>
+<p>Optimized: <code>O(logn)</code></p>
+<h3 id="Strategy"><a href="#Strategy" class="headerlink" title="Strategy"></a>Strategy</h3><p>Since we are dealing with A^n, the optimized time complexity of pow(x, n) is  <code>O(logn)</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A^n =   |A(n/2)^2         | n is even</span><br><span class="line">        |A((n-1)/2)^2 * A | n is odd</span><br><span class="line"></span><br><span class="line">A^64 = (A^32)^2 = ((A^16))^2^2 = A^(2^6)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Asymptotic-Notation"><a href="#Asymptotic-Notation" class="headerlink" title="Asymptotic Notation"></a>Asymptotic Notation</h2><h3 id="Comparison-of-each-notation"><a href="#Comparison-of-each-notation" class="headerlink" title="Comparison of each notation"></a>Comparison of each notation</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">Compare Function Growth</th>
+<th>Compare Numbers</th>
+<th>f(n) = 5n</th>
+<th>g(n) = n^2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">O</td>
+<td>&lt;=</td>
+<td>f(n) = O(g(n))</td>
+</tr>
+<tr>
+<td style="text-align:left">o</td>
+<td>&lt;</td>
+<td>f(n) = o(g(n)</td>
+</tr>
+<tr>
+<td style="text-align:left">Θ</td>
+<td>=</td>
+<td>for f(n) = 100n</td>
+<td>and g(n) = n + 100</td>
+</tr>
+<tr>
+<td style="text-align:left">Ω</td>
+<td>&gt;=</td>
+<td>f(n) = Ω(g(n))</td>
+<td>f(n) = Θ(g(n))</td>
+</tr>
+<tr>
+<td style="text-align:left">ω</td>
+<td>&gt;=</td>
+<td>f(n) = ω(g(n))</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Mathematical-Derivation"><a href="#Mathematical-Derivation" class="headerlink" title="Mathematical Derivation"></a>Mathematical Derivation</h3><p><strong>f(n) = O(g(n))</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iff exists constants C and n0</span><br><span class="line">s.t. when n &gt; n0, f(n) &lt;= C * g(n)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lim(n-&gt;inf) f(n)/g(n) =     0           | fn = O/o(g(n))</span><br><span class="line">                            constant    | fn = O/Θ/Ω(g(n))</span><br><span class="line">                            inf         | fn = Ω/ω(g(n))</span><br></pre></td></tr></table></figure>
+<p>Practice:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">lim(n-&gt;inf) (100n)/(n+100) = 100 </span><br><span class="line">fn = O/Θ/Ω(g(n))</span><br><span class="line"></span><br><span class="line">f(n) = nlgn   g(n) = n^2</span><br><span class="line">f(n) = O/o(g(n))</span><br><span class="line"></span><br><span class="line">f(n) = 2^n   g(n) = 3^n</span><br><span class="line">f(n) = O/o(g(n))</span><br><span class="line">lim(n-&gt;inf) f(n)/g(n) = lim(n-&gt;inf) (2/3)^n = 0</span><br><span class="line"></span><br><span class="line">f(n) = n+3   g(n) = 2 * sqrt(n)</span><br><span class="line">f(n) = Ω/ω(g(n))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f(n) = log2(n)   g(n) = log3(n)</span><br><span class="line">f(n) = Ω/ω/Θ(g(n))</span><br><span class="line">lim(n-&gt;inf) f(n)/g(n) = lim(n-&gt;inf) log2n/log3n = log3/log2</span><br><span class="line"></span><br><span class="line">f(n) = (logn)^2   g(n) = log(n^2) = 2logn</span><br><span class="line">f(n) = Ω/ω(g(n))</span><br></pre></td></tr></table></figure></p>
+<h2 id="Master’s-Theorem"><a href="#Master’s-Theorem" class="headerlink" title="Master’s Theorem"></a>Master’s Theorem</h2><h3 id="Idea-of-merge-sort"><a href="#Idea-of-merge-sort" class="headerlink" title="Idea of merge sort"></a>Idea of merge sort</h3><p>T(n) = 2T(n/2) + n</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">             T(n) n                         | n</span><br><span class="line">          /          \</span><br><span class="line">    T(n/2) n/2          T(n/2) n/2          | n</span><br><span class="line">   /     \           /     \</span><br><span class="line">T(n/4)   T(n/4)    T(n/4)   T(n/4)          | n</span><br><span class="line">            ......</span><br><span class="line">T(1)    T(1)    T(1)    T(1) ...            | n</span><br></pre></td></tr></table></figure>
+<h3 id="Time-Complexity-of-merge-sort"><a href="#Time-Complexity-of-merge-sort" class="headerlink" title="Time Complexity of merge sort"></a>Time Complexity of merge sort</h3><p>T(n) = height <em> T(level) = logn </em> n = nlogn</p>
+<h3 id="Master’s-Theorem-1"><a href="#Master’s-Theorem-1" class="headerlink" title="Master’s Theorem"></a>Master’s Theorem</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">T(n) = a * T(n/b) + n^c, where a, b, c are constants</span><br><span class="line"></span><br><span class="line">Examples:</span><br><span class="line">T(n) = 2 * T(n/2) + n</span><br><span class="line">T(n) = 8 * T(n/2) + n^2</span><br><span class="line">T(n) = T(n/2) + 1</span><br><span class="line">T(n) = T(n/3) + T(2n/3) + n  (Not master&apos;s theorem)</span><br></pre></td></tr></table></figure>
+<p>Now we have to compare logb(a) and c</p>
+<ul>
+<li>logb(a) &gt; c T(n) = Θ(n^(logb(a)))</li>
+<li>logb(a) = c T(n) = Θ((n^c) * logn)</li>
+<li>logb(a) &lt; c T(n) = Θ(n^c)</li>
+</ul>
+<p>Practice<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">T(n) = T(n/2) + 1   T(n) = Θ(lgn)</span><br><span class="line">T(n) = 8T(n/2) + n^2   T(n) = Θ(n^3)</span><br><span class="line">T(n) = 7T(n/2) + n^2   T(n) = Θ(n^(log2(7)))</span><br><span class="line">T(n) = 4T(n/2) + n^2   T(n) = Θ(n^2 * (log2n))</span><br><span class="line">T(n) = T(n/2) + n  T(n) = Θ(n)</span><br><span class="line">T(n) = T(n-1) + n  (Not master&apos;s theorem)</span><br></pre></td></tr></table></figure></p>
+<p>Draw the Recursion Tree of the last one<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Recursion Tree of T(n) = T(n-1) + n </span><br><span class="line"></span><br><span class="line">        T(n) n</span><br><span class="line">        T(n-1) n-1</span><br><span class="line">        T(n-2) n-2</span><br><span class="line">        ...</span><br><span class="line">        T(1) 1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">T(n) = 1 + 2 + 3 + ... + n = n(n+1)/2</span><br><span class="line">Θ(n) = n^2</span><br></pre></td></tr></table></figure></p>
+<h3 id="Other-useful-Summation-Formula"><a href="#Other-useful-Summation-Formula" class="headerlink" title="Other useful Summation Formula"></a>Other useful Summation Formula</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 + 2 + 3 + .. + n = n(n+1)/2</span><br><span class="line"></span><br><span class="line">q^0 + q^1 + q^2 + ... q^n = (q^(n+1) -1)/(q-1)</span><br><span class="line"></span><br><span class="line">1 + 1/2 + 1/3 + ... + 1/n = Θ(ln(n))</span><br></pre></td></tr></table></figure>
+<h3 id="Normal-case"><a href="#Normal-case" class="headerlink" title="Normal case"></a>Normal case</h3><p>T(n) = T(n/3) + T(2n/3) + n</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">             T(n) n                         | n</span><br><span class="line">          /          \</span><br><span class="line">    T(n/3) n/3        T(2n/3)  2n/3         | n</span><br><span class="line">   /     \           /     \</span><br><span class="line">T(n/9)   T(2n/9)    T(2n/9)   T(4n/9)       | n</span><br><span class="line">            ......</span><br><span class="line">T(1)    T(1)    T(1)    T(1) ...            | n</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">            /\</span><br><span class="line">           /  \</span><br><span class="line">          /____\</span><br><span class="line">          \     \</span><br><span class="line">            \    \</span><br><span class="line">              \   \</span><br><span class="line">                \_\</span><br><span class="line"></span><br><span class="line">left side = log3n</span><br><span class="line">right side = log3/2(n)</span><br><span class="line"></span><br><span class="line">T(n) = num of nodes in this recursion tree</span><br><span class="line"></span><br><span class="line">n * log3(n) &lt;= T(n) &lt;= n * log3/2(n)</span><br></pre></td></tr></table></figure>
+<h3 id="Time-Complexity-of-Normal-recursion-tree"><a href="#Time-Complexity-of-Normal-recursion-tree" class="headerlink" title="Time Complexity of Normal recursion tree"></a>Time Complexity of Normal recursion tree</h3><p><code>T(n) = Θ(nlgn)</code></p>
+<h3 id="Some-examples"><a href="#Some-examples" class="headerlink" title="Some examples"></a>Some examples</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">T(n) = T(n/4) + T(3n/4) + n             T(n) = Θ(nlgn)</span><br><span class="line">T(n) = T(n/1000) + T(999n/1000) + n     T(n) = Θ(nlgn)</span><br><span class="line">T(n) = T(n-1) + T(1) + n                T(n) = Θ(n^2)</span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h2><h3 id="Partition"><a href="#Partition" class="headerlink" title="Partition"></a>Partition</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Given array like</span><br><span class="line"></span><br><span class="line">|1 |9 |2 |8 |3 |8 |7 |5 |6 |</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Choose a pivot, put all num &lt; pivot in left, others in right</span><br><span class="line"></span><br><span class="line">|    nums &lt;=  pivot  |pivot|  nums &gt; pivot   |</span><br><span class="line"></span><br><span class="line">The process is partition(A[], i, j)</span><br></pre></td></tr></table></figure>
+<h3 id="Code-3"><a href="#Code-3" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">QuickSort(<span class="keyword">int</span>[] A, <span class="keyword">int</span> i, <span class="keyword">int</span> j) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i &gt;= j) &#123;<span class="keyword">return</span>;&#125;</span><br><span class="line">    <span class="keyword">int</span> pivot_pos = Partition(A, i, j);</span><br><span class="line">    QuickSort(A, i, pivot_pos-<span class="number">1</span>);</span><br><span class="line">    QuickSort(A, pivot_pos+<span class="number">1</span>, j);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Time-Complexity-3"><a href="#Time-Complexity-3" class="headerlink" title="Time Complexity"></a>Time Complexity</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">T(n) = 2T(n/2) + n = Θ(nlogn)</span><br><span class="line">T(n) = T(n/3) + T(2n/3) + n = Θ(nlogn)</span><br><span class="line">T(n) = T(n/1000) + T(999n/1000) + n = Θ(nlogn)</span><br><span class="line"></span><br><span class="line">Worst Case</span><br><span class="line">T(n) = T(n-1) + n = Θ(n^2)</span><br></pre></td></tr></table></figure>
+<p>Average <code>T(n) = Θ(nlogn)</code></p>
+<p>Worst   <code>T(n) = Θ(n^2)</code></p>
+<h3 id="Code-of-Partition"><a href="#Code-of-Partition" class="headerlink" title="Code of Partition"></a>Code of Partition</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pivot = A[j]</span><br><span class="line">| i |  ... | p | p+1 |  ...  | cur |  ...  | j |</span><br><span class="line"></span><br><span class="line">i - p: &lt;= pivot</span><br><span class="line">p - p+1: &gt; pivot</span><br><span class="line">cur: current pointer</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>A[cur] &gt; pivot  </p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cur += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>A[cur] &lt;= pivot  </p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">swap(A[cur], A[p+<span class="number">1</span>]);</span><br><span class="line">p += <span class="number">1</span>;</span><br><span class="line">cur += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Partition(<span class="keyword">int</span>[] A, <span class="keyword">int</span> i, <span class="keyword">int</span> j) &#123;</span><br><span class="line">    <span class="keyword">int</span> pivot = A[j];</span><br><span class="line">    <span class="keyword">int</span> p = i - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> cur = i; cur &lt;= j-<span class="number">1</span>; cur++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (A[cur] &lt;= pivot) &#123;</span><br><span class="line">            swap(A[cur], A[p+<span class="number">1</span>]);</span><br><span class="line">            p += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    swap(A[j], A[p+<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> p+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/03/Google Bigtable/" rel="next" title="Google Bigtable">
+                <i class="fa fa-chevron-left"></i> Google Bigtable
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Anda Luo</p>
+              <div class="site-description motion-element" itemprop="description">Notes of study, work and life</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Luorinz" title="GitHub &rarr; https://github.com/Luorinz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:luorinz@gmail.com" title="E-Mail &rarr; mailto:luorinz@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Class-1-05-06-2019"><span class="nav-number">1.</span> <span class="nav-text">Class 1 05/06/2019</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fibonacci-numbers"><span class="nav-number">1.1.</span> <span class="nav-text">Fibonacci numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fibonacci-numbers-Exponential-Algorithm"><span class="nav-number">1.1.1.</span> <span class="nav-text">Fibonacci numbers (Exponential Algorithm)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">1.1.2.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Time-Complexity"><span class="nav-number">1.1.3.</span> <span class="nav-text">Time Complexity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recursion-Tree"><span class="nav-number">1.2.</span> <span class="nav-text">Recursion Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-algorithm"><span class="nav-number">1.3.</span> <span class="nav-text">Linear algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Time-Complexity-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">Time Complexity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Constant-space-algorithm"><span class="nav-number">1.4.</span> <span class="nav-text">Constant space algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-2"><span class="nav-number">1.4.1.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analysis"><span class="nav-number">1.4.2.</span> <span class="nav-text">Analysis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix-solution"><span class="nav-number">1.5.</span> <span class="nav-text">Matrix solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Idea"><span class="nav-number">1.5.1.</span> <span class="nav-text">Idea</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Time-Complexity-2"><span class="nav-number">1.5.2.</span> <span class="nav-text">Time Complexity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strategy"><span class="nav-number">1.5.3.</span> <span class="nav-text">Strategy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Asymptotic-Notation"><span class="nav-number">1.6.</span> <span class="nav-text">Asymptotic Notation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparison-of-each-notation"><span class="nav-number">1.6.1.</span> <span class="nav-text">Comparison of each notation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mathematical-Derivation"><span class="nav-number">1.6.2.</span> <span class="nav-text">Mathematical Derivation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Master’s-Theorem"><span class="nav-number">1.7.</span> <span class="nav-text">Master’s Theorem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Idea-of-merge-sort"><span class="nav-number">1.7.1.</span> <span class="nav-text">Idea of merge sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Time-Complexity-of-merge-sort"><span class="nav-number">1.7.2.</span> <span class="nav-text">Time Complexity of merge sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Master’s-Theorem-1"><span class="nav-number">1.7.3.</span> <span class="nav-text">Master’s Theorem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Other-useful-Summation-Formula"><span class="nav-number">1.7.4.</span> <span class="nav-text">Other useful Summation Formula</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Normal-case"><span class="nav-number">1.7.5.</span> <span class="nav-text">Normal case</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Time-Complexity-of-Normal-recursion-tree"><span class="nav-number">1.7.6.</span> <span class="nav-text">Time Complexity of Normal recursion tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Some-examples"><span class="nav-number">1.7.7.</span> <span class="nav-text">Some examples</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Sort"><span class="nav-number">1.8.</span> <span class="nav-text">Quick Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Partition"><span class="nav-number">1.8.1.</span> <span class="nav-text">Partition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-3"><span class="nav-number">1.8.2.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Time-Complexity-3"><span class="nav-number">1.8.3.</span> <span class="nav-text">Time Complexity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-of-Partition"><span class="nav-number">1.8.4.</span> <span class="nav-text">Code of Partition</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+    <div id="sidebar-dimmer"></div>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Anda Luo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total">183k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="Reading time total">2:46</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#more");
+  
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
