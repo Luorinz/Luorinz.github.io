@@ -294,7 +294,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives<span class="badge">26</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives<span class="badge">27</span></a>
 
   </li>
 
@@ -370,6 +370,214 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/How to Reverse A Linked List/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anda Luo"/>
+      <meta itemprop="description" content="Notes of study, work and life"/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anda"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/09/How to Reverse A Linked List/" class="post-title-link" itemprop="url">How to Reverse A Linked List</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-09 17:04:54 / Modified: 10:09:05" itemprop="dateCreated datePublished" datetime="2019-04-09T17:04:54-07:00">2019-04-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">780</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">1 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Reverse-linked-list"><a href="#Reverse-linked-list" class="headerlink" title="Reverse linked list"></a>Reverse linked list</h1><ol>
+<li><p>corner case</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dummy-&gt;1-&gt;null</span><br><span class="line">dummy-&gt;null</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>general case</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dummy-&gt; 1 -&gt;   2      -&gt; 3 -&gt; null</span><br><span class="line">pre    cur  nextNode</span><br><span class="line"></span><br><span class="line">dummy -&gt;  2   -&gt; 1 -&gt; 3 -&gt; null</span><br><span class="line">pre     nextNode cur  </span><br><span class="line"></span><br><span class="line">dummy -&gt;  2   -&gt; 1 -&gt;   3   -&gt; null</span><br><span class="line">pre             cur  nextNode</span><br><span class="line"></span><br><span class="line">dummy -&gt;  3   -&gt; 2 -&gt;   1   -&gt; null</span><br><span class="line">pre                    cur      nextNode</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<ol>
+<li>link cur to the next node <code>cur.next = nextNode.next</code></li>
+<li>link nextNode to the head of the reversed part <code>nextNode.next = pre.next</code></li>
+<li>link pre to the nextNode <code>pre.next = nextNode</code></li>
+<li>update nextNode to next <code>nextNode = cur.next</code></li>
+<li>when nextNode gets to the end, exit</li>
+</ol>
+<hr>
+<blockquote>
+<p>cur represents the tail, and pre represents the the dummy, nextNode represents the node waiting to be added to the head of the list.</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1864,7 +2072,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2028,7 +2236,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">238k</span>
+    <span title="Symbols count total">245k</span>
   
 
   
@@ -2037,7 +2245,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">3:36</span>
+    <span title="Reading time total">3:43</span>
   
 </div>
 

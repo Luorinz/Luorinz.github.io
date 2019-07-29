@@ -294,7 +294,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">26</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">27</span></a>
 
   </li>
 
@@ -384,6 +384,533 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/Leetcode Summary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anda Luo">
+      <meta itemprop="description" content="Notes of study, work and life">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anda">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/26/Leetcode Summary/" class="post-title-link" itemprop="url">Leetcode Summary</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-26 16:48:12" itemprop="dateCreated datePublished" datetime="2019-07-26T16:48:12-07:00">2019-07-26</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-29 16:57:50" itemprop="dateModified" datetime="2019-07-29T16:57:50-07:00">2019-07-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">6.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">6 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Algorithm-Review"><a href="#Algorithm-Review" class="headerlink" title="Algorithm Review"></a>Algorithm Review</h1><h2 id="Greedy"><a href="#Greedy" class="headerlink" title="Greedy"></a>Greedy</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">316. Remove Duplicate Letters</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">Find the current smallest achievable letter and continue searching the rest</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/remove-duplicate-letters/description/" target="_blank" rel="noopener">https://leetcode.com/problems/remove-duplicate-letters/description/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Monotonic-Stack"><a href="#Monotonic-Stack" class="headerlink" title="Monotonic Stack"></a>Monotonic Stack</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">316. Remove Duplicate Letters</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">Use a increasing stack to keep the str in order and use visited to keep the uniqueness of the letters</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/remove-duplicate-letters/description/" target="_blank" rel="noopener">https://leetcode.com/problems/remove-duplicate-letters/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">402. Remove K Digits</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Keep the chars in increasing order and count the poped element. If we didn’t delete enough element we delete from the end</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/remove-k-digits/description/" target="_blank" rel="noopener">https://leetcode.com/problems/remove-k-digits/description/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">658. Find K Closest Elements</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Use binary search to find a size k interval. Compare the distance from left bound to the x and right bound to x</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/find-k-closest-elements/description/" target="_blank" rel="noopener">https://leetcode.com/problems/find-k-closest-elements/description/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Prefix-Sum"><a href="#Prefix-Sum" class="headerlink" title="Prefix Sum"></a>Prefix Sum</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">548. Split Array with Equal Sum</td>
+<td style="text-align:center">Mediumn</td>
+<td style="text-align:center">find all possible positions of j, and find all possiblt positions of i and k. Use the prefixSum to check if we have seen the same interval sum.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/split-array-with-equal-sum/description/" target="_blank" rel="noopener">https://leetcode.com/problems/split-array-with-equal-sum/description/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Divide-amp-Conquer"><a href="#Divide-amp-Conquer" class="headerlink" title="Divide &amp; Conquer"></a>Divide &amp; Conquer</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">312. Burst Balloons</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">dp(left, right) = nums[left] <em> nums[mid] </em> nums[right] + dp(left, mid) + dp(mid, right), left &lt; mid &lt; right</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/burst-balloons/description/" target="_blank" rel="noopener">https://leetcode.com/problems/burst-balloons/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">53. Maximum Subarray</td>
+<td style="text-align:center">Easy</td>
+<td style="text-align:center">find the mid pos, solve its left and right subproblem, get the current result from mid to both ends, then merge the result.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/maximum-subarray/description/" target="_blank" rel="noopener">https://leetcode.com/problems/maximum-subarray/description/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="DP"><a href="#DP" class="headerlink" title="DP"></a>DP</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">312. Burst Balloons</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">dp(left, right) = nums[left] <em> nums[mid] </em> nums[right] + dp(left, mid) + dp(mid, right), left &lt; mid &lt; right. Find all possible length first, then search from left to right, from short to long of all subarrays(Bottom up)</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/burst-balloons/description/" target="_blank" rel="noopener">https://leetcode.com/problems/burst-balloons/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">53. Maximum Subarray</td>
+<td style="text-align:center">Easy</td>
+<td style="text-align:center">dp[i] = dp[i-1] &gt; 0?:dp[i-1] + nums[i]: nums[i]</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/maximum-subarray/description/" target="_blank" rel="noopener">https://leetcode.com/problems/maximum-subarray/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">801. Minimum Swaps To Make Sequences Increasing</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">if is already valid, swap[i] = swap[i-1] + 1, keep[i] = keep[i-1. It we can swap, keep[i] = min(keep[i], swap[i-1]), swap[i] = min(swap[i], keep[i-1] + 1</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/description/" target="_blank" rel="noopener">https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">750. Number Of Corner Rectangles</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">dp[i][j] means the number of matches between colomn i and j. Loop all items and scan the right of it, update res = dp[i][k]++, when grid[i][j] == 1 and grid[i][k] == 1.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/number-of-corner-rectangles/description/" target="_blank" rel="noopener">https://leetcode.com/problems/number-of-corner-rectangles/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">1140. Stone Game II</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">dp(ind, m) = max points of cur player given ind and m. We search next player’s possible points and pick the smallest. then return all points- opponent’s points. can use a postsum array to optimize</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/stone-game-ii/description/" target="_blank" rel="noopener">https://leetcode.com/problems/stone-game-ii/description/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Design-Datastructre"><a href="#Design-Datastructre" class="headerlink" title="Design Datastructre"></a>Design Datastructre</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">641. Design Circular Deque</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Use a doubly linkedlist</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/design-circular-deque/description/" target="_blank" rel="noopener">https://leetcode.com/problems/design-circular-deque/description/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Sliding-Window"><a href="#Sliding-Window" class="headerlink" title="Sliding Window"></a>Sliding Window</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">713. Subarray Product Less Than K</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Use a sliding window which product is less than k, and add the size of window to res</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/subarray-product-less-than-k/description/" target="_blank" rel="noopener">https://leetcode.com/problems/subarray-product-less-than-k/description/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">663. Equal Tree Partition</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Store the sum of every subtree and check if totalSum/2 in these subtrees</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/equal-tree-partition/description/" target="_blank" rel="noopener">https://leetcode.com/problems/equal-tree-partition/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">662. Maximum Width of Binary Tree</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Change the val of the nodes to the corresponding index in a full binary tree, then do a level order traversal, track the largest distance</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/maximum-width-of-binary-tree/description/" target="_blank" rel="noopener">https://leetcode.com/problems/maximum-width-of-binary-tree/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">652. Find Duplicate Subtrees</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Encode the tree and track the appearance of all encoded strings</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/find-duplicate-subtrees/description/" target="_blank" rel="noopener">https://leetcode.com/problems/find-duplicate-subtrees/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">549. Binary Tree Longest Consecutive Sequence II</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">helper gets a node and return the longest inc num and decnum. For each node, compare to its left and right, find current lonest inc num and dec num, then update the res with curInc + curDec - 1</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/binary-tree-longest-consecutive-sequence-ii/description/" target="_blank" rel="noopener">https://leetcode.com/problems/binary-tree-longest-consecutive-sequence-ii/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">515. Find Largest Value in Each Tree Row</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Recursion: check the depth and the size of the res to see if we find the first node in the level. Non-recursion: simple level order traversal</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/find-largest-value-in-each-tree-row/description/" target="_blank" rel="noopener">https://leetcode.com/problems/find-largest-value-in-each-tree-row/description/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1135. Connecting Cities With Minimum Cost</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">TODO</td>
+<td style="text-align:center"><a href="https://leetcode.com/contest/biweekly-contest-5/problems/connecting-cities-with-minimum-cost/" target="_blank" rel="noopener">https://leetcode.com/contest/biweekly-contest-5/problems/connecting-cities-with-minimum-cost/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="UnionFind"><a href="#UnionFind" class="headerlink" title="UnionFind"></a>UnionFind</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1135. Connecting Cities With Minimum Cost</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">TODO</td>
+<td style="text-align:center"><a href="https://leetcode.com/contest/biweekly-contest-5/problems/connecting-cities-with-minimum-cost/" target="_blank" rel="noopener">https://leetcode.com/contest/biweekly-contest-5/problems/connecting-cities-with-minimum-cost/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="SubMatrix"><a href="#SubMatrix" class="headerlink" title="SubMatrix"></a>SubMatrix</h2><blockquote>
+<p>For this type of question, always try to reduce the time complexity to n^3. Try to fix an edge/point and search other points.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1139. Largest 1-Bordered Square</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Search all possible r for the square(big-&gt;small) and all possible root point, check if all 4 edges are 1s. Optimize it with helper matrix that tells how many consecutive 1s to the left/top of the current pos.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/largest-1-bordered-square/description/" target="_blank" rel="noopener">https://leetcode.com/problems/largest-1-bordered-square/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">764. Largest Plus Sign</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">track the minimum distance that a pos can strech. then return the max pos.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/largest-plus-sign/description/" target="_blank" rel="noopener">https://leetcode.com/problems/largest-plus-sign/description/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="String-Parsing"><a href="#String-Parsing" class="headerlink" title="String Parsing"></a>String Parsing</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">640. Solve the Equation</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Split the string with left and right. and then count the res of ax+b = cx+d. regex “(?=[+-])” means we want to match + or -a, but not including the sign into the split.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/solve-the-equation/description/" target="_blank" rel="noopener">https://leetcode.com/problems/solve-the-equation/description/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">525. Contiguous Array</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">replace the 0 to -1, then we do the same thing as max subarray with sum k(k=0). We store the sum with the index, and if curSum already in the map, it means current interval is 0-1 balanced, we update the res. Otherwise, we update the map.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/contiguous-array/description/" target="_blank" rel="noopener">https://leetcode.com/problems/contiguous-array/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">554. Brick Wall</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">count the pos of all brick edges in map, and return the num of walls - edge with most appearance</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/brick-wall/description/" target="_blank" rel="noopener">https://leetcode.com/problems/brick-wall/description/</a></td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/07/[Notes] Notes of Algorithm CS5800/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -446,7 +973,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-23 11:38:10" itemprop="dateModified" datetime="2019-07-23T11:38:10-07:00">2019-07-23</time>
+                <time title="Modified: 2019-07-29 16:57:34" itemprop="dateModified" datetime="2019-07-29T16:57:34-07:00">2019-07-29</time>
               
             
           </span>
@@ -968,7 +1495,7 @@
 <h3 id="Pseudocode-4"><a href="#Pseudocode-4" class="headerlink" title="Pseudocode"></a>Pseudocode</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// O n^3 time O n space -&gt; O n^3 time to O n^2 time optimizing isPalindrome, O n space to O n^2</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MinPalindrome</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[A.length+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= A.length; i++) &#123;</span><br><span class="line">        dp[i] = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (isPalindrome(A.substring(j-<span class="number">1</span>, i))) &#123;</span><br><span class="line">                dp[i] = Math.min(dp[j-<span class="number">1</span>]+<span class="number">1</span>, dp[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[A.length];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">base case g(i, i) = true</span></span><br><span class="line"><span class="comment">g(i, i+1) = A[i] == A[i+1]</span></span><br><span class="line"><span class="comment">g(i, j) = A[i] == A[j] &amp;&amp; g(i+1,j-1)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span>[][] p = <span class="keyword">new</span> <span class="keyword">int</span>[A.length][A.length];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.length; i++) p[i][i] = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.length-<span class="number">1</span>; i++) p[i][i+<span class="number">1</span>] = A[i] == A[i+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">2</span>; col &lt; A.length; col++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">0</span>; row &lt;= col-<span class="number">2</span>; row++) &#123;</span><br><span class="line">            p[row][col] = A[row] == A[col] &amp;&amp; p[row+<span class="number">1</span>][col-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p[i][j]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="Class-8-07-08-2019"><a href="#Class-8-07-08-2019" class="headerlink" title="Class 8 07/08/2019"></a>Class 8 07/08/2019</h1><h2 id="Matrix-Multiplication"><a href="#Matrix-Multiplication" class="headerlink" title="Matrix Multiplication"></a>Matrix Multiplication</h2><h3 id="Description-7"><a href="#Description-7" class="headerlink" title="Description"></a>Description</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">A1 * A2 * ... * An</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for A * B, the time would be O(pqr)</span><br><span class="line"></span><br><span class="line">For A1 * A2 * A3, Assume A1(2 * 100), A2(100 * 5), A3(5 * 3)</span><br><span class="line">We can do (A1 * A2) * A3, overall time is 2 * 100 * 5 + 2 * 5 * 3 = 103</span><br><span class="line">Or we can do A1 * (A2 * A3), overall time is 100 * 5 * 3 + 2 * 100 * 3 = 2100</span><br><span class="line"></span><br><span class="line">What&apos;s the minimum cost after re-arranging the order of calculation?</span><br></pre></td></tr></table></figure>
 <h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><h4 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">f(i, j) = min cost to multiply Ai * ..  * Aj</span><br><span class="line"></span><br><span class="line">Assume i &lt; k &lt; j, </span><br><span class="line"></span><br><span class="line">f(i, j) = f(i, k) + f(k+1, j) + m0 * nk * mj</span><br><span class="line"></span><br><span class="line">For A1 * A2 * A3 * A4,</span><br><span class="line"></span><br><span class="line">Option1: A1 * (A2*A3*A4) = f(2, 4) + p0p1p4</span><br><span class="line"></span><br><span class="line">Option2: (A1*A2) * (A3*A4) = f(1, 2) + f(3, 4) + p0*p2*p4</span><br><span class="line"></span><br><span class="line">Option2: (A1*A2*A3) * A4 = f(1, 3) + p0 * p3 * p4</span><br><span class="line"></span><br><span class="line">Thus, f(i, j) = min(option1, option2, option3)</span><br><span class="line"></span><br><span class="line">f(i, j) = min(f(i, k) + f(k+1, j) + pi-1*pk*pj, i &lt;= k &lt; j)</span><br><span class="line"></span><br><span class="line">We can use dp[i][j] to store all the results, and return dp[0][n]</span><br><span class="line"></span><br><span class="line">base case dp[i][i]</span><br><span class="line"></span><br><span class="line">  0 1 2 3 4</span><br><span class="line">0 0 </span><br><span class="line">1   0 y x</span><br><span class="line">2     0 v</span><br><span class="line">3       0</span><br><span class="line">4         0</span><br><span class="line"></span><br><span class="line">x = 0 + y + v + 0</span><br><span class="line">We search the left and the bottom of dp[i][j]</span><br><span class="line"></span><br><span class="line">So we update dp[i][j] from left to right, from bottom to up</span><br></pre></td></tr></table></figure>
-<h4 id="Pseudocode-5"><a href="#Pseudocode-5" class="headerlink" title="Pseudocode"></a>Pseudocode</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// O n^3 time O n^2 space</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MatrixMultiplication</span><span class="params">(<span class="keyword">int</span>[] p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = p.length;</span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>][n+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span>; j &lt;= n; j++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = j-<span class="number">1</span>; j &gt;= <span class="number">1</span>; j--) &#123;</span><br><span class="line">            dp[i][j] = Integer.MAX_VALUE;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = i; k &lt;= j-<span class="number">1</span>; k++) &#123;</span><br><span class="line">                dp[i][j] = Math.min(dp[i][j], dp[i][k] + dp[k+<span class="number">1</span>][j] + p[i-<span class="number">1</span>]*p[k]*p[j] )</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">1</span>][n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Pseudocode-5"><a href="#Pseudocode-5" class="headerlink" title="Pseudocode"></a>Pseudocode</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// O n^3 time O n^2 space</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MatrixMultiplication</span><span class="params">(<span class="keyword">int</span>[] p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = p.length;</span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>][n+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span>; j &lt;= n; j++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = j-<span class="number">1</span>; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">            dp[i][j] = Integer.MAX_VALUE;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = i; k &lt;= j-<span class="number">1</span>; k++) &#123;</span><br><span class="line">                dp[i][j] = Math.min(dp[i][j], dp[i][k] + dp[k+<span class="number">1</span>][j] + p[i-<span class="number">1</span>]*p[k]*p[j] )</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">1</span>][n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Sell-products-problem"><a href="#Sell-products-problem" class="headerlink" title="Sell products problem"></a>Sell products problem</h2><h3 id="Description-8"><a href="#Description-8" class="headerlink" title="Description"></a>Description</h3><p>Assume we have a street of n houses, we have 3 colors of them, red, green and yellow. The profit of coloring them should be R[], G[], Y[]. We want to have maximum profit while coloring all n houses. No adjacent houses can be painted the same color.</p>
 <h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><h4 id="Explanation-1"><a href="#Explanation-1" class="headerlink" title="Explanation"></a>Explanation</h4><p>We assume g(i) = best way to color 1 … i, with ith house colored as green<br>r(i) = paint first ith house and last house is red<br>y(i) = same as above</p>
 <p>g(i) = G[i] + max(r(i-1), y(i-1))<br>r(i) = R[i] + max(g(i-1), y(i-1))<br>y(i) = Y[i] + max(r(i-1), g(i-1))<br>r[1] = R[1]<br>g[1] = G[1]<br>y[1] = Y[1]</p>
@@ -977,7 +1504,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3 2 1</span><br><span class="line">7 4 2</span><br><span class="line">5 3 6</span><br></pre></td></tr></table></figure>
 <h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h3><h4 id="Explanation-2"><a href="#Explanation-2" class="headerlink" title="Explanation"></a>Explanation</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f(i, j) = max path length to pos(i, j)</span><br><span class="line">        = max(</span><br><span class="line">            f(i-1, j) + 1 if A[i, j] &gt; A[i-1, j], </span><br><span class="line">            f(i, j-1) + 1 if A[i, j] &gt; A[i, j-1], </span><br><span class="line">            1</span><br><span class="line">        )</span><br></pre></td></tr></table></figure>
 <h4 id="Pseudocode-7"><a href="#Pseudocode-7" class="headerlink" title="Pseudocode"></a>Pseudocode</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">longestIncPath</span><span class="params">(<span class="keyword">int</span>[][] A)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = A.length;</span><br><span class="line">    <span class="keyword">int</span> n = A[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m][n];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>[] row: dp) Arrays.fill(row, <span class="number">1</span>);</span><br><span class="line">    <span class="comment">// fill the first row and col</span></span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (A[i][<span class="number">0</span>] &gt; A[i-<span class="number">1</span>][<span class="number">0</span>]) &#123;</span><br><span class="line">            dp[i][<span class="number">0</span>] = dp[i-<span class="number">1</span>][<span class="number">0</span>] + <span class="number">1</span>;</span><br><span class="line">            res = Math.max(res, dp[i][<span class="number">0</span>]);</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (A[<span class="number">0</span>][i] &gt; A[<span class="number">0</span>][i-<span class="number">1</span>]) &#123;</span><br><span class="line">            dp[<span class="number">0</span>][i] = dp[<span class="number">0</span>][i-<span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">            res = Math.max(res, dp[<span class="number">0</span>][i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (A[i][j] &gt; A[i-<span class="number">1</span>][j]) dp[i][j] = Math.max(dp[i][j], dp[i-<span class="number">1</span>][j] + <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span> (A[i][j] &gt; A[i][j-<span class="number">1</span>]) dp[i][j] = Math.max(dp[i][j], dp[i][j-<span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">            res = Math.max(res, dp[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h3><h4 id="Explanation-Bottom-up"><a href="#Explanation-Bottom-up" class="headerlink" title="Explanation (Bottom up)"></a>Explanation (Bottom up)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">2 5 1</span><br><span class="line">2 1 6</span><br><span class="line">2 4 7</span><br><span class="line"></span><br><span class="line">The intuition would be:</span><br><span class="line">f(i, j) = max(  </span><br><span class="line">        f(i-1, j) + 1 if A[i, j] &gt; A[i-1, j], </span><br><span class="line">        f(i+1, j) + 1 if A[i, j] &gt; A[i+1, j],</span><br><span class="line">        f(i, j-1) + 1 if A[i, j] &gt; A[i, j-1],</span><br><span class="line">        f(i, j+1) + 1 if A[i, j] &gt; A[i, j+1], </span><br><span class="line">        1</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">Sort the nums and its coordination.</span><br><span class="line">1,1,2,2,3,4,5,6,7</span><br><span class="line">(1,3), (2,2), (2,1)...</span><br><span class="line"></span><br><span class="line">for dp matrix</span><br><span class="line"></span><br><span class="line">_ _ 1</span><br><span class="line">_ 1 _      1</span><br><span class="line">_ _ _</span><br><span class="line"></span><br><span class="line">_ _ 1</span><br><span class="line">2 1 _      2</span><br><span class="line">_ _ _</span><br><span class="line"></span><br><span class="line">_ _ 1</span><br><span class="line">2 1 _      2</span><br><span class="line">1 _ _</span><br><span class="line"></span><br><span class="line">3 _ 1</span><br><span class="line">2 1 _      3</span><br><span class="line">1 _ _</span><br><span class="line"></span><br><span class="line">3 _ 1</span><br><span class="line">2 1 _      4</span><br><span class="line">1 4 _       </span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">Time Complexity of bottom up approach is </span><br><span class="line">O(n^2logn + n^2) = O(n^2logn)</span><br></pre></td></tr></table></figure>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h3><h4 id="Explanation-Bottom-up"><a href="#Explanation-Bottom-up" class="headerlink" title="Explanation (Bottom up)"></a>Explanation (Bottom up)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">3 5 1</span><br><span class="line">2 1 6</span><br><span class="line">2 4 7</span><br><span class="line"></span><br><span class="line">The intuition would be:</span><br><span class="line">f(i, j) = max(  </span><br><span class="line">        f(i-1, j) + 1 if A[i, j] &gt; A[i-1, j], </span><br><span class="line">        f(i+1, j) + 1 if A[i, j] &gt; A[i+1, j],</span><br><span class="line">        f(i, j-1) + 1 if A[i, j] &gt; A[i, j-1],</span><br><span class="line">        f(i, j+1) + 1 if A[i, j] &gt; A[i, j+1], </span><br><span class="line">        1</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">Sort the nums and its coordination.</span><br><span class="line">1,1,2,2,3,4,5,6,7</span><br><span class="line">(1,3), (2,2), (2,1)...</span><br><span class="line"></span><br><span class="line">for dp matrix</span><br><span class="line"></span><br><span class="line">_ _ 1</span><br><span class="line">_ 1 _      1</span><br><span class="line">_ _ _</span><br><span class="line"></span><br><span class="line">_ _ 1</span><br><span class="line">2 1 _      2</span><br><span class="line">_ _ _</span><br><span class="line"></span><br><span class="line">_ _ 1</span><br><span class="line">2 1 _      2</span><br><span class="line">2 _ _</span><br><span class="line"></span><br><span class="line">3 _ 1</span><br><span class="line">2 1 _      3</span><br><span class="line">2 _ _</span><br><span class="line"></span><br><span class="line">3 _ 1</span><br><span class="line">2 1 _      4</span><br><span class="line">2 4 _       </span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">Time Complexity of bottom up approach is </span><br><span class="line">O(n^2logn + n^2) = O(n^2logn)</span><br></pre></td></tr></table></figure>
 <h4 id="Pseudocode-Top-down"><a href="#Pseudocode-Top-down" class="headerlink" title="Pseudocode (Top down)"></a>Pseudocode (Top down)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Top down approach, O(n^2) time</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">longestIncPath</span><span class="params">(<span class="keyword">int</span>[][] A)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = A.length, n = A[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m][n];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            compute(A, dp, i, j);</span><br><span class="line">            res = Math.max(res, dp[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">compute</span><span class="params">(<span class="keyword">int</span>[][] A, <span class="keyword">int</span>[][] dp, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = A.length, n = A[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">if</span> (dp[i][j] != -<span class="number">1</span>) <span class="keyword">return</span> dp[i][[j]];</span><br><span class="line">    dp[i][j] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (i &gt;= <span class="number">1</span> and A[i][j] &gt; A[i-<span class="number">1</span>][j]) &#123;</span><br><span class="line">        dp[i][j] = Math.max(dp[i][j], compute(A, dp, i-<span class="number">1</span>, j));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; m - <span class="number">1</span> and A[i][j] &gt; A[i+<span class="number">1</span>][j]) &#123;</span><br><span class="line">        dp[i][j] = Math.max(dp[i][j], compute(A, dp, i+<span class="number">1</span>, j));</span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="keyword">if</span> (j &gt;= <span class="number">1</span> and A[i][j] &gt; A[i][j-<span class="number">1</span>]) &#123;</span><br><span class="line">        dp[i][j] = Math.max(dp[i][j], compute(A, dp, i, j-<span class="number">1</span>));</span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="keyword">if</span> (i &lt; n-<span class="number">1</span> and A[i][j] &gt; A[i][j+<span class="number">1</span>]) &#123;</span><br><span class="line">        dp[i][j] = Math.max(dp[i][j], compute(A, dp, i, j+<span class="number">1</span>));</span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="keyword">return</span> dp[i][j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Solution-3-Graph-follow-up"><a href="#Solution-3-Graph-follow-up" class="headerlink" title="Solution 3 (Graph follow up)"></a>Solution 3 (Graph follow up)</h3><h4 id="Explanation-3"><a href="#Explanation-3" class="headerlink" title="Explanation"></a>Explanation</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1 -&gt; 3 -&gt; 2</span><br><span class="line">|    |    |</span><br><span class="line">7 &lt;- 5 -&gt; 8</span><br><span class="line">|    |    |</span><br><span class="line">2 &lt;- 1 -&gt; 4</span><br><span class="line">Directed Graph</span><br></pre></td></tr></table></figure>
 <h2 id="Longest-Increasing-Subsequence"><a href="#Longest-Increasing-Subsequence" class="headerlink" title="Longest Increasing Subsequence"></a>Longest Increasing Subsequence</h2><h3 id="Description-10"><a href="#Description-10" class="headerlink" title="Description"></a>Description</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Given an array 1, 2, 4, 3, find the longest increasing subsequence, 1, 2, 3</span><br></pre></td></tr></table></figure>
@@ -1034,7 +1561,7 @@
 <h3 id="Counting-islands"><a href="#Counting-islands" class="headerlink" title="Counting islands"></a>Counting islands</h3><h4 id="Description-15"><a href="#Description-15" class="headerlink" title="Description"></a>Description</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 1 0 0 </span><br><span class="line">1 0 1 1</span><br><span class="line">0 0 1 1 </span><br><span class="line">1 1 0 0</span><br><span class="line">How many islands do we have？</span><br></pre></td></tr></table></figure>
 <h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DFS(G, u, visited[]) &#123;</span><br><span class="line">    visited[u] = <span class="keyword">true</span>;</span><br><span class="line">    <span class="comment">// processing with u;</span></span><br><span class="line">    <span class="keyword">for</span> (v in G.neighbors(u)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[v]) &#123;</span><br><span class="line">            DFS(G, v, visited);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Connected-Components"><a href="#Connected-Components" class="headerlink" title="Connected Components"></a>Connected Components</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">DFS_ALL(G) &#123;</span><br><span class="line">    visited[<span class="number">1</span> ... n] = <span class="keyword">false</span>;</span><br><span class="line">    cc[<span class="number">1</span> ... n] = <span class="number">0</span>;</span><br><span class="line">    cur = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (S = <span class="number">1</span> ... n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[s]) &#123;</span><br><span class="line">            DFS(G, v, visited, cc, cur);</span><br><span class="line">            cur++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Cycles"><a href="#Cycles" class="headerlink" title="Cycles"></a>Cycles</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// O 2^m time </span></span><br><span class="line"><span class="comment">// backtrack</span></span><br><span class="line"><span class="comment">// we visite every possible path starting from the source node.</span></span><br><span class="line">DFS(G, u) &#123;</span><br><span class="line">    visited[u] = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (S = <span class="number">1</span> ... n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[s]) &#123;</span><br><span class="line">            DFS(G, v, visited, cc, cur);</span><br><span class="line">            cur++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    visited[u] = <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//better solution</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">white: new vertex</span></span><br><span class="line"><span class="comment">grey: on recursion call stack</span></span><br><span class="line"><span class="comment">black: visited but not on call stack</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">DFS</span><span class="params">(G, u, color[])</span> </span>&#123;</span><br><span class="line">    color[u] = grey;</span><br><span class="line">    <span class="keyword">for</span> (v in G.neighbors(u)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (color[v] == white) &#123;</span><br><span class="line">            DFS(G, v, color[]);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(color[v] == grey) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    color[u] = black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Cycles"><a href="#Cycles" class="headerlink" title="Cycles"></a>Cycles</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// O 2^m time </span></span><br><span class="line"><span class="comment">// backtrack</span></span><br><span class="line"><span class="comment">// we visite every possible path starting from the source node.</span></span><br><span class="line">DFS(G, u) &#123;</span><br><span class="line">    visited[u] = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (S = <span class="number">1</span> ... n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[s]) &#123;</span><br><span class="line">            DFS(G, v, visited, cc, cur);</span><br><span class="line">            cur++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    visited[u] = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//better solution</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">white: new vertex</span></span><br><span class="line"><span class="comment">grey: on recursion call stack</span></span><br><span class="line"><span class="comment">black: visited but not on call stack</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">DFS</span><span class="params">(G, u, color[])</span> </span>&#123;</span><br><span class="line">    color[u] = grey;</span><br><span class="line">    <span class="keyword">for</span> (v in G.neighbors(u)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (color[v] == white) &#123;</span><br><span class="line">            DFS(G, v, color[]);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(color[v] == grey) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    color[u] = black;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="Class-11-07-22-2019"><a href="#Class-11-07-22-2019" class="headerlink" title="Class 11 07/22/2019"></a>Class 11 07/22/2019</h1><h2 id="Review-1"><a href="#Review-1" class="headerlink" title="Review"></a>Review</h2><h3 id="Time-Complexity-of-some-algorithms"><a href="#Time-Complexity-of-some-algorithms" class="headerlink" title="Time Complexity of some algorithms"></a>Time Complexity of some algorithms</h3><table>
 <thead>
 <tr>
@@ -1063,7 +1590,7 @@
 <li><p>Doesn’t work for cyclic graph. Will recurse forever.</p>
 </li>
 </ol>
-<h4 id="Pseudocode-13"><a href="#Pseudocode-13" class="headerlink" title="Pseudocode"></a>Pseudocode</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// We mark each node in the order we visit them</span></span><br><span class="line"><span class="comment">// if we sort the vertices by decreasing order of finishing time, then I have a valid topological sort</span></span><br><span class="line">DFS_ALL(G) &#123;</span><br><span class="line">    visited[<span class="number">1</span>...n];</span><br><span class="line">    finish[<span class="number">1</span>...n];</span><br><span class="line">    timer = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (u = <span class="number">1</span> ... n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (visited[u] == <span class="keyword">false</span>) &#123;</span><br><span class="line">            DFS(G, u, visited, finish, timer);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">DFS(G, u, visited, finish, timer) &#123;</span><br><span class="line">    visited[u] = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (v in G.neighbor(u)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (visited[v] == <span class="keyword">false</span>) &#123;</span><br><span class="line">            DFS(G, v, visited, finish, timer);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    finish[u] = timer;</span><br><span class="line">    timer += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// updated version using array as finish time recorder</span></span><br><span class="line">DFS(G, u, visited, finish) &#123;</span><br><span class="line">    visited[u] = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (v in G.neighbor(u)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (visited[v] == <span class="keyword">false</span>) &#123;</span><br><span class="line">            DFS(G, v, visited, finish);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    finish.append(u);</span><br><span class="line">    timer += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Pseudocode-13"><a href="#Pseudocode-13" class="headerlink" title="Pseudocode"></a>Pseudocode</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// We mark each node in the order we visit them</span></span><br><span class="line"><span class="comment">// if we sort the vertices by decreasing order of finishing time, then I have a valid topological sort</span></span><br><span class="line">DFS_ALL(G) &#123;</span><br><span class="line">    visited[<span class="number">1</span>...n];</span><br><span class="line">    finish[<span class="number">1</span>...n];</span><br><span class="line">    timer = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (u = <span class="number">1</span> ... n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (visited[u] == <span class="keyword">false</span>) &#123;</span><br><span class="line">            DFS(G, u, visited, finish, timer);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">DFS(G, u, visited, finish, timer) &#123;</span><br><span class="line">    visited[u] = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (v in G.neighbor(u)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (visited[v] == <span class="keyword">false</span>) &#123;</span><br><span class="line">            DFS(G, v, visited, finish, timer);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    finish[u] = timer;</span><br><span class="line">    timer += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// updated version using array as finish time recorder</span></span><br><span class="line">DFS(G, u, visited, finish) &#123;</span><br><span class="line">    visited[u] = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (v in G.neighbor(u)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (visited[v] == <span class="keyword">false</span>) &#123;</span><br><span class="line">            DFS(G, v, visited, finish);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    finish.append(u);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Non-DFS-Solution"><a href="#Non-DFS-Solution" class="headerlink" title="Non DFS Solution"></a>Non DFS Solution</h3><h4 id="Idea-7"><a href="#Idea-7" class="headerlink" title="Idea"></a>Idea</h4><p>Record the indegree of the vertices and keep searching and updating the indegree map.</p>
 <p>The running time is O(m+n)</p>
 <h4 id="Pseudocode-14"><a href="#Pseudocode-14" class="headerlink" title="Pseudocode"></a>Pseudocode</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">TopoSort(G) &#123;</span><br><span class="line">    <span class="keyword">for</span> (u = <span class="number">1</span> ... n) &#123;</span><br><span class="line">        <span class="keyword">for</span> (v in G[u])&#123;</span><br><span class="line">            in[v]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (u = <span class="number">1</span>... n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (in[u] == <span class="number">0</span>) q.enqueue(u);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (!q.isEmpty()) &#123;</span><br><span class="line">        u = q.dequeue();</span><br><span class="line">        <span class="keyword">for</span> (v in G[u]) &#123;</span><br><span class="line">            in[v]--;</span><br><span class="line">            <span class="keyword">if</span> (in[v] == <span class="number">0</span>) &#123;</span><br><span class="line">                q.enqueue(v);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -3467,247 +3994,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/18/[Notes] AJAX Basic/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Anda Luo">
-      <meta itemprop="description" content="Notes of study, work and life">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Anda">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/18/[Notes] AJAX Basic/" class="post-title-link" itemprop="url">[Notes] AJAX Basic</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-18 02:00:51" itemprop="dateCreated datePublished" datetime="2019-04-18T02:00:51-07:00">2019-04-18</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-17 19:01:37" itemprop="dateModified" datetime="2019-04-17T19:01:37-07:00">2019-04-17</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">9.8k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">9 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="What-is-AJAX"><a href="#What-is-AJAX" class="headerlink" title="What is AJAX?"></a>What is AJAX?</h1><p>AJAX is not a programming language.<br>AJAX just uses a combination of:</p>
-<ul>
-<li>A browser built-in XMLHttpRequest object (to request data from a web server)</li>
-<li>JavaScript and HTML DOM (to display or use the data)</li>
-</ul>
-<blockquote>
-<p>AJAX 可以实现异步通信</p>
-</blockquote>
-<h1 id="How-AJAX-Works"><a href="#How-AJAX-Works" class="headerlink" title="How AJAX Works"></a>How AJAX Works</h1><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/13.%20AJAX%20Basic-2019-4-17-13-40-54.png" alt="13. AJAX Basic-2019-4-17-13-40-54.png"></p>
-<h1 id="How-to-use-AJAX"><a href="#How-to-use-AJAX" class="headerlink" title="How to use AJAX"></a>How to use AJAX</h1><p>The keystone of AJAX is the XMLHttpRequest object.</p>
-<h2 id="creating-an-XMLHttpRequest-object"><a href="#creating-an-XMLHttpRequest-object" class="headerlink" title="creating an XMLHttpRequest object"></a>creating an XMLHttpRequest object</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br></pre></td></tr></table></figure>
-<h2 id="send-a-request-to-a-server-we-use-the-open-and-send-methods-of-the-XMLHttpRequest-object"><a href="#send-a-request-to-a-server-we-use-the-open-and-send-methods-of-the-XMLHttpRequest-object" class="headerlink" title="send a request to a server, we use the open() and send() methods of the XMLHttpRequest object"></a>send a request to a server, we use the <code>open()</code> and <code>send()</code> methods of the <code>XMLHttpRequest</code> object</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xhttp.open(<span class="string">"GET"</span>, <span class="string">"ajax_info.txt"</span>, <span class="literal">true</span>);</span><br><span class="line">xhttp.send();</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/13.%20AJAX%20Basic-2019-4-17-13-46-10.png" alt="13. AJAX Basic-2019-4-17-13-46-10.png"></p>
-<h2 id="GET-or-POST"><a href="#GET-or-POST" class="headerlink" title="GET or POST?"></a>GET or POST?</h2><p>GET is simpler and faster than POST, and can be used in most cases.<br>However, always use POST requests when:</p>
-<ul>
-<li>A cached file is not an option (update a file or database on the server).</li>
-<li>Sending a large amount of data to the server (POST has no size limitations).</li>
-<li>Sending user input (which can contain unknown characters), POST is more robust and secure than GET.</li>
-</ul>
-<h2 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h2><p>demo of our web applications: <a href="http://34.211.21.63/Event/" target="_blank" rel="noopener">http://34.211.21.63/Event/</a> </p>
-<h1 id="Complete-HTML-CSS-Javascript-code"><a href="#Complete-HTML-CSS-Javascript-code" class="headerlink" title="Complete HTML/CSS/Javascript code"></a>Complete HTML/CSS/Javascript code</h1><p><a href="http://jsbin.com/hocukukiva/edit?html,css,js" target="_blank" rel="noopener">http://jsbin.com/hocukukiva/edit?html,css,js</a></p>
-<p>将JSBin里面的代码分别放在：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/WebContent/index.html</span><br><span class="line">/WebContent/styles/main.css</span><br><span class="line">/WebContent/scripts/main.js</span><br></pre></td></tr></table></figure></p>
-<p>访问： <a href="http://localhost:8080/Jupiter" target="_blank" rel="noopener">http://localhost:8080/Jupiter</a></p>
-<blockquote>
-<p>自动跳转至index.html<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset</a></p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">font-size</span>: 0<span class="selector-class">.9em</span>; </span><br><span class="line"><span class="comment">/* means 0.9 * parent's font-size  */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.top-nav</span> &#123;</span><br><span class="line">	<span class="comment">/* flex means listed from left to right  */</span></span><br><span class="line">	<span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="Step-1-Run-the-scripts"><a href="#Step-1-Run-the-scripts" class="headerlink" title="Step 1 ()() Run the scripts"></a>Step 1 ()() Run the scripts</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Run all following scripts</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
-<h2 id="Step-2-Gloval-Variables"><a href="#Step-2-Gloval-Variables" class="headerlink" title="Step 2 Gloval Variables"></a>Step 2 Gloval Variables</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> user_id = <span class="string">'1111'</span>;</span><br><span class="line"><span class="keyword">var</span> user_fullname = <span class="string">'John Smith'</span>;</span><br><span class="line"><span class="keyword">var</span> lng = <span class="number">-122.08</span>;</span><br><span class="line"><span class="keyword">var</span> lat = <span class="number">37.38</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="step3-main-function-entrance"><a href="#step3-main-function-entrance" class="headerlink" title="step3: main function(entrance)"></a>step3: main function(entrance)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">init();</span><br><span class="line"><span class="comment">/* step4: define init function */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Register event listeners</span></span><br><span class="line">  $(<span class="string">'nearby-btn'</span>).addEventListener(<span class="string">'click'</span>, loadNearbyItems);</span><br><span class="line"><span class="comment">//		$('fav-btn').addEventListener('click', loadFavoriteItems);</span></span><br><span class="line"><span class="comment">//		$('recommend-btn').addEventListener('click', loadRecommendedItems);</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> welcomeMsg = $(<span class="string">'welcome-msg'</span>);</span><br><span class="line">          welcomeMsg.innerHTML = <span class="string">'Welcome, '</span> + user_fullname;</span><br><span class="line">      </span><br><span class="line">          <span class="comment">// step 7</span></span><br><span class="line">          initGeoLocation();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="step5-create-function"><a href="#step5-create-function" class="headerlink" title="step5: create $ function"></a>step5: create $ function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * A helper function that creates a DOM element &lt;tag options...&gt;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> $(<span class="params">tag, options</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!options) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">document</span>.getElementById(tag);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> element = <span class="built_in">document</span>.createElement(tag);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> ( <span class="keyword">var</span> option <span class="keyword">in</span> options) &#123;</span><br><span class="line">    <span class="keyword">if</span> (options.hasOwnProperty(option)) &#123;</span><br><span class="line">      element[option] = options[option];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> element;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="step6-create-AJAX-helper-function"><a href="#step6-create-AJAX-helper-function" class="headerlink" title="step6: create AJAX helper function"></a>step6: create AJAX helper function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param method - GET|POST|PUT|DELETE</span></span><br><span class="line"><span class="comment"> * @param url - API end point</span></span><br><span class="line"><span class="comment"> * @param callback - This the successful callback</span></span><br><span class="line"><span class="comment"> * @param errorHandler - This is the failed callback</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">method, url, data, callback, errorHandler</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"></span><br><span class="line">  xhr.open(method, url, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 判断request</span></span><br><span class="line">  xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 判断 resopnse</span></span><br><span class="line">    <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">      <span class="comment">// callback 属于回调函数</span></span><br><span class="line">      callback(xhr.responseText);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (xhr.status === <span class="number">403</span>) &#123;</span><br><span class="line">      onSessionInvalid();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      errorHandler();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  xhr.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(<span class="string">"The request couldn't be completed."</span>);</span><br><span class="line">    errorHandler();</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (data === <span class="literal">null</span>) &#123;</span><br><span class="line">    xhr.send();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    xhr.setRequestHeader(<span class="string">"Content-Type"</span>,</span><br><span class="line">        <span class="string">"application/json;charset=utf-8"</span>);</span><br><span class="line">    xhr.send(data);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="step-7-initGeoLocation-function"><a href="#step-7-initGeoLocation-function" class="headerlink" title="step 7: initGeoLocation function"></a>step 7: initGeoLocation function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">initGeoLocation</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (navigator.geolocation) &#123;</span><br><span class="line">    <span class="comment">// step 8</span></span><br><span class="line">    <span class="comment">// get current position by browser.</span></span><br><span class="line">    navigator.geolocation.getCurrentPosition(onPositionUpdated,</span><br><span class="line">        onLoadPositionFailed, &#123;</span><br><span class="line">          maximumAge : <span class="number">60000</span></span><br><span class="line">        &#125;);</span><br><span class="line">    showLoadingMessage(<span class="string">'Retrieving your location...'</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// step 9</span></span><br><span class="line">    onLoadPositionFailed();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="step-8-onPositionUpdated-function"><a href="#step-8-onPositionUpdated-function" class="headerlink" title="step 8: onPositionUpdated function"></a>step 8: onPositionUpdated function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onPositionUpdated</span>(<span class="params">position</span>) </span>&#123;</span><br><span class="line">  lat = position.coords.latitude;</span><br><span class="line">  lng = position.coords.longitude;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// step 11</span></span><br><span class="line">  loadNearbyItems();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="step-9-onLoadPositionFailed-function"><a href="#step-9-onLoadPositionFailed-function" class="headerlink" title="step 9: onLoadPositionFailed function"></a>step 9: onLoadPositionFailed function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onLoadPositionFailed</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.warn(<span class="string">'navigator.geolocation is not available'</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//step 10</span></span><br><span class="line">  getLocationFromIP();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="step-10-getLocationFromIP-function"><a href="#step-10-getLocationFromIP-function" class="headerlink" title="step 10: getLocationFromIP function"></a>step 10: getLocationFromIP function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLocationFromIP</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Get location from http://ipinfo.io/json</span></span><br><span class="line">  <span class="keyword">var</span> url = <span class="string">'http://ipinfo.io/json'</span></span><br><span class="line">  <span class="keyword">var</span> req = <span class="literal">null</span>;</span><br><span class="line">  ajax(<span class="string">'GET'</span>, url, req, <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="built_in">JSON</span>.parse(res);</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">'loc'</span> <span class="keyword">in</span> result) &#123;</span><br><span class="line">      <span class="keyword">var</span> loc = result.loc.split(<span class="string">','</span>);</span><br><span class="line">      lat = loc[<span class="number">0</span>];</span><br><span class="line">      lng = loc[<span class="number">1</span>];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.warn(<span class="string">'Getting location by IP failed.'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// step 11</span></span><br><span class="line">    loadNearbyItems();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="step-11-loadNearbyItems-function"><a href="#step-11-loadNearbyItems-function" class="headerlink" title="step 11: loadNearbyItems function"></a>step 11: loadNearbyItems function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * API #1 Load the nearby items API end point: [GET]</span></span><br><span class="line"><span class="comment"> * /Dashi/search?user_id=1111&amp;lat=37.38&amp;lon=-122.08</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadNearbyItems</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'loadNearbyItems'</span>);</span><br><span class="line">  <span class="comment">// step 12</span></span><br><span class="line">  activeBtn(<span class="string">'nearby-btn'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// The request parameters</span></span><br><span class="line">  <span class="keyword">var</span> url = <span class="string">'./search'</span>;</span><br><span class="line">  <span class="keyword">var</span> params = <span class="string">'user_id='</span> + user_id + <span class="string">'&amp;lat='</span> + lat + <span class="string">'&amp;lon='</span> + lng;</span><br><span class="line">  <span class="keyword">var</span> req = <span class="built_in">JSON</span>.stringify(&#123;&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// step 13</span></span><br><span class="line">  <span class="comment">// display loading message</span></span><br><span class="line">  showLoadingMessage(<span class="string">'Loading nearby items...'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// make AJAX call</span></span><br><span class="line">  ajax(<span class="string">'GET'</span>, url + <span class="string">'?'</span> + params, req,</span><br><span class="line">  <span class="comment">// successful callback</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> items = <span class="built_in">JSON</span>.parse(res);</span><br><span class="line">    <span class="keyword">if</span> (!items || items.length === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="comment">// step 14</span></span><br><span class="line">      showWarningMessage(<span class="string">'No nearby item.'</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// step 16</span></span><br><span class="line">      listItems(items);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// failed callback</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// step 15</span></span><br><span class="line">    showErrorMessage(<span class="string">'Cannot load nearby items.'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="step-12-activeBtn-function"><a href="#step-12-activeBtn-function" class="headerlink" title="step 12: activeBtn function"></a>step 12: activeBtn function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * A helper function that makes a navigation button active</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @param btnId - The id of the navigation button</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">activeBtn</span>(<span class="params">btnId</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> btns = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'main-nav-btn'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// deactivate all navigation buttons</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; btns.length; i++) &#123;</span><br><span class="line">    btns[i].className = btns[i].className.replace(<span class="regexp">/\bactive\b/</span>, <span class="string">''</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// active the one that has id = btnId</span></span><br><span class="line">  <span class="keyword">var</span> btn = $(btnId);</span><br><span class="line">  btn.className += <span class="string">' active'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="step-13-showLoadingMessage-function"><a href="#step-13-showLoadingMessage-function" class="headerlink" title="step 13: showLoadingMessage function"></a>step 13: showLoadingMessage function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showLoadingMessage</span>(<span class="params">msg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> itemList = $(<span class="string">'item-list'</span>);</span><br><span class="line">  itemList.innerHTML = <span class="string">'&lt;p class="notice"&gt;&lt;i class="fa fa-spinner fa-spin"&gt;&lt;/i&gt; '</span></span><br><span class="line">      + msg + <span class="string">'&lt;/p&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** step 14: showWarningMessage function **/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showWarningMessage</span>(<span class="params">msg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> itemList = $(<span class="string">'item-list'</span>);</span><br><span class="line">  itemList.innerHTML = <span class="string">'&lt;p class="notice"&gt;&lt;i class="fa fa-exclamation-triangle"&gt;&lt;/i&gt; '</span></span><br><span class="line">      + msg + <span class="string">'&lt;/p&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** step15: showErrorMessage function **/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showErrorMessage</span>(<span class="params">msg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> itemList = $(<span class="string">'item-list'</span>);</span><br><span class="line">  itemList.innerHTML = <span class="string">'&lt;p class="notice"&gt;&lt;i class="fa fa-exclamation-circle"&gt;&lt;/i&gt; '</span></span><br><span class="line">      + msg + <span class="string">'&lt;/p&gt;'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="step16-listItems-function"><a href="#step16-listItems-function" class="headerlink" title="step16: listItems function"></a>step16: listItems function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param items - An array of item JSON objects</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">listItems</span>(<span class="params">items</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Clear the current results</span></span><br><span class="line">  <span class="keyword">var</span> itemList = $(<span class="string">'item-list'</span>);</span><br><span class="line">  itemList.innerHTML = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; items.length; i++) &#123;</span><br><span class="line">    <span class="comment">// step 17</span></span><br><span class="line">    addItem(itemList, items[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="step17-addItem-function"><a href="#step17-addItem-function" class="headerlink" title="step17: addItem function"></a>step17: addItem function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Add item to the list</span></span><br><span class="line"><span class="comment"> * @param itemList - The &lt;ul id="item-list"&gt; tag</span></span><br><span class="line"><span class="comment"> * @param item - The item data (JSON object)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addItem</span>(<span class="params">itemList, item</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> item_id = item.item_id;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// create the &lt;li&gt; tag and specify the id and class attributes</span></span><br><span class="line">  <span class="keyword">var</span> li = $(<span class="string">'li'</span>, &#123;</span><br><span class="line">    id : <span class="string">'item-'</span> + item_id,</span><br><span class="line">    className : <span class="string">'item'</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// set the data attribute</span></span><br><span class="line">  li.dataset.item_id = item_id;</span><br><span class="line">  li.dataset.favorite = item.favorite;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// item image</span></span><br><span class="line">  <span class="keyword">if</span> (item.image_url) &#123;</span><br><span class="line">    li.appendChild($(<span class="string">'img'</span>, &#123;</span><br><span class="line">      src : item.image_url</span><br><span class="line">    &#125;));</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    li.appendChild($(<span class="string">'img'</span>, &#123;</span><br><span class="line">      src : <span class="string">'https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png'</span></span><br><span class="line">    &#125;))</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// section</span></span><br><span class="line">  <span class="keyword">var</span> section = $(<span class="string">'div'</span>, &#123;&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// title</span></span><br><span class="line">  <span class="keyword">var</span> title = $(<span class="string">'a'</span>, &#123;</span><br><span class="line">    href : item.url,</span><br><span class="line">    target : <span class="string">'_blank'</span>,</span><br><span class="line">    className : <span class="string">'item-name'</span></span><br><span class="line">  &#125;);</span><br><span class="line">  title.innerHTML = item.name;</span><br><span class="line">  section.appendChild(title);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// category</span></span><br><span class="line">  <span class="keyword">var</span> category = $(<span class="string">'p'</span>, &#123;</span><br><span class="line">    className : <span class="string">'item-category'</span></span><br><span class="line">  &#125;);</span><br><span class="line">  category.innerHTML = <span class="string">'Category: '</span> + item.categories.join(<span class="string">', '</span>);</span><br><span class="line">  section.appendChild(category);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> stars = $(<span class="string">'div'</span>, &#123;</span><br><span class="line">    className : <span class="string">'stars'</span></span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; item.rating; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> star = $(<span class="string">'i'</span>, &#123;</span><br><span class="line">      className : <span class="string">'fa fa-star'</span></span><br><span class="line">    &#125;);</span><br><span class="line">    stars.appendChild(star);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ((<span class="string">''</span> + item.rating).match(<span class="regexp">/\.5$/</span>)) &#123;</span><br><span class="line">    stars.appendChild($(<span class="string">'i'</span>, &#123;</span><br><span class="line">      className : <span class="string">'fa fa-star-half-o'</span></span><br><span class="line">    &#125;));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  section.appendChild(stars);</span><br><span class="line"></span><br><span class="line">  li.appendChild(section);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// address</span></span><br><span class="line">  <span class="keyword">var</span> address = $(<span class="string">'p'</span>, &#123;</span><br><span class="line">    className : <span class="string">'item-address'</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  address.innerHTML = item.address.replace(<span class="regexp">/,/g</span>, <span class="string">'&lt;br/&gt;'</span>).replace(<span class="regexp">/\"/g</span>,</span><br><span class="line">      <span class="string">''</span>);</span><br><span class="line">  li.appendChild(address);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// favorite link</span></span><br><span class="line">  <span class="keyword">var</span> favLink = $(<span class="string">'p'</span>, &#123;</span><br><span class="line">    className : <span class="string">'fav-link'</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  favLink.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    changeFavoriteItem(item_id);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  favLink.appendChild($(<span class="string">'i'</span>, &#123;</span><br><span class="line">    id : <span class="string">'fav-icon-'</span> + item_id,</span><br><span class="line">    className : item.favorite ? <span class="string">'fa fa-heart'</span> : <span class="string">'fa fa-heart-o'</span></span><br><span class="line">  &#125;));</span><br><span class="line"></span><br><span class="line">  li.appendChild(favLink);</span><br><span class="line"></span><br><span class="line">  itemList.appendChild(li);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3754,7 +4040,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -3918,7 +4204,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">238k</span>
+    <span title="Symbols count total">245k</span>
   
 
   
@@ -3927,7 +4213,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">3:36</span>
+    <span title="Reading time total">3:43</span>
   
 </div>
 
