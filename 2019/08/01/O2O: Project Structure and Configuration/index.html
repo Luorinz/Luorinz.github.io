@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false,"dimmer":true},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Notes of O2O projcetTech stack SSM: Spring, SpringMVC, MyBatisProject StructureGeneral StructureFront End  Shop  Administrator Product Concrete Class Area1. Build the class in Java 1. Build the table">
+<meta name="keywords" content="Web,Database,Java,Tomcat,MySQL,Maven,Spring,MyBatis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="O2O: Project Structure and Configuration">
+<meta property="og:url" content="http://yoursite.com/2019/08/01/O2O: Project Structure and Configuration/index.html">
+<meta property="og:site_name" content="Anda">
+<meta property="og:description" content="Notes of O2O projcetTech stack SSM: Spring, SpringMVC, MyBatisProject StructureGeneral StructureFront End  Shop  Administrator Product Concrete Class Area1. Build the class in Java 1. Build the table">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-48-14.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-48-32.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-49-14.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-49-0.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-50-17.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-29-17-21-23.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-29-17-22-14.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-29-17-50-54.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-29-17-52-58.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-29-19-47-45.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-29-19-48-53.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-29-19-51-51.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-10-28.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-10-50.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-12-50.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-14-45.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-16-31.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-23-45.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-57-58.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-58-44.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-17-8-50.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-17-12-3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-17-15-35.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-17-19-17.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-20-57-2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-5-5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-11-59.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-12-20.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-15-54.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-16-44.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-22-37.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-23-26.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-27-50.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-33-45.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-34-3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-34-24.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-8-43-55.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-8-47-55.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-10-7-2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-16-18-3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-21-9-26.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-21-12-11.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-21-34-33.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-21-46-58.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-22-3-49.png">
+<meta property="og:updated_time" content="2019-08-01T06:28:47.761Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="O2O: Project Structure and Configuration">
+<meta name="twitter:description" content="Notes of O2O projcetTech stack SSM: Spring, SpringMVC, MyBatisProject StructureGeneral StructureFront End  Shop  Administrator Product Concrete Class Area1. Build the class in Java 1. Build the table">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-48-14.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/08/01/O2O: Project Structure and Configuration/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>O2O: Project Structure and Configuration | Anda</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Anda</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Notes of study, work and life</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags<span class="badge">25</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories<span class="badge">2</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">28</span></a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/Luorinz" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/01/O2O: Project Structure and Configuration/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anda Luo">
+      <meta itemprop="description" content="Notes of study, work and life">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anda">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">O2O: Project Structure and Configuration
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-01 06:24:45" itemprop="dateCreated datePublished" datetime="2019-08-01T06:24:45-07:00">2019-08-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-31 23:28:47" itemprop="dateModified" datetime="2019-07-31T23:28:47-07:00">2019-07-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">13k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">12 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Notes-of-O2O-projcet"><a href="#Notes-of-O2O-projcet" class="headerlink" title="Notes of O2O projcet"></a>Notes of O2O projcet</h1><h2 id="Tech-stack"><a href="#Tech-stack" class="headerlink" title="Tech stack"></a>Tech stack</h2><ol>
+<li>SSM: Spring, SpringMVC, MyBatis<h2 id="Project-Structure"><a href="#Project-Structure" class="headerlink" title="Project Structure"></a>Project Structure</h2><h3 id="General-Structure"><a href="#General-Structure" class="headerlink" title="General Structure"></a>General Structure</h3><h4 id="Front-End"><a href="#Front-End" class="headerlink" title="Front End"></a>Front End</h4><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-48-14.png" alt="Notes-2019-7-30-21-48-14.png"></li>
+</ol>
+<h4 id="Shop"><a href="#Shop" class="headerlink" title="Shop"></a>Shop</h4><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-48-32.png" alt="Notes-2019-7-30-21-48-32.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-49-14.png" alt="Notes-2019-7-30-21-49-14.png"></p>
+<h4 id="Administrator"><a href="#Administrator" class="headerlink" title="Administrator"></a>Administrator</h4><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-49-0.png" alt="Notes-2019-7-30-21-49-0.png"></p>
+<h4 id="Product"><a href="#Product" class="headerlink" title="Product"></a>Product</h4><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-50-17.png" alt="Notes-2019-7-30-21-50-17.png"></p>
+<h3 id="Concrete-Class"><a href="#Concrete-Class" class="headerlink" title="Concrete Class"></a>Concrete Class</h3><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-29-17-21-23.png" alt="Notes-2019-7-29-17-21-23.png"></p>
+<h4 id="Area"><a href="#Area" class="headerlink" title="Area"></a>Area</h4><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-29-17-22-14.png" alt="Notes-2019-7-29-17-22-14.png"><br><strong>1. Build the class in Java</strong><br><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-29-17-50-54.png" alt="Notes-2019-7-29-17-50-54.png"></p>
+<p><strong>1. Build the table in database</strong><br><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-29-17-52-58.png" alt="Notes-2019-7-29-17-52-58.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-29-19-47-45.png" alt="Notes-2019-7-29-19-47-45.png"></p>
+<p><strong>Q: Why do we use DateTime rather than TimeStamp in mySQL?</strong><br><strong>A: Because DateTime has a larger range of 0000 -&gt; 9999 year, while TimeStamp can only varies between 1970 and 2037. However, TimeStamp can automatically adjust to the current time zone.</strong></p>
+<p><strong>Q: What’s the difference between InnoDB and MYISAM?</strong><br><strong>A: MYISAM has a table lock that doesn’t allow multiple threads modifying the table while current thread working on it. InnoDB is locked by row. Also, MYISAM has a better read performance, while InnoDB has a better write performance.</strong></p>
+<h4 id="PersonInfo"><a href="#PersonInfo" class="headerlink" title="PersonInfo"></a>PersonInfo</h4><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-29-19-48-53.png" alt="Notes-2019-7-29-19-48-53.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-29-19-51-51.png" alt="Notes-2019-7-29-19-51-51.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-10-28.png" alt="Notes-2019-7-30-16-10-28.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-10-50.png" alt="Notes-2019-7-30-16-10-50.png"></p>
+<h4 id="WechatAuth-and-LocalAuth"><a href="#WechatAuth-and-LocalAuth" class="headerlink" title="WechatAuth and LocalAuth"></a>WechatAuth and LocalAuth</h4><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-12-50.png" alt="Notes-2019-7-30-16-12-50.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-14-45.png" alt="Notes-2019-7-30-16-14-45.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-16-31.png" alt="Notes-2019-7-30-16-16-31.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-23-45.png" alt="Notes-2019-7-30-16-23-45.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-57-58.png" alt="Notes-2019-7-30-16-57-58.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-16-58-44.png" alt="Notes-2019-7-30-16-58-44.png"></p>
+<blockquote>
+<p>Here we should also change open_id in tb_wechat_auth into a unique key.</p>
+</blockquote>
+<p><strong>Q: Why do we want to set username to be unique?</strong><br><strong>A: Because we want to improve the performance of lookup. </strong></p>
+<h4 id="HeadLine"><a href="#HeadLine" class="headerlink" title="HeadLine"></a>HeadLine</h4><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-17-8-50.png" alt="Notes-2019-7-30-17-8-50.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-17-12-3.png" alt="Notes-2019-7-30-17-12-3.png"><br><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-17-15-35.png" alt="Notes-2019-7-30-17-15-35.png"></p>
+<h4 id="ShopCategory"><a href="#ShopCategory" class="headerlink" title="ShopCategory"></a>ShopCategory</h4><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-17-19-17.png" alt="Notes-2019-7-30-17-19-17.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-20-57-2.png" alt="Notes-2019-7-30-20-57-2.png"></p>
+<blockquote>
+<p>parentId is like a recurrence relation here. if the parent is null, that means the category is the root. Any child node can traverl all the way back to root.</p>
+</blockquote>
+<h4 id="Shop-1"><a href="#Shop-1" class="headerlink" title="Shop"></a>Shop</h4><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-5-5.png" alt="Notes-2019-7-30-21-5-5.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-11-59.png" alt="Notes-2019-7-30-21-11-59.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-12-20.png" alt="Notes-2019-7-30-21-12-20.png"></p>
+<h4 id="ProductCategory"><a href="#ProductCategory" class="headerlink" title="ProductCategory"></a>ProductCategory</h4><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-15-54.png" alt="Notes-2019-7-30-21-15-54.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-16-44.png" alt="Notes-2019-7-30-21-16-44.png"></p>
+<h4 id="ProductImg"><a href="#ProductImg" class="headerlink" title="ProductImg"></a>ProductImg</h4><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-22-37.png" alt="Notes-2019-7-30-21-22-37.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-23-26.png" alt="Notes-2019-7-30-21-23-26.png"></p>
+<h4 id="Product-1"><a href="#Product-1" class="headerlink" title="Product"></a>Product</h4><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-27-50.png" alt="Notes-2019-7-30-21-27-50.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-33-45.png" alt="Notes-2019-7-30-21-33-45.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-34-3.png" alt="Notes-2019-7-30-21-34-3.png"></p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-30-21-34-24.png" alt="Notes-2019-7-30-21-34-24.png"></p>
+<h3 id="Configurations"><a href="#Configurations" class="headerlink" title="Configurations"></a>Configurations</h3><h4 id="Packages-of-the-projects"><a href="#Packages-of-the-projects" class="headerlink" title="Packages of the projects"></a>Packages of the projects</h4><p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-8-43-55.png" alt="Notes-2019-7-31-8-43-55.png"></p>
+<h4 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h4><ol>
+<li>Junit<blockquote>
+<p>Has to be higher than 4.12, otherwise there’s error. </p>
+</blockquote>
+</li>
+<li>Logback<br><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-8-47-55.png" alt="Notes-2019-7-31-8-47-55.png"></li>
+</ol>
+<blockquote>
+<p>Here we want to remove \<scope>test\<scope>, since we also want it to appear in the actual scope.</scope></scope></p>
+</blockquote>
+<ol start="3">
+<li><p>spring </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">spring.version</span>&gt;</span>4.3.7.RELEASE<span class="tag">&lt;/<span class="name">spring.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Spring --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 1)包含Spring 框架基本的核心工具类。Spring 其它组件要都要使用到这个包里的类，是其它组件的基本核心 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 2)这个jar 文件是所有应用都要用到的，它包含访问配置文件、创建和管理bean 以及进行Inversion of Control</span></span><br><span class="line"><span class="comment">      / Dependency Injection（IoC/DI）操作相关的所有类。如果应用只需基本的IoC/DI 支持，引入spring-core.jar</span></span><br><span class="line"><span class="comment">      及spring-beans.jar 文件就可以了。 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-beans<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 3)这个jar 文件为Spring 核心提供了大量扩展。可以找到使用Spring ApplicationContext特性时所需的全部类，JDNI</span></span><br><span class="line"><span class="comment">      所需的全部类，instrumentation组件以及校验Validation 方面的相关类。 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 4) 这个jar 文件包含对Spring 对JDBC 数据访问进行封装的所有类。 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 5) 为JDBC、Hibernate、JDO、JPA等提供的一致的声明式和编程式事务管理。 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-tx<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 6)Spring web 包含Web应用开发时，用到Spring框架时所需的核心类，包括自动载入WebApplicationContext特性的类、Struts与JSF集成类、文件上传的支持类、Filter类和大量工具辅助类。 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 7)包含SpringMVC框架相关的所有类。 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 8)Spring test 对JUNIT等测试框架的简单封装 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Servlet<br>Servlet serevice dependency</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Servlet web --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>json support for front-end</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- json解析 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>spring-core dependency</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Map工具类 对标准java Collection的扩展 spring-core.jar需commons-collections.jar --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-collections<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-collections<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mybatis dependency</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- DAO: MyBatis --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.5.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mysql<br>mysql-connector-java supports sql api<br>com.mchange supports connection pool</p>
+</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 数据库 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.16<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/com.mchange/c3p0 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.mchange<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>c3p0<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.9.5.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">什么是连接池</span><br><span class="line">数据库连接池负责分配、管理和释放数据库连接，它允许应用程序重复使用一个现有的数据库连接，而不是再重新建立一个。</span><br><span class="line"></span><br><span class="line">为什么要使用连接池</span><br><span class="line"> 数据库连接是一种关键的有限的昂贵的资源，这一点在多用户的网页应用程序中体现得尤为突出。  一个数据库连接对象均对应一个物理数据库连接，每次操作都打开一个物理连接，使用完都关闭连接，这样造成系统的 性能低下。 数据库连接池的解决方案是在应用程序启动时建立足够的数据库连接，并讲这些连接组成一个连接池(简单说：在一个“池”里放了好多半成品的数据库联接对象)，由应用程序动态地对池中的连接进行申请、使用和释放。对于多于连接池中连接数的并发请求，应该在请求队列中排队等待。并且应用程序可以根据池中连接的使用率，动态增加或减少池中的连接数。 连接池技术尽可能多地重用了消耗内存地资源，大大节省了内存，提高了服务器地服务效率，能够支持更多的客户服务。通过使用连接池，将大大提高程序运行效率，同时，我们可以通过其自身的管理机制来监视数据库连接的数量、使用情况等。 </span><br><span class="line">--------------------- </span><br><span class="line">作者：CrankZ </span><br><span class="line">来源：CSDN </span><br><span class="line">原文：https://blog.csdn.net/crankz/article/details/82874158 </span><br><span class="line">版权声明：本文为博主原创文章，转载请附上博文链接！</span><br></pre></td></tr></table></figure>
+<h4 id="Configurations-1"><a href="#Configurations-1" class="headerlink" title="Configurations"></a>Configurations</h4><ol>
+<li><p>jdbc<br>File name is <strong>jdbc.properties</strong>, save it under src/main/resources</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jdbc.driver = com.mysql.jdbc.Driver</span><br><span class="line">jdbc.url = jdbc:mysql:<span class="comment">//localhost:8889/o2o?useUnicode=true&amp;characterEncoding=utf8</span></span><br><span class="line">jdbc.username = root</span><br><span class="line">#jdbc.password =</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mybatis<br>File name is <strong>mybatis-config.xml</strong>, save it under src/main/resources</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用jdbc的getGeneratedKeys获取数据库自增主键值 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"useGeneratedKeys"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 使用列标签替换列别名 默认:true --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"useColumnLabel"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 开启驼峰命名转换:Table&#123;create_time&#125; -&gt; Entity&#123;createTime&#125; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"mapUnderscoreToCamelCase"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>spring<br><strong>spring-dao.xml</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 配置整合mybatis过程 --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 1.配置数据库相关参数properties的属性：$&#123;url&#125; --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 2.配置连接池属性 --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 3.配置SqlSessionFactory对象 --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 4.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 --&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>spring-service.xml</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 扫描service包下所有使用注解的类型 --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 配置事务管理器 --&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 注入数据库连接池 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 配置基于注解的声明式事务 --&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>spring-web.xml</strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 配置SpringMVC --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 1.开启SpringMVC注解模式 --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 2.静态资源默认servlet配置 (1)加入对静态资源的处理：js,gif,png (2)允许使用"/"做整体映射 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 3.定义视图解析器 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 4.扫描web相关的bean --&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li><p>web.xml<br>Integrate the configuration of Spring</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>spring-dispatcher<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:spring/spring-*.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>spring-dispatcher<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    默认匹配所有的请求 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Review<br><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-10-7-2.png" alt="Notes-2019-7-31-10-7-2.png"></p>
+</li>
+</ol>
+<h3 id="Test-for-DAO"><a href="#Test-for-DAO" class="headerlink" title="Test for DAO"></a>Test for DAO</h3><p>Take Area class as an example, we try to implement its DAO. </p>
+<p><strong>Q: What is DAO?</strong><br><strong>A: DAO是Data Access Object数据访问接口，数据访问：顾名思义就是与数据库打交道。In computer software, a data access object (DAO) is an object that provides an abstract interface to some type of database or other persistence mechanism. By mapping application calls to the persistence layer, the DAO provides some specific data operations without exposing details of the database. This isolation supports the single responsibility principle. It separates what data access the application needs, in terms of domain-specific objects and data types (the public interface of the DAO), from how these needs can be satisfied with a specific DBMS, database schema, etc. (the implementation of the DAO).</strong></p>
+<p>We first implement the interface of user’s operation(such as insertion, deletion, update, query), and then map the DAO in the myBatis (mapper package) to the entity class. There we define the type of the operation and return type, then we can write SQLs to execute the actual queries.</p>
+<p>Step:</p>
+<ol>
+<li>create interface AreaDao in o2o.dao</li>
+<li>create config file AreaDao.xml in resources.mapper<blockquote>
+<p>Here we don’t need to implement the actual AreaDao class but simply provide an interface is enough. MyBatis will do the job for us. We just need to map it to MyBatis.</p>
+</blockquote>
+</li>
+<li>Specify the namespace, id, and resultType<br><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-16-18-3.png" alt="Notes-2019-7-31-16-18-3.png"></li>
+<li>Write the test for the dao.</li>
+</ol>
+<p>First, create a BaseTest class in test/…/o2o/, which is used to initialize Spring and Junit configuration</p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-21-9-26.png" alt="Notes-2019-7-31-21-9-26.png"></p>
+<blockquote>
+<p>@RunWith and @ContextConfiguratiion are often used together. First one indicate what test runner we want to use for junit. @ContextConfiguration indicates the Config file of Spring DAO.</p>
+</blockquote>
+<p>Then create a concrete test class AreaDaoTest in ~/o2o.dao extending the BaseTest.</p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-21-12-11.png" alt="Notes-2019-7-31-21-12-11.png"></p>
+<blockquote>
+<p>@Autowired is used to assemble the DAO class by Spring. Every time we declare an interface with @Autowired, Spring will automatically use its implementation class.</p>
+</blockquote>
+<ol start="5">
+<li>Debug.</li>
+</ol>
+<ul>
+<li>in <code>jdbc.properties</code>, password line cannot be omitted</li>
+<li>jdbc.driver changes to <code>com.mysql.cj.jdbc.Driver</code></li>
+<li>Add <code>&amp;serverTimezone=UTC</code> to jdbc url</li>
+<li>Make sure all paths are configured correctly.</li>
+</ul>
+<h3 id="Test-for-Service"><a href="#Test-for-Service" class="headerlink" title="Test for Service"></a>Test for Service</h3><ol>
+<li>Create <code>AreaService</code> interface in service package, which has a getAreaList API. </li>
+<li>Create <code>AreaServiceImpl</code> class in service.impl package, create a DAO and implement the API. Just simply return the DAO’s queryArea() API.</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-21-34-33.png" alt="Notes-2019-7-31-21-34-33.png"></p>
+<ol start="3">
+<li><p>Create <code>serevice.AreaServiceTest</code> in test package, and add config file to the BaseTest.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ContextConfiguration</span>(&#123;<span class="string">"classpath:spring/spring-dao.xml"</span>, <span class="string">"classpath:spring/spring-service.xml"</span>&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Same as testDao, test the getAreaList() API we defined in interface AreaService. Here we changed a way to test it. Notice that since we configure the mapper with AreaDao.xml, we know that the result return from the database is exactly the field we defined in entity class Area.</p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-21-46-58.png" alt="Notes-2019-7-31-21-46-58.png"></p>
+<h3 id="Test-for-Controller"><a href="#Test-for-Controller" class="headerlink" title="Test for Controller"></a>Test for Controller</h3><ol>
+<li>Since we use a super admin to control the Area, we create a superadmin package to manage related behaviour. Create <code>web.superadmin.AreaController</code>.</li>
+<li>Implement this class.</li>
+</ol>
+<p><code>@Controller</code> tag means this is an implementation class of Controller(just like <code>@Service</code>). Here we don’t have a Controller interface. </p>
+<p><code>@RequestMapping</code> means when we have a request calling <code>superadmin</code>, we direct it to our current class <code>AreaController</code>. Same as the following. Notice that we use lower case here for url.</p>
+<p><code>@ResponseBody</code> is used to write the data we have in controller to the body of response. Could be html, json or xml. In this case, we return <code>json</code>.</p>
+<p>The reason why we use a Map&lt;String, Object&gt; here is because this data structure is like a json. We can put whatever we want as the value of a certain String, including error message.</p>
+<p><img src="https://raw.githubusercontent.com/Luorinz/images/master/Notes-2019-7-31-22-3-49.png" alt="Notes-2019-7-31-22-3-49.png"></p>
+<p>We can test it at <a href="http://localhost:8080/superadmin/listarea" target="_blank" rel="noopener">http://localhost:8080/superadmin/listarea</a></p>
+<p>and get something like</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"total"</span>:<span class="number">2</span>,<span class="attr">"rows"</span>:[&#123;<span class="attr">"areaId"</span>:<span class="number">2</span>,<span class="attr">"areaName"</span>:<span class="string">"Chicago"</span>,<span class="attr">"priority"</span>:<span class="number">2</span>,<span class="attr">"createTime"</span>:<span class="literal">null</span>,<span class="attr">"lastEditTime"</span>:<span class="literal">null</span>&#125;,&#123;<span class="attr">"areaId"</span>:<span class="number">1</span>,<span class="attr">"areaName"</span>:<span class="string">"Seattle"</span>,<span class="attr">"priority"</span>:<span class="number">1</span>,<span class="attr">"createTime"</span>:<span class="literal">null</span>,<span class="attr">"lastEditTime"</span>:<span class="literal">null</span>&#125;]&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Debug: There’s a serious bug about bean multipartResolver. Annotate it will be fine.</p>
+</blockquote>
+<h3 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h3><ol>
+<li>Create the interface in DAO, and create certain APIs</li>
+<li>Create config file in mapper for this DAO, and Use SQL to execute operations on Database.</li>
+<li>Call DAO API in Service</li>
+<li>Call Service API in Controller and return it to front end(write to response).</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web/" rel="tag"># Web</a>
+          
+            <a href="/tags/Database/" rel="tag"># Database</a>
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Tomcat/" rel="tag"># Tomcat</a>
+          
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+          
+            <a href="/tags/Maven/" rel="tag"># Maven</a>
+          
+            <a href="/tags/Spring/" rel="tag"># Spring</a>
+          
+            <a href="/tags/MyBatis/" rel="tag"># MyBatis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/26/Leetcode Summary/" rel="next" title="Leetcode Summary">
+                <i class="fa fa-chevron-left"></i> Leetcode Summary
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Anda Luo</p>
+              <div class="site-description motion-element" itemprop="description">Notes of study, work and life</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Luorinz" title="GitHub &rarr; https://github.com/Luorinz" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:luorinz@gmail.com" title="E-Mail &rarr; mailto:luorinz@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes-of-O2O-projcet"><span class="nav-number">1.</span> <span class="nav-text">Notes of O2O projcet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tech-stack"><span class="nav-number">1.1.</span> <span class="nav-text">Tech stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Project-Structure"><span class="nav-number">1.2.</span> <span class="nav-text">Project Structure</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#General-Structure"><span class="nav-number">1.2.1.</span> <span class="nav-text">General Structure</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Front-End"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Front End</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shop"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">Shop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Administrator"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">Administrator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Product"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">Product</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Concrete-Class"><span class="nav-number">1.2.2.</span> <span class="nav-text">Concrete Class</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Area"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Area</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PersonInfo"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">PersonInfo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WechatAuth-and-LocalAuth"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">WechatAuth and LocalAuth</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HeadLine"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">HeadLine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ShopCategory"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">ShopCategory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shop-1"><span class="nav-number">1.2.2.6.</span> <span class="nav-text">Shop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ProductCategory"><span class="nav-number">1.2.2.7.</span> <span class="nav-text">ProductCategory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ProductImg"><span class="nav-number">1.2.2.8.</span> <span class="nav-text">ProductImg</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Product-1"><span class="nav-number">1.2.2.9.</span> <span class="nav-text">Product</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Configurations"><span class="nav-number">1.2.3.</span> <span class="nav-text">Configurations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Packages-of-the-projects"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">Packages of the projects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dependencies"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">Dependencies</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Configurations-1"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">Configurations</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Test-for-DAO"><span class="nav-number">1.2.4.</span> <span class="nav-text">Test for DAO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Test-for-Service"><span class="nav-number">1.2.5.</span> <span class="nav-text">Test for Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Test-for-Controller"><span class="nav-number">1.2.6.</span> <span class="nav-text">Test for Controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Review"><span class="nav-number">1.2.7.</span> <span class="nav-text">Review</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+    <div id="sidebar-dimmer"></div>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Anda Luo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Symbols count total">258k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="Reading time total">3:54</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#more");
+  
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
