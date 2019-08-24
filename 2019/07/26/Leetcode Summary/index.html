@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="Anda">
 <meta property="og:description" content="Algorithm ReviewGreedy   Name difficulty Solution Link     316. Remove Duplicate Letters Hard Find the current smallest achievable letter and continue searching the rest https://leetcode.com/problems/">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-14T21:11:45.093Z">
+<meta property="og:updated_time" content="2019-08-24T21:44:04.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode Summary">
 <meta name="twitter:description" content="Algorithm ReviewGreedy   Name difficulty Solution Link     316. Remove Duplicate Letters Hard Find the current smallest achievable letter and continue searching the rest https://leetcode.com/problems/">
@@ -447,7 +447,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-14 14:11:45" itemprop="dateModified" datetime="2019-08-14T14:11:45-07:00">2019-08-14</time>
+                <time title="Modified: 2019-08-24 14:44:04" itemprop="dateModified" datetime="2019-08-24T14:44:04-07:00">2019-08-24</time>
               
             
           </span>
@@ -493,7 +493,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">13k</span>
+                <span title="Symbols count in article">18k</span>
               
 
               
@@ -507,7 +507,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">11 mins.</span>
+                <span title="Reading time">17 mins.</span>
               
             </div>
           
@@ -591,6 +591,24 @@
 <td style="text-align:center">Maintain a decreasing stack of the array(the first one). Then search from the tail and try to enlarge the interval.</td>
 <td style="text-align:center"><a href="https://leetcode.com/problems/maximum-width-ramp/description/" target="_blank" rel="noopener">https://leetcode.com/problems/maximum-width-ramp/description/</a></td>
 </tr>
+<tr>
+<td style="text-align:center">907. Sum of Subarray Minimums</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Maintain nextMin[] and prevMin[], then we scan from left to right, update res by A[i] <em> (i-prevMin[i])</em>(nextMin[i] - i). Note that the default of next should len(A), the other is -1</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/sum-of-subarray-minimums/description/" target="_blank" rel="noopener">https://leetcode.com/problems/sum-of-subarray-minimums/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">1124. Longest Well-Performing Interval</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Same as maximum width ramp. Transform into subarray sum &gt; k problem.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/longest-well-performing-interval/description/" target="_blank" rel="noopener">https://leetcode.com/problems/longest-well-performing-interval/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">84. Largest Rectangle in Histogram</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">Use single monotonic stack, or 2 mono stack expanding each item.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/largest-rectangle-in-histogram/description/" target="_blank" rel="noopener">https://leetcode.com/problems/largest-rectangle-in-histogram/description/</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h2><table>
@@ -608,6 +626,12 @@
 <td style="text-align:center">Medium</td>
 <td style="text-align:center">Use binary search to find a size k interval. Compare the distance from left bound to the x and right bound to x</td>
 <td style="text-align:center"><a href="https://leetcode.com/problems/find-k-closest-elements/description/" target="_blank" rel="noopener">https://leetcode.com/problems/find-k-closest-elements/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">392. Is Subsequence</td>
+<td style="text-align:center">Easy</td>
+<td style="text-align:center">Practice bin search.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/is-subsequence/description/" target="_blank" rel="noopener">https://leetcode.com/problems/is-subsequence/description/</a></td>
 </tr>
 </tbody>
 </table>
@@ -717,6 +741,12 @@
 <td style="text-align:center">Similar to Coin Change. dp[i][j] += dp[i-1][j-k] for k in [1…f]. Note that dp[0][0] should be 1.</td>
 <td style="text-align:center"><a href="https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/description/" target="_blank" rel="noopener">https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/description/</a></td>
 </tr>
+<tr>
+<td style="text-align:center">265. Paint House II</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">Simple DP. We can optimize it to Onk and O1 space by finding the minimum 2 items of each level while traversing.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/paint-house-ii/description/" target="_blank" rel="noopener">https://leetcode.com/problems/paint-house-ii/description/</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="Design-Datastructre"><a href="#Design-Datastructre" class="headerlink" title="Design Datastructre"></a>Design Datastructre</h2><table>
@@ -741,6 +771,18 @@
 <td style="text-align:center">HashMap + Double Linkedlist</td>
 <td style="text-align:center"><a href="https://leetcode.com/problems/lru-cache/description/" target="_blank" rel="noopener">https://leetcode.com/problems/lru-cache/description/</a></td>
 </tr>
+<tr>
+<td style="text-align:center">460. LFU Cache</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">HashMap + LinkedHashSet. Use a map to store key to val, a map to store key to freq, a map to store freq to list of keys. Linked hash set can keep the keys in order and have a O1 insert and delete</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/lfu-cache/description/" target="_blank" rel="noopener">https://leetcode.com/problems/lfu-cache/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">381. Insert Delete GetRandom O(1) - Duplicates allowed</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">TODO: implement it with LinkedHashSet. Use HashMap + array. Hashmap stores the value and its index in the array. Array stores the value and its relative index in the hashmap</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/description/" target="_blank" rel="noopener">https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/description/</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="Sliding-Window"><a href="#Sliding-Window" class="headerlink" title="Sliding Window"></a>Sliding Window</h2><table>
@@ -764,6 +806,12 @@
 <td style="text-align:center">Medium</td>
 <td style="text-align:center">maintain a window which size is the same as total number of 1s in the array, in which have as many 1s as possible</td>
 <td style="text-align:center"><a href="https://leetcode.com/contest/biweekly-contest-6/problems/minimum-swaps-to-group-all-1s-together/" target="_blank" rel="noopener">https://leetcode.com/contest/biweekly-contest-6/problems/minimum-swaps-to-group-all-1s-together/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">683. K Empty Slots</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">First record which bulb is turned on on each day, then try to find an subarray such that we have k+2 items in the subarray, and the items on both ends should be smaller than that in the middle. Then we try to find this window from left to right.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/k-empty-slots/description/" target="_blank" rel="noopener">https://leetcode.com/problems/k-empty-slots/description/</a></td>
 </tr>
 </tbody>
 </table>
@@ -825,6 +873,12 @@
 <td style="text-align:center">A regular tree question. Use the full binary tree characteristic. Check the right and left height and one of them must be a full binary tree, and use the formula will do.</td>
 <td style="text-align:center"><a href="https://leetcode.com/problems/count-complete-tree-nodes/description/" target="_blank" rel="noopener">https://leetcode.com/problems/count-complete-tree-nodes/description/</a></td>
 </tr>
+<tr>
+<td style="text-align:center">1161. Maximum Level Sum of a Binary Tree</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">level order/DFS level sum</td>
+<td style="text-align:center"><a href="https://leetcode.com/contest/weekly-contest-150/problems/maximum-level-sum-of-a-binary-tree/" target="_blank" rel="noopener">https://leetcode.com/contest/weekly-contest-150/problems/maximum-level-sum-of-a-binary-tree/</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h2><table>
@@ -854,6 +908,18 @@
 <td style="text-align:center">Hard</td>
 <td style="text-align:center">BFS and record the min distance to each reachable point, return the distance to targete point</td>
 <td style="text-align:center"><a href="https://leetcode.com/problems/the-maze-ii/description/" target="_blank" rel="noopener">https://leetcode.com/problems/the-maze-ii/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">834. Sum of Distances in Tree</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">First use a dfs(preorder) to build the count[] counting the number of nodes of each subtree. Then we use another dfs(postorder) to build the dist[]. dist[child] = dist[parent] - count[child] + N - count[child]. This means, from parent to child, we have counts[child] of nodes get 1 distance nearer, and N - counts[child] of nodes get 1 distance further.</td>
+<td style="text-align:center"><a href="https://leetcode.com/contest/weekly-contest-84/problems/sum-of-distances-in-tree/" target="_blank" rel="noopener">https://leetcode.com/contest/weekly-contest-84/problems/sum-of-distances-in-tree/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">1168. Optimize Water Distribution in a Village</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">The key is to build a MST among all pipes and a dummy node that connects all other nodes with cost of building wells. Practice for Kruskal and Prim</td>
+<td style="text-align:center"><a href="https://leetcode.com/contest/biweekly-contest-7/problems/optimize-water-distribution-in-a-village/" target="_blank" rel="noopener">https://leetcode.com/contest/biweekly-contest-7/problems/optimize-water-distribution-in-a-village/</a></td>
 </tr>
 </tbody>
 </table>
@@ -930,6 +996,36 @@
 <td style="text-align:center">Store the result by level. Here we also need to store the sign of each level by pushing num first then sign. So when we push, we get the sign first, apply on the cur level, and add to previous level.</td>
 <td style="text-align:center"><a href="https://leetcode.com/problems/basic-calculator/description/" target="_blank" rel="noopener">https://leetcode.com/problems/basic-calculator/description/</a></td>
 </tr>
+<tr>
+<td style="text-align:center">726. Number of Atoms</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">Same as calculator. Store each level in the stack and merge the result to last level when we have ‘)’.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/number-of-atoms/description/" target="_blank" rel="noopener">https://leetcode.com/problems/number-of-atoms/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">68. Text Justification</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">Similar to round robin, Calculate the num of space first, then use modular to pad space to each word one by one until finish.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/text-justification/description/" target="_blank" rel="noopener">https://leetcode.com/problems/text-justification/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">1106. Parsing A Boolean Expression</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">Use 2 stacks to store operands and operators</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/parsing-a-boolean-expression/description/" target="_blank" rel="noopener">https://leetcode.com/problems/parsing-a-boolean-expression/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">150. Evaluate Reverse Polish Notation</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Need to pay attention on the floor division problem and take care of the sign.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/evaluate-reverse-polish-notation/description/" target="_blank" rel="noopener">https://leetcode.com/problems/evaluate-reverse-polish-notation/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">394. Decode String</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">String parsing practice.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/decode-string/description/" target="_blank" rel="noopener">https://leetcode.com/problems/decode-string/description/</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><table>
@@ -972,6 +1068,12 @@
 <td style="text-align:center">Searching from substring containing only 1 unique letter to 26 of them. Maintain a window using 2 pointers with certain unique letters, and check if this window is a valid window. The reason why window works here is we are dealing with substring, which is continuous.</td>
 <td style="text-align:center"><a href="https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/description/" target="_blank" rel="noopener">https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/description/</a></td>
 </tr>
+<tr>
+<td style="text-align:center">862. Shortest Subarray with Sum at Least K</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">Same idea. Use deque as a sliding window and keep the sum &gt;= k. Use a prefix array and increasing monotonic stack to help control the sum calculation and size control.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/" target="_blank" rel="noopener">https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="Trie"><a href="#Trie" class="headerlink" title="Trie"></a>Trie</h2><table>
@@ -989,6 +1091,12 @@
 <td style="text-align:center">Hard</td>
 <td style="text-align:center">Classic Trie problem. Build Trie with all words and search each grid using backtrack.</td>
 <td style="text-align:center"><a href="https://leetcode.com/problems/word-search-ii/description/" target="_blank" rel="noopener">https://leetcode.com/problems/word-search-ii/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">1166. Design File System</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Practice for Trie Tree</td>
+<td style="text-align:center"><a href="https://leetcode.com/contest/biweekly-contest-7/problems/design-file-system/" target="_blank" rel="noopener">https://leetcode.com/contest/biweekly-contest-7/problems/design-file-system/</a></td>
 </tr>
 </tbody>
 </table>
@@ -1008,6 +1116,24 @@
 <td style="text-align:center">Use Sieve of Eratosthenes, loop all n and try to get rid of all composites of every prime</td>
 <td style="text-align:center"><a href="https://leetcode.com/problems/count-primes/description/" target="_blank" rel="noopener">https://leetcode.com/problems/count-primes/description/</a></td>
 </tr>
+<tr>
+<td style="text-align:center">296. Best Meeting Point</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">Find the median of all houses.`Proof: totalX =</td>
+<td style="text-align:center">x1 - m</td>
+<td>+</td>
+<td>x2-m</td>
+<td>+ … +</td>
+<td>xn-m</td>
+<td>. `Derivative of totalX = -1 + 1 + -1 + … Since we want the derivative to be 0, thus, the number of -1 and 1 should equal. Thus we should have half of the xn smaller than m and half bigger, which is median. Same idea with the totalY.</td>
+<td><a href="https://leetcode.com/problems/best-meeting-point/description/" target="_blank" rel="noopener">https://leetcode.com/problems/best-meeting-point/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">264. Ugly Number II</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Generate <code>1*2, 1*3, 1*5...</code> by multiplying 2, 3, 5 to current minimum ugly number. We set up 3 pointers that can generate next <code>*2, *3, *5</code>ugly number, and keep track of them until we generate n number.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/ugly-number-ii/description/d" target="_blank" rel="noopener">https://leetcode.com/problems/ugly-number-ii/description/d</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h2><table>
@@ -1025,6 +1151,12 @@
 <td style="text-align:center">Medium</td>
 <td style="text-align:center">simulate the process of stack operation. First push, then check if we shoud pop anything at this moment. Then check the final result</td>
 <td style="text-align:center"><a href="https://leetcode.com/problems/validate-stack-sequences/description/" target="_blank" rel="noopener">https://leetcode.com/problems/validate-stack-sequences/description/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">1003. Check If Word Is Valid After Substitutions</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Reconstruct this string. the first c we met has to be the last abc we insert, thus previous 2 chars have to be a and b. Check this continously until the stack is empty</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/description/" target="_blank" rel="noopener">https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/description/</a></td>
 </tr>
 </tbody>
 </table>
@@ -1061,6 +1193,42 @@
 <td style="text-align:center">Hard</td>
 <td style="text-align:center">Every time i pick a random element between bounds, And check to see if it’s a majority item by binary search its left and right pos. right_pos - left_pos is the number of this element, and we check it with threshold.</td>
 <td style="text-align:center"><a href="https://leetcode.com/problems/online-majority-element-in-subarray/discuss/356227/C++-Codes-of-different-approaches-(Random-Pick-Trade-off-Segment-Tree-Bucket)" target="_blank" rel="noopener">https://leetcode.com/problems/online-majority-element-in-subarray/discuss/356227/C++-Codes-of-different-approaches-(Random-Pick-Trade-off-Segment-Tree-Bucket)</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Backtrack"><a href="#Backtrack" class="headerlink" title="Backtrack"></a>Backtrack</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">291. Word Pattern II</td>
+<td style="text-align:center">Hard</td>
+<td style="text-align:center">For each pattern char, search the following source to find a match, search deeper and backtrack.</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/word-pattern-ii/description/" target="_blank" rel="noopener">https://leetcode.com/problems/word-pattern-ii/description/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Bucket-Sort"><a href="#Bucket-Sort" class="headerlink" title="Bucket Sort"></a>Bucket Sort</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">difficulty</th>
+<th style="text-align:center">Solution</th>
+<th style="text-align:center">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">274. H-Index</td>
+<td style="text-align:center">Medium</td>
+<td style="text-align:center">Use a bucket to store the number of citations of each paper. If exceeds, merge the result to nth paper. Then check backwards, try to find a point where the total count &gt; ith paper. That point is that at this point, we have this amount of citations (total count), that have at least this many citations(ith paper)</td>
+<td style="text-align:center"><a href="https://leetcode.com/problems/h-index/description/" target="_blank" rel="noopener">https://leetcode.com/problems/h-index/description/</a></td>
 </tr>
 </tbody>
 </table>
@@ -1333,7 +1501,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-Review"><span class="nav-number">1.</span> <span class="nav-text">Algorithm Review</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Greedy"><span class="nav-number">1.1.</span> <span class="nav-text">Greedy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Monotonic-Stack"><span class="nav-number">1.2.</span> <span class="nav-text">Monotonic Stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary-Search"><span class="nav-number">1.3.</span> <span class="nav-text">Binary Search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prefix-Sum"><span class="nav-number">1.4.</span> <span class="nav-text">Prefix Sum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Divide-amp-Conquer"><span class="nav-number">1.5.</span> <span class="nav-text">Divide &amp; Conquer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DP"><span class="nav-number">1.6.</span> <span class="nav-text">DP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-Datastructre"><span class="nav-number">1.7.</span> <span class="nav-text">Design Datastructre</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sliding-Window"><span class="nav-number">1.8.</span> <span class="nav-text">Sliding Window</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tree"><span class="nav-number">1.9.</span> <span class="nav-text">Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Graph"><span class="nav-number">1.10.</span> <span class="nav-text">Graph</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UnionFind"><span class="nav-number">1.11.</span> <span class="nav-text">UnionFind</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SubMatrix"><span class="nav-number">1.12.</span> <span class="nav-text">SubMatrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String-Parsing"><span class="nav-number">1.13.</span> <span class="nav-text">String Parsing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap"><span class="nav-number">1.14.</span> <span class="nav-text">HashMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Substring-Subsequence-SubArray"><span class="nav-number">1.15.</span> <span class="nav-text">Substring/Subsequence/SubArray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trie"><span class="nav-number">1.16.</span> <span class="nav-text">Trie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math"><span class="nav-number">1.17.</span> <span class="nav-text">Math</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stack"><span class="nav-number">1.18.</span> <span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segmant-Tree"><span class="nav-number">1.19.</span> <span class="nav-text">Segmant Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Random"><span class="nav-number">1.20.</span> <span class="nav-text">Random</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm-Review"><span class="nav-number">1.</span> <span class="nav-text">Algorithm Review</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Greedy"><span class="nav-number">1.1.</span> <span class="nav-text">Greedy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Monotonic-Stack"><span class="nav-number">1.2.</span> <span class="nav-text">Monotonic Stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary-Search"><span class="nav-number">1.3.</span> <span class="nav-text">Binary Search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prefix-Sum"><span class="nav-number">1.4.</span> <span class="nav-text">Prefix Sum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Divide-amp-Conquer"><span class="nav-number">1.5.</span> <span class="nav-text">Divide &amp; Conquer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DP"><span class="nav-number">1.6.</span> <span class="nav-text">DP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-Datastructre"><span class="nav-number">1.7.</span> <span class="nav-text">Design Datastructre</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sliding-Window"><span class="nav-number">1.8.</span> <span class="nav-text">Sliding Window</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tree"><span class="nav-number">1.9.</span> <span class="nav-text">Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Graph"><span class="nav-number">1.10.</span> <span class="nav-text">Graph</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UnionFind"><span class="nav-number">1.11.</span> <span class="nav-text">UnionFind</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SubMatrix"><span class="nav-number">1.12.</span> <span class="nav-text">SubMatrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String-Parsing"><span class="nav-number">1.13.</span> <span class="nav-text">String Parsing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap"><span class="nav-number">1.14.</span> <span class="nav-text">HashMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Substring-Subsequence-SubArray"><span class="nav-number">1.15.</span> <span class="nav-text">Substring/Subsequence/SubArray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trie"><span class="nav-number">1.16.</span> <span class="nav-text">Trie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math"><span class="nav-number">1.17.</span> <span class="nav-text">Math</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stack"><span class="nav-number">1.18.</span> <span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segmant-Tree"><span class="nav-number">1.19.</span> <span class="nav-text">Segmant Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Random"><span class="nav-number">1.20.</span> <span class="nav-text">Random</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backtrack"><span class="nav-number">1.21.</span> <span class="nav-text">Backtrack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bucket-Sort"><span class="nav-number">1.22.</span> <span class="nav-text">Bucket Sort</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1368,7 +1536,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">271k</span>
+    <span title="Symbols count total">277k</span>
   
 
   
@@ -1377,7 +1545,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">4:06</span>
+    <span title="Reading time total">4:11</span>
   
 </div>
 
